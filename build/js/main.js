@@ -1,31 +1,30 @@
-
 //about-sanatorium
-// Видео
 $(document).on('click','.js-videoPoster',function(e) {
-    //отменяем стандартное действие button
-    e.preventDefault();
-    var poster = $(this);
-    // ищем родителя ближайшего по классу
-    var wrapper = poster.closest('.js-videoWrapper');
-    videoPlay(wrapper);
-  });
-  
-  //вопроизводим видео, при этом скрывая постер
-  function videoPlay(wrapper) {
-    var iframe = wrapper.find('.js-videoIframe');
-    // Берем ссылку видео из data
-    var src = iframe.data('src');
-    // скрываем постер
-    wrapper.addClass('videoWrapperActive');
-    // подставляем в src параметр из data
-    iframe.attr('src',src);
-  }
+  //отменяем стандартное действие button
+  e.preventDefault();
+  var poster = $(this);
+  // ищем родителя ближайшего по классу
+  var wrapper = poster.closest('.js-videoWrapper');
+  videoPlay(wrapper);
+});
+
+//вопроизводим видео, при этом скрывая постер
+function videoPlay(wrapper) {
+  var iframe = wrapper.find('.js-videoIframe');
+  // Берем ссылку видео из data
+  var src = iframe.data('src');
+  // скрываем постер
+  wrapper.addClass('videoWrapperActive');
+  // подставляем в src параметр из data
+  iframe.attr('src',src);
+};
+
 //fix hover element on mobile
 let allEl = document.querySelectorAll('*')
 for(let i = 0; i < allEl.length; i++){
   allEl.ontouchstart = () => this.mouseover()
   allEl.ontouchcancel = () => this.mouseover()
-}
+};
 
 //Проверка поддержки WEBP
 function check_webp_feature(feature, callback) {
@@ -42,7 +41,7 @@ function check_webp_feature(feature, callback) {
   };
   img.onerror = () => callback(feature, false);
   img.src = "data:image/webp;base64," + kTestImages[feature];
-}
+};
 //Если браузер поддерживает WEBP, то добавляем класс тегу body
 check_webp_feature('lossy', function (feature, isSupported) {
   isSupported ? document.body.classList.add('webp-support-js') : document.body.classList.add('webp-nosupport-js')
@@ -56,8 +55,8 @@ document.getElementById('header__menu').addEventListener("mouseover", function()
 // бургер в десктопном меню
 const desctopBtn = document.querySelector('.header__menu');
 const desctopBtn2 = document.querySelector('.header__desctop-burger--wrapper');
-const desctopmenuIcon = document.querySelector('.header__desctop-burger__menu-icon')
-const desctopMenu = document.querySelector('.header__desctop-menu')
+const desctopmenuIcon = document.querySelector('.header__desctop-burger__menu-icon');
+const desctopMenu = document.querySelector('.header__desctop-menu');
 
 // Клик по кнопке для скрытия / показа фильтра и изменения  иконки
 desctopBtn.onclick = function(){
@@ -71,8 +70,8 @@ desctopBtn2.onclick = function(){
 
 // бургер в сайдбаре
 const sidebarToggleBtn = document.querySelector('.header__top-burger--wrapper');
-const menuIcon = document.querySelector('.header__top-burger__menu-icon')
-const sidebar = document.querySelector('.header__side-menu')
+const menuIcon = document.querySelector('.header__top-burger__menu-icon');
+const sidebar = document.querySelector('.header__side-menu');
 
 // Клик по кнопке для скрытия / показа фильтра и изменения  иконки
 sidebarToggleBtn.onclick = function(){
@@ -83,16 +82,16 @@ sidebarToggleBtn.onclick = function(){
 // добавляем Тень при активном боковом меню
 $('.header__top-burger').click(function() {
     $('.shadow').toggleClass('body-shadow');
-})
+});
 
 // лочим прокрутку сайта при активном десктопном/мобильном меню
 $('.header__menu, .header__top-burger').click(function() {
     $('body').toggleClass('body__lock');
-})
+});
 // разлочиваем прокрутку сайта при убраном десктопном/мобильном меню
 $('.header__desctop-burger--wrapper, header__top-burger').click(function() {
     $('body').removeClass('body__lock');
-})
+});
 
 
 // Выпадающий список в шапке
@@ -140,17 +139,30 @@ $('select').each(function(){
         $list.hide();
     });
   
-  });
+});
+//infra
 //hero
 $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
-        items: 3,
+        margin: 10,
         loop: true,
-        nav: true
-        // dotn: false
+        nav: true,
+        pagination: true,   
+        dots: true,
+        navText : ["",""],
+        responsiveClass:true,
+        responsiveBaseElement:"body",
+        responsive:{
+            0:{
+                items:1.5
+            },
+            563: {
+                items: 2,  
+            }
+        }
     });
 });
-//infra
+
 //nav
 //room-fund
 //sanatorium-progs
