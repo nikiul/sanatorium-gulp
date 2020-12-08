@@ -1,6 +1,6 @@
 //hero
 $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
+    $("#owl-carousel__banner").owlCarousel({
         margin: 10,
         loop: true,
         nav: true,

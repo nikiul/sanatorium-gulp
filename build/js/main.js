@@ -19,6 +19,27 @@ function videoPlay(wrapper) {
   iframe.attr('src',src);
 };
 
+$(document).ready(function(){
+  $("#owl-carousel__about-sanatorium").owlCarousel({
+      margin: 10,
+      loop: true,
+      nav: true,
+      pagination: true,   
+      dots: true,
+      navText : ["",""],
+      responsiveClass:true,
+      responsiveBaseElement:"body",
+      responsive:{
+          0:{
+              items:1.5
+          },
+          563: {
+              items: 2,  
+          }
+      }
+  });
+});
+
 //fix hover element on mobile
 let allEl = document.querySelectorAll('*')
 for(let i = 0; i < allEl.length; i++){
@@ -95,54 +116,79 @@ $('.header__desctop-burger--wrapper, header__top-burger').click(function() {
 
 
 // Выпадающий список в шапке
-$('select').each(function(){
-    var $this = $(this), numberOfOptions = $(this).children('option').length;
+// $('select').each(function(){
+//     var $this = $(this), numberOfOptions = $(this).children('option').length;
   
-    $this.addClass('select-hidden'); 
-    $this.wrap('<div class="select"></div>');
-    $this.after('<div class="select-styled"></div>');
+//     $this.addClass('select-hidden'); 
+//     $this.wrap('<div class="select"></div>');
+//     $this.after('<div class="select-styled"></div>');
   
-    var $styledSelect = $this.next('div.select-styled');
-    $styledSelect.text($this.children('option').eq(0).text());
+//     var $styledSelect = $this.next('div.select-styled');
+//     $styledSelect.text($this.children('option').eq(0).text());
   
-    var $list = $('<ul />', {
-        'class': 'select-options'
-    }).insertAfter($styledSelect);
+//     var $list = $('<ul />', {
+//         'class': 'select-options'
+//     }).insertAfter($styledSelect);
   
-    for (var i = 0; i < numberOfOptions; i++) {
-        $('<li />', {
-            text: $this.children('option').eq(i).text(),
-            rel: $this.children('option').eq(i).val()
-        }).appendTo($list);
-    }
+//     for (var i = 0; i < numberOfOptions; i++) {
+//         $('<li />', {
+//             text: $this.children('option').eq(i).text(),
+//             rel: $this.children('option').eq(i).val()
+//         }).appendTo($list);
+//     }
   
-    var $listItems = $list.children('li');
+//     var $listItems = $list.children('li');
   
-    $styledSelect.click(function(e) {
-        e.stopPropagation();
-        $('div.select-styled.active').not(this).each(function(){
-            $(this).removeClass('active').next('ul.select-options').hide();
-        });
-        $(this).toggleClass('active').next('ul.select-options').toggle();
-    });
+//     $styledSelect.click(function(e) {
+//         e.stopPropagation();
+//         $('div.select-styled.active').not(this).each(function(){
+//             $(this).removeClass('active').next('ul.select-options').hide();
+//         });
+//         $(this).toggleClass('active').next('ul.select-options').toggle();
+//     });
   
-    $listItems.click(function(e) {
-        e.stopPropagation();
-        $styledSelect.text($(this).text()).removeClass('active');
-        $this.val($(this).attr('rel'));
-        $list.hide();
-        //console.log($this.val());
-    });
+//     $listItems.click(function(e) {
+//         e.stopPropagation();
+//         $styledSelect.text($(this).text()).removeClass('active');
+//         $this.val($(this).attr('rel'));
+//         $list.hide();
+//         //console.log($this.val());
+//     });
   
-    $(document).click(function() {
-        $styledSelect.removeClass('active');
-        $list.hide();
-    });
+//     $(document).click(function() {
+//         $styledSelect.removeClass('active');
+//         $list.hide();
+//     });
   
+// });
+
+var tel = $(".tel");
+var telList = $('.tel__list');
+var telBtn = $('.tel-btn');
+var telCurrent = $('.tel-current__link');
+
+telBtn.click(function(e){
+	telList.fadeToggle();
+});
+
+telList.on('click', '.tel__item', function(){
+	var th = $(this);
+	var thText = th.text();
+	telCurrent
+		.text(thText)
+		.attr('href', 'tel:'+thText+'');
+		telList.fadeOut();
+});
+
+$(document).mouseup(function (e){
+	if (!tel.is(e.target)
+			&& tel.has(e.target).length === 0) {
+		telList.fadeOut(); // скрываем его
+	}
 });
 //hero
 $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
+    $("#owl-carousel__banner").owlCarousel({
         margin: 10,
         loop: true,
         nav: true,

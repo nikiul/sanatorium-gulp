@@ -1,10 +1,11 @@
 <header class="header">
-
+	
+	<!-- десктопное меню -->
 	<div class="header__desctop-menu">    
 		<!-- бургер декстопного меню -->
 		<div class="header__desctop-burger">
 			<button class="header__desctop-burger--wrapper">     
-					<div class="header__desctop-burger__menu-icon"></div>
+					<span class="header__desctop-burger__menu-icon"></span>
 			</button>
 		</div>
 		<!-- // бургер декстопного меню -->
@@ -191,6 +192,38 @@
 				</div>
 	
 			</div> 
+
+			<div class="desctop-menu__desclamer">
+				<h3>ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ. НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</h3>
+			</div>
+
+			<div class="desctop-menu__contacts">
+				<p class="desctop-menu__contacts-title">Контакты:</p>
+
+				<div class="desctop-menu__row">
+
+					<div class="desctop-menu__contacts-column">
+						<p class="desctop-menu__contacts-toptext">Адрес:</p>
+						<p class="desctop-menu__contacts-subtext">Ставропольский край, г. Кисловодск, проспект Ленина, 30</p>
+					</div>
+					<div class="desctop-menu__vertical-line"></div>
+					<div class="desctop-menu__contacts-column">
+						<p class="desctop-menu__contacts-toptext">Телефон:</p>
+						<a href="tel:88793767220" class="desctop-menu__contacts-subtext">8 (87937) 6-72-20</a>
+					</div>
+					<div class="desctop-menu__vertical-line"></div>
+					<div class="desctop-menu__contacts-column">
+						<p class="desctop-menu__contacts-toptext">Эл. почта:</p>
+						<a href="Allentown@gmail.com" class="desctop-menu__contacts-subtext">Parker Rd. Allentown@gmail.com</a>
+					</div>
+					<div class="desctop-menu__vertical-line"></div>
+					<div class="desctop-menu__contacts-column">
+						<p class="desctop-menu__contacts-toptext">Режим работы:</p>
+						<p class="desctop-menu__contacts-subtext">09:00 - 20:00</p>
+					</div>
+
+				</div>
+			</div>
 	
 		</div>
 		
@@ -241,23 +274,31 @@
 									<div class="header__tel">
 											<img class="tel__icon" src="img/icons/tel.svg" alt="Телефон">
 											<div class="header__tel--info">
-													<div class="header__tel--row">
-															<select id="mounth">
-																	<option value="">8 (87937) 6-72-20</option>
-																	<option value="">+7 (495 ) 120-28-11</option>
-																	<option value="">8 800 8000 800</option>   
-															</select>
-															<!-- <img src="img/icons/drop-down-trigon.svg" alt=""> -->
-													</div>
-													<p >Заказать звонок</p>
+												
+											<div class="tel">
+												<div class="tel-current">
+													<a href="#" class="tel-current__link">8 (87937) 6-72-20</a>	 
+													<div class="tel-btn"></div>
+												</div>
+												<ul class="tel__list">
+													<li class="tel__item">8 (87937) 6-72-20</li> 	
+													<li class="tel__item">+7 (495 ) 120-28-11</li> 
+													<li class="tel__item">8 800 8000 800</li> 		
+												</ul>
+											</div>	
 
+											<p >Заказать звонок</p>
 											</div>
 									</div>
+										
+										
+										
+									
 							</div>
 
 							<div class="header__top-burger">
 									<button class="header__top-burger--wrapper">     
-											<div class="header__top-burger__menu-icon"></div>
+											<span class="header__top-burger__menu-icon"></span>
 									</button>
 							</div>
 
@@ -294,9 +335,12 @@
 													<li class="side-nav__item">
 															<a class="side-nav__link" href="#">Контакты</a>
 													</li>
+											</ul>
 													
-													<div class="side__border"></div>
+											<div class="side__border"></div>
 
+											<ul class="side-nav">
+											
 													<li class="side-nav__item">
 															<a class="side-nav__link" href="#">Новости</a>
 													</li>
@@ -350,15 +394,20 @@
 													<div class="header-side__contacts-tel">
 
 															<img src="img/icons/tel.svg" alt="">
+															<div class="header__tel--info">
 
-															<div class="header-side__contacts-tel--info">
-																	<select id="mounth">
-																			<option value="">8 (87937) 6-72-20</option>
-																			<option value="">+7 (495 ) 120-28-11 </option>
-																			<option value="">8 800 8000 800 </option>
-																	</select>
-
-																	<a class="">Заказать звонок</a>
+																<div class="tel">
+																	<div class="tel-current">
+																		<a href="#" class="tel-current__link">8 (87937) 6-72-20</a>	 
+																		<div class="tel-btn"></div>
+																	</div>
+																	<ul class="tel__list">
+																		<li class="tel__item">8 (87937) 6-72-20</li> 	
+																		<li class="tel__item">+7 (495 ) 120-28-11</li> 
+																		<li class="tel__item">8 800 8000 800</li> 		
+																	</ul>
+																</div>	
+																<p>Заказать звонок</p>
 															</div>
 													</div>
 

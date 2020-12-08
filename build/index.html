@@ -16,12 +16,13 @@
 	<body>
 		<!-- Header -->
 <header class="header">
-
+	
+	<!-- десктопное меню -->
 	<div class="header__desctop-menu">    
 		<!-- бургер декстопного меню -->
 		<div class="header__desctop-burger">
 			<button class="header__desctop-burger--wrapper">     
-					<div class="header__desctop-burger__menu-icon"></div>
+					<span class="header__desctop-burger__menu-icon"></span>
 			</button>
 		</div>
 		<!-- // бургер декстопного меню -->
@@ -208,6 +209,38 @@
 				</div>
 	
 			</div> 
+
+			<div class="desctop-menu__desclamer">
+				<h3>ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ. НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</h3>
+			</div>
+
+			<div class="desctop-menu__contacts">
+				<p class="desctop-menu__contacts-title">Контакты:</p>
+
+				<div class="desctop-menu__row">
+
+					<div class="desctop-menu__contacts-column">
+						<p class="desctop-menu__contacts-toptext">Адрес:</p>
+						<p class="desctop-menu__contacts-subtext">Ставропольский край, г. Кисловодск, проспект Ленина, 30</p>
+					</div>
+					<div class="desctop-menu__vertical-line"></div>
+					<div class="desctop-menu__contacts-column">
+						<p class="desctop-menu__contacts-toptext">Телефон:</p>
+						<a href="tel:88793767220" class="desctop-menu__contacts-subtext">8 (87937) 6-72-20</a>
+					</div>
+					<div class="desctop-menu__vertical-line"></div>
+					<div class="desctop-menu__contacts-column">
+						<p class="desctop-menu__contacts-toptext">Эл. почта:</p>
+						<a href="Allentown@gmail.com" class="desctop-menu__contacts-subtext">Parker Rd. Allentown@gmail.com</a>
+					</div>
+					<div class="desctop-menu__vertical-line"></div>
+					<div class="desctop-menu__contacts-column">
+						<p class="desctop-menu__contacts-toptext">Режим работы:</p>
+						<p class="desctop-menu__contacts-subtext">09:00 - 20:00</p>
+					</div>
+
+				</div>
+			</div>
 	
 		</div>
 		
@@ -258,23 +291,31 @@
 									<div class="header__tel">
 											<img class="tel__icon" src="img/icons/tel.svg" alt="Телефон">
 											<div class="header__tel--info">
-													<div class="header__tel--row">
-															<select id="mounth">
-																	<option value="">8 (87937) 6-72-20</option>
-																	<option value="">+7 (495 ) 120-28-11</option>
-																	<option value="">8 800 8000 800</option>   
-															</select>
-															<!-- <img src="img/icons/drop-down-trigon.svg" alt=""> -->
-													</div>
-													<p >Заказать звонок</p>
+												
+											<div class="tel">
+												<div class="tel-current">
+													<a href="#" class="tel-current__link">8 (87937) 6-72-20</a>	 
+													<div class="tel-btn"></div>
+												</div>
+												<ul class="tel__list">
+													<li class="tel__item">8 (87937) 6-72-20</li> 	
+													<li class="tel__item">+7 (495 ) 120-28-11</li> 
+													<li class="tel__item">8 800 8000 800</li> 		
+												</ul>
+											</div>	
 
+											<p >Заказать звонок</p>
 											</div>
 									</div>
+										
+										
+										
+									
 							</div>
 
 							<div class="header__top-burger">
 									<button class="header__top-burger--wrapper">     
-											<div class="header__top-burger__menu-icon"></div>
+											<span class="header__top-burger__menu-icon"></span>
 									</button>
 							</div>
 
@@ -311,9 +352,12 @@
 													<li class="side-nav__item">
 															<a class="side-nav__link" href="#">Контакты</a>
 													</li>
+											</ul>
 													
-													<div class="side__border"></div>
+											<div class="side__border"></div>
 
+											<ul class="side-nav">
+											
 													<li class="side-nav__item">
 															<a class="side-nav__link" href="#">Новости</a>
 													</li>
@@ -367,15 +411,20 @@
 													<div class="header-side__contacts-tel">
 
 															<img src="img/icons/tel.svg" alt="">
+															<div class="header__tel--info">
 
-															<div class="header-side__contacts-tel--info">
-																	<select id="mounth">
-																			<option value="">8 (87937) 6-72-20</option>
-																			<option value="">+7 (495 ) 120-28-11 </option>
-																			<option value="">8 800 8000 800 </option>
-																	</select>
-
-																	<a class="">Заказать звонок</a>
+																<div class="tel">
+																	<div class="tel-current">
+																		<a href="#" class="tel-current__link">8 (87937) 6-72-20</a>	 
+																		<div class="tel-btn"></div>
+																	</div>
+																	<ul class="tel__list">
+																		<li class="tel__item">8 (87937) 6-72-20</li> 	
+																		<li class="tel__item">+7 (495 ) 120-28-11</li> 
+																		<li class="tel__item">8 800 8000 800</li> 		
+																	</ul>
+																</div>	
+																<p>Заказать звонок</p>
 															</div>
 													</div>
 
@@ -582,7 +631,7 @@
 <section class="section__under-banner">
 
     <div class="container">
-        <p class="under-banner__par">В санатории действует обязательное соблюдение масочного режима и социального дистанцирования. Меры по снижению рисков распространения предписаны Постановлением губернатором Ставропольского края от 6 августа 2020 года № 326.</p>
+        <h4 class="under-banner__title">В санатории действует обязательное соблюдение масочного режима и социального дистанцирования. Меры по снижению рисков распространения предписаны Постановлением губернатором Ставропольского края от 6 августа 2020 года № 326.</h4>
 
         <a href="#" class="under-banner__mobile-link">
             <p>Подробнее</p>
@@ -610,7 +659,7 @@
             <div class="about-sanatorium__right-col">
                 
                 <div class="video_wrapper video_wrapper_full js-videoWrapper">
-                    <iframe class="videoIframe js-videoIframe" frameborder="0" allowTransparency="true" data-src="https://www.youtube.com/embed/Leoo2bJ5Vik?modestbranding=1&iv_load_policy=3" allowfullscreen></iframe>
+                    <iframe class="videoIframe js-videoIframe" data-src="https://www.youtube.com/embed/Leoo2bJ5Vik?modestbranding=1&iv_load_policy=3" allowfullscreen></iframe>
                     <button class="videoPoster js-videoPoster"></button>                    
                 </div>
 
@@ -622,7 +671,7 @@
 
             <div class="about-sanatorium__right-col">
                 <div class="video_wrapper video_wrapper_full js-videoWrapper">
-                    <iframe class="videoIframe js-videoIframe" frameborder="0" allowTransparency="true" data-src="https://www.youtube.com/embed/Leoo2bJ5Vik?modestbranding=1&iv_load_policy=3" allowfullscreen></iframe>
+                    <iframe class="videoIframe js-videoIframe" data-src="https://www.youtube.com/embed/Leoo2bJ5Vik?modestbranding=1&iv_load_policy=3" allowfullscreen></iframe>
                     <button class="videoPoster js-videoPoster"></button>                    
                 </div>
             </div>
@@ -632,7 +681,7 @@
             <button class="about-sanatorium__btn">Подробнее</button>
         </div>
 
-        <div class="about-sanatorium__row about-sanatorium__row-bottom">
+        <!-- <div class="about-sanatorium__row about-sanatorium__row-bottom">
             <a href="#" class="about__block-link-wrapper">
                 <div class="about__block">
                     <div class="about__block-content">
@@ -670,7 +719,84 @@
                 </div>
             </a>           
 
+        </div> -->
+        <div class="block-wrapper">
+            <a href="#" class="about__block-link-wrapper">
+                <div class="about__block">
+                    <div class="about__block-content">
+                        <h4 class="about__block-title">Подробнее  о нашем <br> санатории</h4>
+                        <p class="about__block-par">У нашего санатория богатая и интересная история, которая заслуживает отдельного внимания. Так же вы можете узнать об уникальных условиях…</p>
+                        <div class="about__block-btn">Подробнее</div>
+                    </div>    
+                </div>
+            </a>           
+            <a href="#" class="about__block-link-wrapper">
+                <div class="about__block">
+                    <div class="about__block-content">
+                        <h4 class="about__block-title">Подробнее  о нашем <br> санатории</h4>
+                        <p class="about__block-par">У нашего санатория богатая и интересная история, которая заслуживает отдельного внимания. Так же вы можете узнать об уникальных условиях…</p>
+                        <div class="about__block-btn">Подробнее</div>
+                    </div>    
+                </div>
+            </a>           
+            <a href="#" class="about__block-link-wrapper">
+                <div class="about__block">
+                    <div class="about__block-content">
+                        <h4 class="about__block-title">Подробнее  о нашем <br> санатории</h4>
+                        <p class="about__block-par">У нашего санатория богатая и интересная история, которая заслуживает отдельного внимания. Так же вы можете узнать об уникальных условиях…</p>
+                        <div class="about__block-btn">Подробнее</div>
+                    </div>    
+                </div>
+            </a>           
+            <a href="#" class="about__block-link-wrapper">
+                <div class="about__block">
+                    <div class="about__block-content">
+                        <h4 class="about__block-title">Подробнее  о нашем <br> санатории</h4>
+                        <p class="about__block-par">У нашего санатория богатая и интересная история, которая заслуживает отдельного внимания. Так же вы можете узнать об уникальных условиях…</p>
+                        <div class="about__block-btn">Подробнее</div>
+                    </div>    
+                </div>
+            </a>           
         </div>
+
+        <!-- <div class="owl-carousel owl-theme" id="owl-carousel__about-sanatorium">
+            <a href="#" class="about__block-link-wrapper">
+                <div class="about__block">
+                    <div class="about__block-content">
+                        <h4 class="about__block-title">Подробнее  о нашем <br> санатории</h4>
+                        <p class="about__block-par">У нашего санатория богатая и интересная история, которая заслуживает отдельного внимания. Так же вы можете узнать об уникальных условиях…</p>
+                        <div class="about__block-btn">Подробнее</div>
+                    </div>    
+                </div>
+            </a>           
+            <a href="#" class="about__block-link-wrapper">
+                <div class="about__block">
+                    <div class="about__block-content">
+                        <h4 class="about__block-title">Виртуальный <br> тур</h4>
+                        <p class="about__block-par">Окунитесь в чудесную атмосферу нашего санатория. Питьевые бюветы, прогулочные дорожки, узнайте о нас больше, посмотрев виртуальный тур прямо сейчас!</p>
+                        <div class="about__block-btn">Подробнее</div>
+                    </div>    
+                </div>
+            </a>           
+            <a href="#" class="about__block-link-wrapper">
+                <div class="about__block">
+                    <div class="about__block-content">
+                        <h4 class="about__block-title">Отзывы о нашем санатории</h4>
+                        <p class="about__block-par">Мы стараемся, чтобы каждый наш гость получал положительные эмоции от пребывания в нашем санатории. Вы можете почитать отзывы гостей или оставить свой</p>
+                        <div class="about__block-btn">Подробнее</div>   
+                    </div>    
+                </div>
+            </a>           
+            <a href="#" class="about__block-link-wrapper">
+                <div class="about__block">
+                    <div class="about__block-content">
+                        <h4 class="about__block-title">Посмотреть галерею</h4>
+                        <p class="about__block-par">Иногда хочется заранее знать куда едешь. Поэтому вы всегда можете посмотреть нашу галерею, чтобы убедиться в том, насколько чудесно у нас в санатории</p>
+                        <div class="about__block-btn">Подробнее</div>
+                    </div>    
+                </div>
+            </a>      
+        </div> -->
 
     </div>
 
@@ -763,7 +889,7 @@
     <div class="container">
 
         <div class="small-banner__content">
-            <p class="small-banner__title"><span>Хотите узнать</span> о стоимости и наличии мест?</p>
+            <h2 class="small-banner__title"><span>Хотите узнать</span> о стоимости и наличии мест?</h2>
             <p class="small-banner__subtitle">Оставьте свои данные, специалисты отдела бронирования ответят на все вопросы</p>
             <button class="small-banner__btn">Оставить заявку</button>
         </div>

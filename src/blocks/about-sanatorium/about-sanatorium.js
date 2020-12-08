@@ -18,3 +18,24 @@ function videoPlay(wrapper) {
   // подставляем в src параметр из data
   iframe.attr('src',src);
 };
+
+$(document).ready(function(){
+  $("#owl-carousel__about-sanatorium").owlCarousel({
+      margin: 10,
+      loop: true,
+      nav: true,
+      pagination: true,   
+      dots: true,
+      navText : ["",""],
+      responsiveClass:true,
+      responsiveBaseElement:"body",
+      responsive:{
+          0:{
+              items:1.5
+          },
+          563: {
+              items: 2,  
+          }
+      }
+  });
+});
