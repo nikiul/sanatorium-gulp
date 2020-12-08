@@ -140,7 +140,6 @@ $('select').each(function(){
     });
   
 });
-//infra
 //hero
 $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
@@ -163,6 +162,7 @@ $(document).ready(function(){
     });
 });
 
+//infra
 //nav
 //room-fund
 //sanatorium-progs

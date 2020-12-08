@@ -1022,9 +1022,6 @@ a {
   justify-content: space-between;
   margin-bottom: 26px
 }
-.banner__block-link-wrapper {
-  max-width: 100%
-}
 .banner__block {
   max-width: 296px;
   padding: 10px;
@@ -1074,7 +1071,6 @@ a {
   color: #fff
 }
 #owl-carousel__banner {
-  margin-bottom: 40px;
   display: none
 }
 .owl-theme .owl-nav {
@@ -2243,6 +2239,11 @@ a {
     display: none
   }
 }
+@media (max-width:1081px) {
+  .banner__block-content {
+    height: 164px
+  }
+}
 @media (max-width:1060px) {
   .about-sanatorium__right-col {
     width: 587px;
@@ -2326,6 +2327,9 @@ a {
     max-width: 215px;
     min-height: 245px
   }
+  .banner__block-content {
+    height: 218px
+  }
   .banner__block-title {
     font-size: 16px;
     padding-top: 10px
@@ -2372,6 +2376,9 @@ a {
   .banner__block {
     max-width: 310px;
     min-height: 175px
+  }
+  .banner__block-content {
+    height: 150px
   }
   #owl-carousel__banner {
     display: block
@@ -2456,8 +2463,8 @@ a {
   }
   .banner__about-progs {
     width: 265px;
-    font-size: 15px;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    font-size: 15px
   }
   .under-banner__par {
     font-size: 16px;
@@ -2493,6 +2500,35 @@ a {
   .banner__block {
     max-width: 253px;
     min-height: 160px
+  }
+}
+@media (max-width:415px) {
+  .banner__block {
+    max-width: 253px;
+    height: 180px
+  }
+}
+@media (max-width:400px) {
+  .banner__block-content {
+    height: 157px
+  }
+}
+@media (max-width:351px) {
+  .banner__block {
+    max-width: 253px;
+    height: 212px
+  }
+  .banner__block-content {
+    height: 185px
+  }
+}
+@media (max-width:350px) {
+  .banner__block {
+    max-width: 253px;
+    height: 221px
+  }
+  .banner__block-content {
+    height: 200px
   }
 }
 @media (max-width:320px) {
