@@ -39,7 +39,6 @@ $(document).ready(function(){
       }
   });
 });
-
 //fix hover element on mobile
 let allEl = document.querySelectorAll('*')
 for(let i = 0; i < allEl.length; i++){
@@ -186,6 +185,7 @@ $(document).mouseup(function (e){
 		telList.fadeOut(); // скрываем его
 	}
 });
+
 //hero
 $(document).ready(function(){
     $("#owl-carousel__banner").owlCarousel({
