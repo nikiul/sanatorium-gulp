@@ -35,6 +35,69 @@ a {
   padding-left: 15px;
   padding-right: 15px
 }
+.owl-theme .owl-nav {
+  margin-top: 10px;
+  position: absolute;
+  right: 0
+}
+.owl-carousel .owl-nav button.owl-prev {
+  margin: 0 10px 0 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 3px;
+  background-image: url(../img/icons/nav-arrow-left-gray.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f4f4f4;
+  border: none;
+  outline: 0
+}
+.owl-carousel .owl-nav button.owl-prev:hover {
+  background-image: url(../img/icons/nav-arrow-left-white.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #006cb5
+}
+.owl-carousel .owl-nav button.owl-next {
+  margin: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 3px;
+  background-image: url(../img/icons/nav-arrow-right-gray.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f4f4f4;
+  border: none;
+  outline: 0
+}
+.owl-carousel .owl-nav button.owl-next:hover {
+  background-image: url(../img/icons/nav-arrow-right-white.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #006cb5
+}
+.owl-dots {
+  margin-top: 26px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex
+}
+.owl-theme .owl-dots .owl-dot {
+  margin-right: 10px;
+  width: 30px;
+  height: 2px;
+  border-radius: 10px;
+  background-color: #efefef;
+  border: none;
+  outline: 0
+}
+.owl-theme .owl-dots .owl-dot:active,
+.owl-theme .owl-dots .owl-dot:hover {
+  background-color: #2e95db
+}
+.owl-theme .owl-dots .owl-dot span {
+  display: none
+}
 .header__desctop-menu {
   -webkit-transform: translateY(-150%);
   transform: translateY(-150%);
@@ -960,69 +1023,6 @@ a {
   color: #fff
 }
 #owl-carousel__banner {
-  display: none
-}
-.owl-theme .owl-nav {
-  margin-top: 10px;
-  position: absolute;
-  right: 0
-}
-.owl-carousel .owl-nav button.owl-prev {
-  margin: 0 10px 0 0;
-  width: 35px;
-  height: 35px;
-  border-radius: 3px;
-  background-image: url(../img/icons/nav-arrow-left-gray.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #f4f4f4;
-  border: none;
-  outline: 0
-}
-.owl-carousel .owl-nav button.owl-prev:hover {
-  background-image: url(../img/icons/nav-arrow-left-white.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #006cb5
-}
-.owl-carousel .owl-nav button.owl-next {
-  margin: 0;
-  width: 35px;
-  height: 35px;
-  border-radius: 3px;
-  background-image: url(../img/icons/nav-arrow-right-gray.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #f4f4f4;
-  border: none;
-  outline: 0
-}
-.owl-carousel .owl-nav button.owl-next:hover {
-  background-image: url(../img/icons/nav-arrow-right-white.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #006cb5
-}
-.owl-dots {
-  margin-top: 26px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex
-}
-.owl-theme .owl-dots .owl-dot {
-  margin-right: 10px;
-  width: 30px;
-  height: 2px;
-  border-radius: 10px;
-  background-color: #fff;
-  border: none;
-  outline: 0
-}
-.owl-theme .owl-dots .owl-dot:active,
-.owl-theme .owl-dots .owl-dot:hover {
-  background-color: #2e95db
-}
-.owl-theme .owl-dots .owl-dot span {
   display: none
 }
 .banner__img--down {
@@ -2377,9 +2377,17 @@ a {
   #owl-carousel__about-sanatorium {
     display: block
   }
-  .about__block,
-  .about__block-content,
   .about__block-link-wrapper {
+    max-width: 310px;
+    min-height: 294px;
+    position: static
+  }
+  .about__block {
+    max-width: 310px;
+    min-height: 294px;
+    position: relative
+  }
+  .about__block-content {
     max-width: 310px;
     min-height: 294px
   }

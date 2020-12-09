@@ -1,3 +1,4 @@
+
 //about-sanatorium
 $(document).on('click','.js-videoPoster',function(e) {
   //отменяем стандартное действие button
@@ -185,7 +186,7 @@ $(document).mouseup(function (e){
 		telList.fadeOut(); // скрываем его
 	}
 });
-
+//infra
 //hero
 $(document).ready(function(){
     $("#owl-carousel__banner").owlCarousel({
@@ -208,9 +209,8 @@ $(document).ready(function(){
     });
 });
 
-//infra
 //nav
 //room-fund
-//sanatorium-progs
 //small-banner
 //under-hero
+//sanatorium-progs
