@@ -1093,3 +1093,23 @@
     }
     }
   }
+  // скролл шапки
+  .header__fixed {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation-name: show__header;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes show__header {
+    0% {
+      // opacity: 0;
+      top: -70px;
+    }
+    100% {
+      opacity: 1;
+      top: 0;
+    }
+  }

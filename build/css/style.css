@@ -898,6 +898,34 @@ a {
 .tel__item:last-child {
   border-bottom: 0
 }
+.header__fixed {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation-name: show__header;
+  animation-name: show__header;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s
+}
+@-webkit-keyframes show__header {
+  0% {
+    top: -70px
+  }
+  100% {
+    opacity: 1;
+    top: 0
+  }
+}
+@keyframes show__header {
+  0% {
+    top: -70px
+  }
+  100% {
+    opacity: 1;
+    top: 0
+  }
+}
 .section__banner {
   padding-top: 96px;
   padding-bottom: 22px;
