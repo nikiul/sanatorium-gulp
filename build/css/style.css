@@ -828,11 +828,11 @@ a {
   flex-direction: column
 }
 .tel {
-  width: 193px;
+  width: 161px;
   position: relative
 }
 .tel-current {
-  padding: 6px 0 2px 10px
+  margin-left: 10px
 }
 .tel .tel-current__link {
   text-decoration: none;
@@ -871,10 +871,12 @@ a {
 }
 .tel__list {
   display: none;
+  z-index: 10;
   position: absolute;
   top: 25px;
-  width: 100%;
+  width: 102%;
   padding: 0;
+  margin-left: 10px;
   list-style-type: none;
   background-color: #fff;
   border-radius: 2px;
@@ -882,7 +884,7 @@ a {
   box-shadow: 0 4px 20px rgba(0,0,0,.1)
 }
 .tel__item {
-  padding: 12px 15px;
+  padding: 12px 10px;
   border-bottom: 1px solid #ededed;
   color: #303030;
   cursor: pointer;

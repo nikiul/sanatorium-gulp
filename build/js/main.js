@@ -40,6 +40,29 @@ $(document).ready(function(){
   });
 });
 
+//infra
+//hero
+$(document).ready(function(){
+    $("#owl-carousel__banner").owlCarousel({
+        margin: 10,
+        loop: true,
+        nav: true,
+        pagination: true,   
+        dots: true,
+        navText : ["",""],
+        responsiveClass:true,
+        responsiveBaseElement:"body",
+        responsive:{
+            0:{
+                items:1.5
+            },
+            563: {
+                items: 2,  
+            }
+        }
+    });
+});
+
 //fix hover element on mobile
 let allEl = document.querySelectorAll('*')
 for(let i = 0; i < allEl.length; i++){
@@ -102,7 +125,7 @@ sidebarToggleBtn.onclick = function(){
 
 // добавляем Тень при активном боковом меню
 $('.header__top-burger').click(function() {
-    $('.shadow').toggleClass('body-shadow');
+    $('.header__side-menu').toggleClass('body-shadow');
 });
 
 // лочим прокрутку сайта при активном десктопном/мобильном меню
@@ -149,29 +172,6 @@ window.onscroll = function showHeader() {
         header.classList.remove('header__fixed');
     }
 }
-//hero
-$(document).ready(function(){
-    $("#owl-carousel__banner").owlCarousel({
-        margin: 10,
-        loop: true,
-        nav: true,
-        pagination: true,   
-        dots: true,
-        navText : ["",""],
-        responsiveClass:true,
-        responsiveBaseElement:"body",
-        responsive:{
-            0:{
-                items:1.5
-            },
-            563: {
-                items: 2,  
-            }
-        }
-    });
-});
-
-//infra
 //nav
 //room-fund
 //sanatorium-progs

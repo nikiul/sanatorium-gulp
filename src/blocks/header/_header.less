@@ -1004,11 +1004,11 @@
             flex-direction: column;
   }
   .tel {
-    width: 193px;
+    width: 161px;
     position: relative;
 	  &-current{
-      padding: 6px 0 2px 10px;
-
+      // padding: 6px 0 2px 10px;
+      margin-left: 10px;
       @media (max-width: 1530px) {
         padding-top: 0;
         padding-bottom: 0;
@@ -1063,10 +1063,12 @@
     }
 	  &__list {
     display: none;
+    z-index: 10;
 		position: absolute;
 		top: 25px;
-		width: 100%;
-		padding: 0;
+		width: 102%;
+    padding: 0;
+    margin-left: 10px;
 		list-style-type: none;
 		background-color: #fff;
 		border-radius: 2px;
@@ -1078,7 +1080,7 @@
     }
 		
 	  &__item {
-		padding: 12px 15px;
+		padding: 12px 10px;
 		border-bottom: 1px solid #EDEDED;
 		color: #303030;
 		cursor: pointer;

@@ -60,7 +60,7 @@ sidebarToggleBtn.onclick = function(){
 
 // добавляем Тень при активном боковом меню
 $('.header__top-burger').click(function() {
-    $('.shadow').toggleClass('body-shadow');
+    $('.header__side-menu').toggleClass('body-shadow');
 });
 
 // лочим прокрутку сайта при активном десктопном/мобильном меню
