@@ -1495,12 +1495,14 @@ a {
 }
 .section__small-banner {
   padding: 36px 0;
-  background-image: url(../img/small-banner.jpg);
+  background: -webkit-gradient(linear,left top,right top,color-stop(1.17%,rgba(0,0,0,.65)),color-stop(62.05%,rgba(0,0,0,.5655)),color-stop(116.9%,rgba(0,0,0,.0195))),url(../img/small-banner1.jpg);
+  background: linear-gradient(90deg,rgba(0,0,0,.65) 1.17%,rgba(0,0,0,.5655) 62.05%,rgba(0,0,0,.0195) 116.9%),url(../img/small-banner1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center
 }
-.small-banner__content {
+.small-banner__content,
+.small-banner__content-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2130,6 +2132,17 @@ a {
   .about__block-btn {
     font-size: 16px
   }
+  .section__small-banner {
+    padding: 30px 0
+  }
+  .small-banner__title {
+    font-size: 28px;
+    line-height: 34px
+  }
+  .small-banner__subtitle {
+    font-size: 16px;
+    line-height: 26px
+  }
 }
 @media (max-width:1200px) {
   .header__title {
@@ -2325,6 +2338,21 @@ a {
     background-color: #2e95db;
     color: #fff
   }
+  .small-banner__content-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: normal;
+    -ms-flex-align: normal;
+    align-items: normal
+  }
+  .small-banner__title {
+    margin-bottom: 20px
+  }
 }
 @media (max-width:925px) {
   .about__block,
@@ -2503,6 +2531,28 @@ a {
     line-height: 28px;
     margin-bottom: 18px
   }
+  .small-banner__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: normal;
+    -ms-flex-align: normal;
+    align-items: normal
+  }
+  .small-banner__title {
+    font-size: 25px;
+    line-height: 35px
+  }
+  .small-banner__subtitle {
+    margin-bottom: 25px
+  }
+  .small-banner__btn {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 15px 0;
+    width: 315px
+  }
 }
 @media (max-width:500px) {
   .banner__block-par {
@@ -2513,6 +2563,18 @@ a {
   .banner__block {
     max-width: 253px;
     height: 220px
+  }
+}
+@media (max-width:350px) {
+  .small-banner__btn {
+    width: 290px
+  }
+}
+@media (max-width:321px) {
+  .small-banner__btn {
+    font-size: 14px;
+    padding: 10px 0;
+    width: 250px
   }
 }
 @media (max-width:320px) {
@@ -2528,5 +2590,12 @@ a {
   }
   .about-sanatorium__par {
     margin-bottom: 20px
+  }
+  .small-banner__title {
+    max-width: 217px
+  }
+  .small-banner__subtitle {
+    font-size: 14px;
+    line-height: 22px
   }
 }
