@@ -913,7 +913,6 @@ a {
     top: -70px
   }
   100% {
-    opacity: 1;
     top: 0
   }
 }
@@ -922,7 +921,6 @@ a {
     top: -70px
   }
   100% {
-    opacity: 1;
     top: 0
   }
 }

@@ -1,4 +1,3 @@
-
 //about-sanatorium
 $(document).on('click','.js-videoPoster',function(e) {
   //отменяем стандартное действие button
@@ -40,6 +39,7 @@ $(document).ready(function(){
       }
   });
 });
+
 //fix hover element on mobile
 let allEl = document.querySelectorAll('*')
 for(let i = 0; i < allEl.length; i++){
@@ -147,9 +147,17 @@ window.onscroll = function showHeader() {
         header.classList.add('header__fixed');
     } else {
         header.classList.remove('header__fixed');
-
     }
 }
+
+// window.onscroll = function showHeader() {
+//     var header = document.querySelector('.header');
+//     if(window.pageYOffset > 170) {
+//         header.classList.add('header__hide');
+//     } else {
+//         header.classList.remove('header__hide');
+//     }
+// }
 //hero
 $(document).ready(function(){
     $("#owl-carousel__banner").owlCarousel({

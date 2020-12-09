@@ -18,7 +18,7 @@ const replace        = require('replace');
 
 var paths = {
   dirs: {
-    build: './build'
+    build: ['./build', './blocks']
   },
   html: {
     blocks: './src/blocks/',
@@ -62,6 +62,25 @@ var paths = {
 
 gulp.task('clean', function () {
   return del(paths.dirs.build);
+});
+
+gulp.task('blocks' , function(){
+  return gulp.src(['./src/blocks/**/.html', './src/blocks/**/.js'])
+    .pipe(gulp.dest('./blocks'))
+});
+
+gulp.task('blockCSS' , function(){
+  return gulp.src('./src/blocks/**/.less')
+    .pipe(plumber())
+    .pipe(less({
+      plugins: [autoprefix]
+    }))
+    .pipe(groupMedia())
+    .pipe(cleanCss({
+      level: 2,
+      format: 'beautify'
+    }))
+    .pipe(gulp.dest('./blocks'))
 });
 
 gulp.task('html' , function(){
@@ -197,4 +216,10 @@ gulp.task('build', gulp.series(
 
 gulp.task('dev', gulp.series(
   'build', 'server'
+));
+
+gulp.task('buildBlocks', gulp.series(
+  'clean',
+  'blocks',
+  'blockCSS'
 ));
