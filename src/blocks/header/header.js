@@ -107,12 +107,3 @@ window.onscroll = function showHeader() {
         header.classList.remove('header__fixed');
     }
 }
-
-// window.onscroll = function showHeader() {
-//     var header = document.querySelector('.header');
-//     if(window.pageYOffset > 170) {
-//         header.classList.add('header__hide');
-//     } else {
-//         header.classList.remove('header__hide');
-//     }
-// }
