@@ -1102,6 +1102,9 @@ a {
 .about-sanatorium__row:last-child {
   margin-bottom: 0
 }
+.about-sanatorium__row-top {
+  margin-bottom: 100px
+}
 .about-sanatorium__center-col {
   display: none
 }
@@ -2205,6 +2208,9 @@ a {
   .under-banner__title {
     font-size: 18px
   }
+  .about-sanatorium__row-top {
+    margin-bottom: 80px
+  }
   .about-sanatorium__title {
     margin-bottom: 20px
   }
@@ -2615,6 +2621,9 @@ a {
   .section__about-sanatorium {
     padding-top: 80px;
     padding-bottom: 80px
+  }
+  .about-sanatorium__row-top {
+    margin-bottom: 40px
   }
   .about-sanatorium__title {
     margin-bottom: 25px;

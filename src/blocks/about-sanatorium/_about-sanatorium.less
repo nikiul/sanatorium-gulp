@@ -23,6 +23,7 @@
     }
   }
   .about-sanatorium__row {
+    // margin-bottom: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -33,11 +34,21 @@
   .about-sanatorium__row:last-child {
     margin-bottom: 0;
   }
-  @media (max-width: 780px) {
-    .about-sanatorium__row-top {
+
+  .about-sanatorium__row-top {
+    margin-bottom: 100px;
+
+    @media (max-width: 1366px) {
+      margin-bottom: 80px;
+    }
+    @media (max-width: 960px) {
+      margin-bottom: 40px;
+    }
+    @media (max-width: 780px) {
       display: none;
     }
   }
+  
   .about-sanatorium__center-col {
     display: none;
   }
