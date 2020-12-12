@@ -3078,6 +3078,14 @@ a {
   .build__title {
     margin-bottom: 20px
   }
+  .build__title p {
+    font-size: 24px;
+    line-height: 44px
+  }
+  .build__title span {
+    width: 70px;
+    height: 44px
+  }
   .discount__content {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -3534,6 +3542,18 @@ a {
   }
   .section__room-fund {
     padding: 60px 0
+  }
+  .room-fund__title {
+    font-size: 32px;
+    line-height: 42px
+  }
+  .build__title p {
+    font-size: 20px;
+    line-height: 30px
+  }
+  .build__title span {
+    width: 68px;
+    height: 43px
   }
   .discount__start img {
     max-width: 95px;
