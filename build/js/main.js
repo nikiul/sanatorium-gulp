@@ -30,10 +30,13 @@ $(document).ready(function(){
       responsiveClass:true,
       responsiveBaseElement:"body",
       responsive:{
-          0:{
+          0: {
+              item:1.05
+          },
+          320:{
               items:1.5
           },
-          563: {
+          604: {
               items: 2,  
           }
       }
@@ -231,5 +234,8 @@ $(document).ready(function(){
     });
   });
 //sanatorium-progs
+//section-activity
+//section-discount
+//section-feedback
 //small-banner
 //under-hero

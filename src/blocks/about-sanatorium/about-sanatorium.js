@@ -30,10 +30,13 @@ $(document).ready(function(){
       responsiveClass:true,
       responsiveBaseElement:"body",
       responsive:{
-          0:{
+          0: {
+              item:1.05
+          },
+          320:{
               items:1.5
           },
-          563: {
+          604: {
               items: 2,  
           }
       }
