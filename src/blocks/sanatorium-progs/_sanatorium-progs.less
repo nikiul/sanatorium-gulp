@@ -2,6 +2,10 @@
 .section__sanatorium-progs {
     padding: 80px 0;
     background-color: #FAFAFA;
+
+    @media (max-width: 1366px) {
+      padding: 50px 0;
+    }
   }
   .sanatorium-progs__row {
     display: -webkit-box;
@@ -16,6 +20,7 @@
     max-width: 433px;
     z-index: 9;
     position: relative;
+    margin-right: 15px;
   }
   .sanatorium-progs__title {
     margin: 0;
@@ -36,6 +41,11 @@
     font-size: 18px;
     line-height: 30px;
     color: #303030;
+
+    @media (max-width: 1366px) {
+      font-size: 16px;
+      line-height: 26px;
+    }
   }
   .sanatorium-progs__desc p:last-child {
     margin-bottom: 0;
@@ -62,97 +72,212 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    width: 730px;
+    width: 100%;
   }
-  .progs__block-link-wrapper {
-    width: 229px;
-    height: 207px;
-  }
-  .progs__block {
-    width: 229px;
-    height: 207px;
-    padding: 10px;
+  // .progs__block-link-wrapper {
+  //   width: 229px;
+  //   height: 207px;
+  //   margin-bottom: 20px;
+  // }
+  // .progs__block {
+  //   width: 229px;
+  //   height: 207px;
+  //   padding: 10px;
+  //   background-color: #fff;
+  //   border-radius: 10px;
+  //   border: 1px solid #EAEAEA;
+  // }
+  // .progs__block:last-child {
+  //   margin-right: 0;
+  // }
+  // .progs__block:hover {
+  //   background-color: #2E95DB;
+  // }
+  // .progs__block-content {
+  //   padding: 6px;
+  //   border: 2px solid transparent;
+  // }
+  // .progs__block:hover .progs__block-content {
+  //   border: 2px solid #fff;
+  //   border-radius: 10px;
+  //   background-color: #2E95DB;
+  // }
+  // .progs__block-numbering {
+  //   margin: 0;
+  //   margin-bottom: 25px;
+  //   font-family: 'Open Sans';
+  //   font-weight: bold;
+  //   font-size: 18px;
+  //   line-height: 30px;
+  //   color: #FF3333;
+  // }
+  // .progs__block:hover .progs__block-numbering {
+  //   color: #fff;
+  // }
+  // .progs__block-title {
+  //   margin: 0;
+  //   margin-bottom: 25px;
+  //   width: 176px;
+  //   font-family: 'Open Sans';
+  //   font-weight: bold;
+  //   font-size: 18px;
+  //   line-height: 28px;
+  //   color: #303030;
+  // }
+  // .progs__block:hover .progs__block-title {
+  //   color: #fff;
+  // }
+  // .progs__block-btn {
+  //   width: 111px;
+  //   display: -webkit-box;
+  //   display: -ms-flexbox;
+  //   display: flex;
+  //   align-items: center;
+  //   border-bottom: 1px solid #2E95DB;
+  // }
+  // .progs__block-btn p {
+  //   margin: 0;
+  //   margin-right: 15px;
+  //   font-family: 'Open Sans';
+  //   font-weight: bold;
+  //   font-size: 14px;
+  //   line-height: 24px;
+  //   color: #2E95DB;
+  // }
+  // .progs__block-svg1 {
+  //   height: 10px;
+  // }
+
+  // .progs__block-svg2 {
+  //   height: 10px;
+  //   display: none;
+  // }
+  // .progs__block:hover .progs__block-svg1 {
+  //   display: none;
+  // }
+  // .progs__block:hover .progs__block-svg2 {
+  //   display: inline;
+  // }
+  // .progs__block:hover .progs__block-btn {
+  //   border-color: #fff;
+  // }
+  // .progs__block:hover .progs__block-btn p {
+  //   color: #fff;
+  // }
+
+  .progs__block-link {
+    width: 32%;
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border: 1.5px solid #EAEAEA;
+    border-radius: 10px;
     background-color: #fff;
-    border-radius: 10px;
-    border: 1px solid #EAEAEA;
+
+    &::before {
+      content: '';
+      position: absolute;
+      border: 2px solid #fff;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      top: 7px;
+      left: 7px;
+      border-radius: inherit;
+      // transition: all .25s ease;
+      opacity: 0;
+    }
+
+    &:hover {
+      background-color: #2E95DB;
+    }
   }
-  .progs__block:last-child {
-    margin-right: 0;
+
+  .progs__block-link:hover::before {
+    opacity: 1;
   }
-  .progs__block:hover {
-    background-color: #2E95DB;
-  }
-  .progs__block-content {
-    padding: 6px;
-    border: 2px solid transparent;
-  }
-  .progs__block:hover .progs__block-content {
-    border: 2px solid #fff;
-    border-radius: 10px;
-    background-color: #2E95DB;
-  }
-  .progs__block-numbering {
+
+  .progs__block-number {
     margin: 0;
     margin-bottom: 25px;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans',sans-serif;
     font-weight: bold;
     font-size: 18px;
     line-height: 30px;
     color: #FF3333;
   }
-  .progs__block:hover .progs__block-numbering {
+
+  .progs__block-link:hover .progs__block-number {
     color: #fff;
   }
-  .progs__block-title {
+
+  .progs__block-desc {
+    z-index: 2;
     margin: 0;
     margin-bottom: 25px;
-    width: 176px;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans',sans-serif;
     font-weight: bold;
     font-size: 18px;
     line-height: 28px;
     color: #303030;
   }
-  .progs__block:hover .progs__block-title {
+
+  .progs__block-link:hover .progs__block-desc{
     color: #fff;
   }
+
   .progs__block-btn {
-    width: 111px;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    position: relative;
+    width: 115px;
+    margin: 0;
+    margin-top: auto;
+    // margin-right: 15px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #2E95DB;
-  }
-  .progs__block-btn p {
-    margin: 0;
-    margin-right: 15px;
-    font-family: 'Open Sans';
+    display: inline;
+    font-family: 'Open Sans',sans-serif;
     font-weight: bold;
     font-size: 14px;
     line-height: 24px;
     color: #2E95DB;
   }
+  
+  .progs__block-link:hover .progs__block-btn {
+    color: #fff;
+    border-color: #fff;
+  }
   .progs__block-svg1 {
-    height: 10px;
+    // margin-bottom: 4px;
+    margin-left: 15px;
+  }
+
+  .progs__block-link:hover .progs__block-svg1 {
+    display: none;
   }
 
   .progs__block-svg2 {
-    height: 10px;
     display: none;
   }
-  .progs__block:hover .progs__block-svg1 {
-    display: none;
-  }
-  .progs__block:hover .progs__block-svg2 {
+
+  .progs__block-link:hover .progs__block-svg2 {
     display: inline;
+    margin-left: 15px;
   }
-  .progs__block:hover .progs__block-btn {
-    border-color: #fff;
+
+  .progs__block-bg-number {
+    display: none;
   }
-  .progs__block:hover .progs__block-btn p {
-    color: #fff;
+
+  .progs__block-link:hover .progs__block-bg-number {
+    display: block;
+    position: absolute;
+    top: 30%;
+    right: 5.3%;
   }
+
+
   .sanatorium-progs__bottom {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -160,36 +285,90 @@
     -ms-flex-pack: distribute;
         justify-content: space-around;
     padding: 23px 0;
-    background-image: url('../img/sanatorium-progs-bottom.jpg');
+    // background-image: url('../img/sanatorium-progs-bottom.jpg');
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0) 82.3%), linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/sanatorium-progs-bg.jpg'), #C4C4C4;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+
+    @media (max-width: 685px) {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
   .sanatorium-progs__bottom-title {
     margin: 0;
+    // margin-left: 75px;
     max-width: 577px;
     font-family: 'Open Sans';
     font-weight: 600;
     font-size: 28px;
     line-height: 38px;
     color: #FFFFFF;
+
+    br {
+      display: none;
+      
+      @media (max-width: 540px) {
+        display: block;
+      }
+    }
+
+    @media (max-width: 1366px) {
+      font-size: 26px;
+      line-height: 35px;
+      margin-left: 40px;
+      margin-right: 10px;
+    }
+    @media (max-width: 960px) {
+      font-size: 22px;
+      line-height: 29px;
+    }
+    @media (max-width: 710px) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    @media (max-width: 685px) {
+      font-size: 26px;
+      line-height: 35px;
+      margin-bottom: 28px;
+      margin-left: 20px;
+    }
+    @media (max-width: 320px) {
+      font-size: 20px;
+      line-height: 27px;
+      margin-bottom: 25px;
+    }
   }
   .sanatorium-progs__bottom-title span {
     font-weight: 800;
     color: #FED576;
   }
   .sanatorium-progs__bottom-form {
+    // width: 70%;
+    // margin-right: 75px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+
+    @media (max-width: 1366px) {
+      margin-right: 40px;
+      // margin-right: 10px;
+    }
+    @media (max-width: 685px) {
+      margin: 0 20px;
+      flex-direction: column;
+    }
+    
   }
   .sanatorium-progs__bottom-form input {
     width: 363px;
-    padding-top: 18px;
+    // width: 60%;
+    padding-top: 17px;
     padding-bottom: 18px;
     padding-left: 25px;
     font-size: 18px;
@@ -199,6 +378,21 @@
             box-sizing: border-box;
     border-radius: 5px 0px 0px 5px;
     outline: none;
+
+    @media (max-width: 1366px) {
+      width: 286px;
+      padding-left: 20px;
+    }
+    @media (max-width: 960px) {
+      width: 239px;
+      // padding-left: 20px;
+    }
+    @media (max-width: 685px) {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding-left: 25px;
+    }
   }
   .sanatorium-progs__bottom-form input[type="number"]::-webkit-outer-spin-button,
   .sanatorium-progs__bottom-form input[type="number"]::-webkit-inner-spin-button {
@@ -217,7 +411,7 @@
     -webkit-appearance: none;
     margin: 0;
   }
-  .sanatorium-progs__bottom-form button {
+  .sanatorium-progs__bottom-btn1 {
     padding: 17px 40px;
     font-family: 'Open Sans';
     font-weight: bold;
@@ -229,7 +423,35 @@
     border: none;
     outline: none;
     cursor: pointer;
+
+    @media (max-width: 1366px) {
+      padding: 17px 38px;
+    }
+    @media (max-width: 685px) {
+      display: none;
+    }
   }
+
+  .sanatorium-progs__bottom-btn2 {
+    display: none;
+    width: 100%;
+    padding: 14px 0;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #2E95DB;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    @media (max-width: 685px) {
+      display: block;
+    }
+  }
+
   .sanatorium-progs__bottom-form button:hover {
     background-color: #006CB5;
   }

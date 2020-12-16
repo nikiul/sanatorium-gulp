@@ -1882,7 +1882,8 @@ a {
 .sanatorium-progs__left-col {
   max-width: 433px;
   z-index: 9;
-  position: relative
+  position: relative;
+  margin-right: 15px
 }
 .sanatorium-progs__title {
   margin: 0 0 20px;
@@ -1927,94 +1928,102 @@ a {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  width: 730px
+  width: 100%
 }
-.progs__block-link-wrapper {
-  width: 229px;
-  height: 207px
-}
-.progs__block {
-  width: 229px;
-  height: 207px;
-  padding: 10px;
-  background-color: #fff;
+.progs__block-link {
+  width: 32%;
+  padding: 25px 20px;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border: 1.5px solid #eaeaea;
   border-radius: 10px;
-  border: 1px solid #eaeaea
+  background-color: #fff
 }
-.progs__block:last-child {
-  margin-right: 0
-}
-.progs__block:hover {
-  background-color: #2e95db
-}
-.progs__block-content {
-  padding: 6px;
-  border: 2px solid transparent
-}
-.progs__block:hover .progs__block-content {
+.progs__block-link::before {
+  content: '';
+  position: absolute;
   border: 2px solid #fff;
-  border-radius: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  top: 7px;
+  left: 7px;
+  border-radius: inherit;
+  opacity: 0
+}
+.progs__block-link:hover {
   background-color: #2e95db
 }
-.progs__block-numbering {
+.progs__block-link:hover::before {
+  opacity: 1
+}
+.progs__block-number {
   margin: 0 0 25px;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans',sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
   color: #f33
 }
-.progs__block:hover .progs__block-numbering {
+.progs__block-link:hover .progs__block-number {
   color: #fff
 }
-.progs__block-title {
+.progs__block-desc {
+  z-index: 2;
   margin: 0 0 25px;
-  width: 176px;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans',sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 28px;
   color: #303030
 }
-.progs__block:hover .progs__block-title {
+.progs__block-link:hover .progs__block-desc {
   color: #fff
 }
 .progs__block-btn {
-  width: 111px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  position: relative;
+  width: 115px;
+  margin: auto 0 0;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid #2e95db
-}
-.progs__block-btn p {
-  margin: 0 15px 0 0;
-  font-family: 'Open Sans';
+  border-bottom: 1px solid #2e95db;
+  display: inline;
+  font-family: 'Open Sans',sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 24px;
   color: #2e95db
 }
-.progs__block-svg1 {
-  height: 10px
-}
-.progs__block-svg2 {
-  height: 10px;
-  display: none
-}
-.progs__block:hover .progs__block-svg1 {
-  display: none
-}
-.progs__block:hover .progs__block-svg2 {
-  display: inline
-}
-.progs__block:hover .progs__block-btn {
+.progs__block-link:hover .progs__block-btn {
+  color: #fff;
   border-color: #fff
 }
-.progs__block:hover .progs__block-btn p {
-  color: #fff
+.progs__block-svg1 {
+  margin-left: 15px
+}
+.progs__block-link:hover .progs__block-svg1,
+.progs__block-svg2 {
+  display: none
+}
+.progs__block-link:hover .progs__block-svg2 {
+  display: inline;
+  margin-left: 15px
+}
+.progs__block-bg-number {
+  display: none
+}
+.progs__block-link:hover .progs__block-bg-number {
+  display: block;
+  position: absolute;
+  top: 30%;
+  right: 5.3%
 }
 .sanatorium-progs__bottom {
   display: -webkit-box;
@@ -2023,7 +2032,8 @@ a {
   -ms-flex-pack: distribute;
   justify-content: space-around;
   padding: 23px 0;
-  background-image: url(../img/sanatorium-progs-bottom.jpg);
+  background: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.56)),color-stop(82.3%,rgba(0,0,0,0))),-webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.5))),url(../img/sanatorium-progs-bg.jpg),#c4c4c4;
+  background: linear-gradient(90deg,rgba(0,0,0,.56) 0,rgba(0,0,0,0) 82.3%),linear-gradient(0deg,rgba(0,0,0,.5),rgba(0,0,0,.5)),url(../img/sanatorium-progs-bg.jpg),#c4c4c4;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -2037,6 +2047,9 @@ a {
   font-size: 28px;
   line-height: 38px;
   color: #fff
+}
+.sanatorium-progs__bottom-title br {
+  display: none
 }
 .sanatorium-progs__bottom-title span {
   font-weight: 800;
@@ -2052,7 +2065,7 @@ a {
 }
 .sanatorium-progs__bottom-form input {
   width: 363px;
-  padding-top: 18px;
+  padding-top: 17px;
   padding-bottom: 18px;
   padding-left: 25px;
   font-size: 18px;
@@ -2075,7 +2088,7 @@ a {
   -webkit-appearance: none;
   margin: 0
 }
-.sanatorium-progs__bottom-form button {
+.sanatorium-progs__bottom-btn1 {
   padding: 17px 40px;
   font-family: 'Open Sans';
   font-weight: 700;
@@ -2084,6 +2097,21 @@ a {
   color: #fff;
   background: #2e95db;
   border-radius: 0 5px 5px 0;
+  border: none;
+  outline: 0;
+  cursor: pointer
+}
+.sanatorium-progs__bottom-btn2 {
+  display: none;
+  width: 100%;
+  padding: 14px 0;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  background: #2e95db;
+  border-radius: 5px;
   border: none;
   outline: 0;
   cursor: pointer
@@ -2645,6 +2673,29 @@ a {
     font-size: 16px;
     padding: 19px 15px
   }
+  .section__sanatorium-progs {
+    padding: 50px 0
+  }
+  .sanatorium-progs__desc p {
+    font-size: 16px;
+    line-height: 26px
+  }
+  .sanatorium-progs__bottom-title {
+    font-size: 26px;
+    line-height: 35px;
+    margin-left: 40px;
+    margin-right: 10px
+  }
+  .sanatorium-progs__bottom-form {
+    margin-right: 40px
+  }
+  .sanatorium-progs__bottom-form input {
+    width: 286px;
+    padding-left: 20px
+  }
+  .sanatorium-progs__bottom-btn1 {
+    padding: 17px 38px
+  }
   .discount__content {
     padding-top: 25px;
     padding-bottom: 25px
@@ -3086,6 +3137,13 @@ a {
     width: 70px;
     height: 44px
   }
+  .sanatorium-progs__bottom-title {
+    font-size: 22px;
+    line-height: 29px
+  }
+  .sanatorium-progs__bottom-form input {
+    width: 239px
+  }
   .discount__content {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -3380,9 +3438,51 @@ a {
     font-size: 16px
   }
 }
+@media (max-width:710px) {
+  .sanatorium-progs__bottom-title {
+    font-size: 20px;
+    line-height: 26px
+  }
+}
 @media (max-width:700px) {
   .header__book-ticket {
     display: none
+  }
+}
+@media (max-width:685px) {
+  .sanatorium-progs__bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+  }
+  .sanatorium-progs__bottom-title {
+    font-size: 26px;
+    line-height: 35px;
+    margin-bottom: 28px;
+    margin-left: 20px
+  }
+  .sanatorium-progs__bottom-form {
+    margin: 0 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .sanatorium-progs__bottom-form input {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-left: 25px
+  }
+  .sanatorium-progs__bottom-btn1 {
+    display: none
+  }
+  .sanatorium-progs__bottom-btn2 {
+    display: block
   }
 }
 @media (max-width:576px) {
@@ -3554,6 +3654,9 @@ a {
   .build__title span {
     width: 68px;
     height: 43px
+  }
+  .sanatorium-progs__bottom-title br {
+    display: block
   }
   .discount__start img {
     max-width: 95px;
@@ -3892,8 +3995,15 @@ a {
     font-size: 14px;
     line-height: 22px
   }
-  .section__activity,
   .section__room-fund {
+    padding: 50px 0
+  }
+  .sanatorium-progs__bottom-title {
+    font-size: 20px;
+    line-height: 27px;
+    margin-bottom: 25px
+  }
+  .section__activity {
     padding: 50px 0
   }
   .feedback__subtitle {
