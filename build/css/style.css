@@ -1241,7 +1241,9 @@ a {
   -webkit-transition-delay: 0s,.8s;
   transition-delay: 0s,.8s
 }
-.about-sanatorium__row-bottom {
+.about-sanatorium__row-bottom,
+.owl-carousel .owl-stage,
+.owl-carousel.owl-drag .owl-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex

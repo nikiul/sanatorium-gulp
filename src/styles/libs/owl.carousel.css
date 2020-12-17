@@ -14,6 +14,7 @@
   position: relative;
   z-index: 1; }
   .owl-carousel .owl-stage {
+    display: flex;
     position: relative;
     -ms-touch-action: pan-Y;
     touch-action: manipulation;
@@ -33,6 +34,7 @@
     -webkit-transform: translate3d(0px, 0px, 0px); }
   .owl-carousel .owl-wrapper,
   .owl-carousel .owl-item {
+    /* display: flex; */
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
@@ -79,6 +81,7 @@
   .owl-carousel.owl-refresh .owl-item {
     visibility: hidden; }
   .owl-carousel.owl-drag .owl-item {
+    display: flex;
     -ms-touch-action: pan-y;
         touch-action: pan-y;
     -webkit-user-select: none;
