@@ -293,18 +293,18 @@
     transition-delay: 0s, 800ms;
   }
   .about-sanatorium__row-bottom {
-
-    @media (max-width: 810px) {
-        display: none;
-    }
+    display: flex;
+    // @media (max-width: 810px) {
+    //     display: none;
+    // }
   } 
 
   #owl-carousel__about-sanatorium {
-    display: none;
+    // display: none;
 
-    @media (max-width: 810px) {
-      display: block;
-    }
+    // @media (max-width: 810px) {
+    //   display: block;
+    // }
   }
 
   // .about__card-link {
@@ -345,15 +345,14 @@
   // }
 
 
-  .wrap {
-	  // margin-top: 50px;
-    display: flex;
-  }
+  // .wrap {
+	//   // margin-top: 50px;
+  //   display: flex;
+  // }
   .wrap-item {
     position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
     border-radius: 5px;
     border: 1px solid #eaeaea;
     margin-right: 10px;
@@ -376,17 +375,6 @@
         background-color: #fff;
       }
     }
-    // &:hover {
-    //   background-color: #2e95db;
-    //   color: #FFFFFF;
-    //   transform: translateY(-20px);
-    //   .wrap-item__btn {
-    //     background-color: #fff;
-    //     color: #000;
-    //   }
-    //   &::before {
-    //     opacity: 1;
-    //   }
   
     &::before {
       content: '';
@@ -466,7 +454,6 @@
   .wrap-item__btn {
     z-index: 1;
     position: relative;
-    margin-top: auto;
     color: #fff;
     background-color: #2e95db;
     text-align: center;
@@ -478,6 +465,7 @@
     border-radius: 3px;
     text-decoration: none;
     transition: all .25s ease;
+    margin-top: auto;
 
     @media (max-width:1366px) {
       font-size: 16px;
@@ -485,11 +473,4 @@
     @media (max-width:960px) {
       font-size: 14px;
     }
-    @media (max-width:810px) {
-    }
   }
-
-  // .wrap-item:hover .wrap-item__btn {
-  //   background-color: #fff;
-  //   color: #FFFFFF;
-  // }

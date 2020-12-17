@@ -19,11 +19,9 @@ function videoPlay(wrapper) {
   iframe.attr('src',src);
 };
 
-
-
-if($(window).width() < 780){
+if($(window).width() < 811){
   $(document).ready(function(){
-    $("#owl-carousel__about-sanatorium").owlCarousel({
+    $(".owl-carousel").owlCarousel({
         margin: 10,
         loop: true,
         nav: true,
@@ -45,7 +43,7 @@ if($(window).width() < 780){
         }
     });
   });
-}
+};
 
 //fix hover element on mobile
 let allEl = document.querySelectorAll('*')
@@ -156,29 +154,29 @@ window.onscroll = function showHeader() {
         header.classList.remove('header__fixed');
     }
 }
+//infra
+jQuery(($) => {
+
+    $(".infrastructure-item .title-item").on('click', function () {
+
+
+        if ($(this).parent().hasClass('open')) {
+            $(".infrastructure-item").removeClass('open');
+            $(".infrastructure-item .about-item").fadeOut(0);
+            $(this).parent().removeClass('open');
+            $(this).next().fadeOut(0);
+
+        } else {
+            $(".infrastructure-item").removeClass('open');
+            $(".infrastructure-item .about-item").fadeOut(0);
+            $(this).parent().addClass('open');
+            $(this).next().fadeIn();
+        }
+
+    });
+
+});
 //hero
-// $(document).ready(function(){
-//     $("#owl-carousel__banner").owlCarousel({
-//         margin: 10,
-//         loop: true,
-//         nav: true,
-//         pagination: true,   
-//         dots: true,
-//         navText : ["",""],
-//         responsiveClass:true,
-//         responsiveBaseElement:"body",
-//         responsive:{
-//             0:{
-//                 items:1.5
-//             },
-//             563: {
-//                 items: 2,  
-//             }
-//         }
-//     });
-// });
-
-
 // $(document).ready(function() {
 //     function checkWidth() {
 //       var windowWidth = $('body').innerWidth(),
@@ -222,31 +220,9 @@ if($(window).width() < 810){
                     items: 2  
                 }
             }
-        });
-    });
+        });     
+    });   
 };
-//infra
-jQuery(($) => {
-
-    $(".infrastructure-item .title-item").on('click', function () {
-
-
-        if ($(this).parent().hasClass('open')) {
-            $(".infrastructure-item").removeClass('open');
-            $(".infrastructure-item .about-item").fadeOut(0);
-            $(this).parent().removeClass('open');
-            $(this).next().fadeOut(0);
-
-        } else {
-            $(".infrastructure-item").removeClass('open');
-            $(".infrastructure-item .about-item").fadeOut(0);
-            $(this).parent().addClass('open');
-            $(this).next().fadeIn();
-        }
-
-    });
-
-});
 //nav
 //room-fund
 function openRoom(evt, buildingNumber) {
@@ -286,7 +262,7 @@ $(document).ready(function(){
   });
 //sanatorium-progs
 //section-activity
-//section-discount
 //section-feedback
-//small-banner
+//section-discount
 //under-hero
+//small-banner

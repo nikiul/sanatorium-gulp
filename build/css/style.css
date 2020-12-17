@@ -1241,15 +1241,13 @@ a {
   -webkit-transition-delay: 0s,.8s;
   transition-delay: 0s,.8s
 }
-#owl-carousel__about-sanatorium {
-  display: none
-}
-.wrap {
+.about-sanatorium__row-bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex
 }
 .wrap-item {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1257,7 +1255,6 @@ a {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  position: relative;
   border-radius: 5px;
   border: 1px solid #eaeaea;
   margin-right: 10px;
@@ -1316,7 +1313,6 @@ a {
 .wrap-item__btn {
   z-index: 1;
   position: relative;
-  margin-top: auto;
   color: #fff;
   background-color: #2e95db;
   text-align: center;
@@ -1328,7 +1324,8 @@ a {
   border-radius: 3px;
   text-decoration: none;
   -webkit-transition: .25s;
-  transition: .25s
+  transition: .25s;
+  margin-top: auto
 }
 .wrapper {
   width: 1272px;
@@ -3300,12 +3297,6 @@ a {
   }
   .banner__block-content {
     height: 150px
-  }
-  .about-sanatorium__row-bottom {
-    display: none
-  }
-  #owl-carousel__about-sanatorium {
-    display: block
   }
   .wrap-item {
     width: auto;

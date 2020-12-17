@@ -19,11 +19,9 @@ function videoPlay(wrapper) {
   iframe.attr('src',src);
 };
 
-
-
-if($(window).width() < 780){
+if($(window).width() < 811){
   $(document).ready(function(){
-    $("#owl-carousel__about-sanatorium").owlCarousel({
+    $(".owl-carousel").owlCarousel({
         margin: 10,
         loop: true,
         nav: true,
@@ -45,4 +43,4 @@ if($(window).width() < 780){
         }
     });
   });
-}
+};
