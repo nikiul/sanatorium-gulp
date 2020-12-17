@@ -1700,9 +1700,8 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between
+  -ms-flex-pack: distribute;
+  justify-content: space-around
 }
 .tab li {
   list-style-type: none;
@@ -1880,7 +1879,7 @@ a {
   margin-bottom: 30px
 }
 .sanatorium-progs__left-col {
-  max-width: 433px;
+  width: 50%;
   z-index: 9;
   position: relative;
   margin-right: 15px
@@ -2892,6 +2891,12 @@ a {
     display: block
   }
 }
+@media (max-width:1110px) {
+  .progs__block-desc {
+    font-size: 14px;
+    line-height: 24px
+  }
+}
 @media (max-width:1090px) {
   .build__content {
     padding: 20px 15px
@@ -3137,6 +3142,39 @@ a {
     width: 70px;
     height: 44px
   }
+  .section__sanatorium-progs {
+    padding: 40px 0
+  }
+  .sanatorium-progs__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .sanatorium-progs__left-col {
+    width: 100%
+  }
+  .sanatorium-progs__title {
+    font-size: 36px;
+    line-height: 42px
+  }
+  .sanatorium-progs__desc p {
+    margin-bottom: 0
+  }
+  .sanatorium-progs__desc p:last-child {
+    margin-bottom: 30px
+  }
+  .sanatorium-progs__bg-number {
+    margin-top: 40%;
+    margin-left: 40%
+  }
+  .progs__block-desc {
+    font-size: 18px;
+    line-height: 28px
+  }
+  .progs__block-link:hover .progs__block-bg-number {
+    display: none
+  }
   .sanatorium-progs__bottom-title {
     font-size: 22px;
     line-height: 29px
@@ -3241,7 +3279,7 @@ a {
 }
 @media (max-width:860px) {
   .build__card {
-    width: 32%
+    width: 47%
   }
   .build__link-btn {
     padding: 7px 30px;
@@ -3485,6 +3523,23 @@ a {
     display: block
   }
 }
+@media (max-width:680px) {
+  .progs__block-desc {
+    font-size: 16px;
+    line-height: 22px
+  }
+}
+@media (max-width:610px) {
+  .sanatorium-progs__desc p {
+    margin-bottom: 1.5em
+  }
+  .sanatorium-progs__bg-number {
+    display: none
+  }
+  .progs__block-link {
+    width: 48%
+  }
+}
 @media (max-width:576px) {
   .wrapper {
     width: calc(100% - 30px)
@@ -3654,6 +3709,10 @@ a {
   .build__title span {
     width: 68px;
     height: 43px
+  }
+  .progs__block-desc,
+  .progs__block-number {
+    margin-bottom: 10px
   }
   .sanatorium-progs__bottom-title br {
     display: block
@@ -3849,6 +3908,11 @@ a {
     margin-bottom: 5px
   }
 }
+@media (max-width:440px) {
+  .progs__block-desc {
+    font-size: 14px
+  }
+}
 @media (max-width:430px) {
   .build__content {
     padding: 15px 10px 10px
@@ -3887,6 +3951,11 @@ a {
 @media (max-width:420px) {
   .build__link-btn {
     font-size: 10px
+  }
+}
+@media (max-width:370px) {
+  .progs__block-desc {
+    font-size: 12px
   }
 }
 @media (max-width:356px) {
@@ -3964,6 +4033,23 @@ a {
     line-height: 20px
   }
   .build__price span {
+    font-size: 16px
+  }
+}
+@media (max-width:340px) {
+  .sanatorium-progs__title {
+    font-size: 32px
+  }
+  .sanatorium-progs__desc p:last-child {
+    margin-bottom: 20px
+  }
+  .progs__block-link {
+    width: 100%
+  }
+  .progs__block-desc br {
+    display: none
+  }
+  .progs__block-desc {
     font-size: 16px
   }
 }
