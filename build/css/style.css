@@ -1048,9 +1048,6 @@ a {
 .banner__block:hover .banner__block-par {
   color: #fff
 }
-#owl-carousel__banner {
-  display: none
-}
 .banner__img--down {
   display: block;
   margin: 0 auto
@@ -3165,8 +3162,8 @@ a {
     margin-bottom: 30px
   }
   .sanatorium-progs__bg-number {
-    margin-top: 40%;
-    margin-left: 40%
+    margin-top: 3%;
+    margin-left: 30%
   }
   .progs__block-desc {
     font-size: 18px;
@@ -3297,18 +3294,12 @@ a {
   }
 }
 @media (max-width:810px) {
-  .banner__blocks-row {
-    display: none
-  }
   .banner__block {
     max-width: 310px;
     min-height: 175px
   }
   .banner__block-content {
     height: 150px
-  }
-  #owl-carousel__banner {
-    display: block
   }
   .about-sanatorium__row-bottom {
     display: none

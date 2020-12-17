@@ -19,13 +19,13 @@
 	
 	<!-- десктопное меню -->
 	<div class="header__desctop-menu">    
-		<!-- бургер декстопного меню -->
+		<!-- бургер десктопного меню -->
 		<div class="header__desctop-burger">
 			<button class="header__desctop-burger--wrapper">     
 					<span class="header__desctop-burger__menu-icon"></span>
 			</button>
 		</div>
-		<!-- // бургер декстопного меню -->
+		<!-- // бургер десктопного меню -->
 		<div class="container">
 	
 			<div class="desctop-menu__row">
@@ -543,7 +543,7 @@
 
             <button class="banner__about-progs">Подробнее о программах</button>
 
-            <div class="banner__blocks-row">
+            <div class="banner__blocks-row owl-carousel owl-theme" id="owl-carousel__banner">
                 <a href="#" class="banner__block-link-wrapper">
                     <div class="banner__block">
                         <div class="banner__block-content">
@@ -578,7 +578,7 @@
                 </a>                
             </div>
 
-            <div class="owl-carousel owl-theme" id="owl-carousel__banner">
+            <!-- <div class="owl-carousel owl-theme" id="owl-carousel__banner">
                 <div class="banner__block">
                     <a href="#" class="banner__block-link-wrapper">
                         <div class="banner__block-content">
@@ -611,8 +611,8 @@
                         </div>    
                     </a>             
                 </div>
-            </div>
-
+            </div> -->
+            
         </div>
 
     </div>
@@ -699,30 +699,28 @@
             </div>
         </div>
 
-        <div class="owl-carousel owl-theme wrap" id="owl-carousel__about-sanatorium">
-            <!-- <div class="wrap"> -->
-                <div class="wrap-item">
-                    <h3 class="wrap-item__title">Подробнее о санатории</h3>
-                    <p class="wrap-item__text">У нашего санатория богатая и интересная история, которая заслуживает отдельного внимания. Так же вы можете узнать об уникальных условиях…</p>
-                    <a class="wrap-item__btn" href="#">Перейти</a>
-                </div>
-                <div class="wrap-item">
-                    <h3 class="wrap-item__title">Виртуальный тур</h3>
-                    <p class="wrap-item__text">Окунитесь чудесную атмосферу нашего санатория. Питьевые бюветы, прогулочные дорожки, узнайте о нас больше, посмотрев виртуальный тур прямо сейчас!</p>
-                    <a class="wrap-item__btn" href="#">Перейти</a>
-                </div>
-                <div class="wrap-item">
-                    <h3 class="wrap-item__title">Отзывы о санатории</h3>
-                    <p class="wrap-item__text">Мы стараемся, чтобы каждый наш гость получал положительные эмоции от пребывания в нашем санатории. Вы можете почитать отзывы гостей или оставить свой</p>
-                    <a class="wrap-item__btn" href="#">Перейти</a>
-                </div>
-                <div class="wrap-item">
-                    <h3 class="wrap-item__title">Посмотреть галерею</h3>
-                    <p class="wrap-item__text">Иногда хочется заранее знать куда едешь. Поэтому вы всегда можете посмотреть нашу галерею, чтобы убедиться в том, насколько чудесно у нас в санатории</p>
-                    <a class="wrap-item__btn" href="#">Перейти</a>
-                </div>
-            <!-- </div> -->
-        </div>
+        <!-- <div class="owl-carousel owl-theme wrap" id="owl-carousel__about-sanatorium">
+            <div class="wrap-item">
+                <h3 class="wrap-item__title">Подробнее о санатории</h3>
+                <p class="wrap-item__text">У нашего санатория богатая и интересная история, которая заслуживает отдельного внимания. Так же вы можете узнать об уникальных условиях…</p>
+                <a class="wrap-item__btn" href="#">Перейти</a>
+            </div>
+            <div class="wrap-item">
+                <h3 class="wrap-item__title">Виртуальный тур</h3>
+                <p class="wrap-item__text">Окунитесь чудесную атмосферу нашего санатория. Питьевые бюветы, прогулочные дорожки, узнайте о нас больше, посмотрев виртуальный тур прямо сейчас!</p>
+                <a class="wrap-item__btn" href="#">Перейти</a>
+            </div>
+            <div class="wrap-item">
+                <h3 class="wrap-item__title">Отзывы о санатории</h3>
+                <p class="wrap-item__text">Мы стараемся, чтобы каждый наш гость получал положительные эмоции от пребывания в нашем санатории. Вы можете почитать отзывы гостей или оставить свой</p>
+                <a class="wrap-item__btn" href="#">Перейти</a>
+            </div>
+            <div class="wrap-item">
+                <h3 class="wrap-item__title">Посмотреть галерею</h3>
+                <p class="wrap-item__text">Иногда хочется заранее знать куда едешь. Поэтому вы всегда можете посмотреть нашу галерею, чтобы убедиться в том, насколько чудесно у нас в санатории</p>
+                <a class="wrap-item__btn" href="#">Перейти</a>
+            </div>
+        </div> -->
 
     </div>
 
@@ -1716,19 +1714,6 @@
                 <p class="contacts__title">Контакты:</p>
 
                 <div class="feedback__contacts">
-                    <!-- <div class="contacts__list1">
-                        <p class="contacts__item1">Телефон:</p>
-                        <p class="contacts__item1">E-mail:</p>
-                        <p class="contacts__item1">Адрес:</p>
-                        <p class="contacts__item1">Режим работы:</p>
-                    </div>
-                    
-                    <div class="contacts__list2">
-                        <p class="contacts__item2">+7 (800) 020-02-81</p>
-                        <p class="contacts__item2">info@gdimitrova.ru</p>
-                        <p class="contacts__item2">Кисловодск, ул. Ленина, 30</p>
-                        <p class="contacts__item2">09:00 - 20:00</p>
-                    </div> -->
                     <div class="contacs__item">
                         <p class="contacts__item--left">Телефон:</p>
                         <p class="contacts__item--right">+7 (800) 020-02-81</p>

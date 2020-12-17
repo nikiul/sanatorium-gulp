@@ -19,29 +19,33 @@ function videoPlay(wrapper) {
   iframe.attr('src',src);
 };
 
-$(document).ready(function(){
-  $("#owl-carousel__about-sanatorium").owlCarousel({
-      margin: 10,
-      loop: true,
-      nav: true,
-      pagination: true,   
-      dots: true,
-      navText : ["",""],
-      responsiveClass:true,
-      responsiveBaseElement:"body",
-      responsive:{
-          0: {
-              item:1.05
-          },
-          320:{
-              items:1.5
-          },
-          604: {
-              items: 2,  
-          }
-      }
+
+
+if($(window).width() < 780){
+  $(document).ready(function(){
+    $("#owl-carousel__about-sanatorium").owlCarousel({
+        margin: 10,
+        loop: true,
+        nav: true,
+        pagination: true,   
+        dots: true,
+        navText : ["",""],
+        responsiveClass:true,
+        responsiveBaseElement:"body",
+        responsive:{
+            0: {
+                item:1.05
+            },
+            320:{
+                items:1.5
+            },
+            604: {
+                items: 2,  
+            }
+        }
+    });
   });
-});
+}
 
 //fix hover element on mobile
 let allEl = document.querySelectorAll('*')
@@ -153,29 +157,74 @@ window.onscroll = function showHeader() {
     }
 }
 //hero
-$(document).ready(function(){
-    $("#owl-carousel__banner").owlCarousel({
-        margin: 10,
-        loop: true,
-        nav: true,
-        pagination: true,   
-        dots: true,
-        navText : ["",""],
-        responsiveClass:true,
-        responsiveBaseElement:"body",
-        responsive:{
-            0:{
-                items:1.5
-            },
-            563: {
-                items: 2,  
+// $(document).ready(function(){
+//     $("#owl-carousel__banner").owlCarousel({
+//         margin: 10,
+//         loop: true,
+//         nav: true,
+//         pagination: true,   
+//         dots: true,
+//         navText : ["",""],
+//         responsiveClass:true,
+//         responsiveBaseElement:"body",
+//         responsive:{
+//             0:{
+//                 items:1.5
+//             },
+//             563: {
+//                 items: 2,  
+//             }
+//         }
+//     });
+// });
+
+
+// $(document).ready(function() {
+//     function checkWidth() {
+//       var windowWidth = $('body').innerWidth(),
+//           elem = $(".banner__blocks-row"); 
+//       if(windowWidth < 810){
+//         elem.addClass('owl-carousel');
+//         elem.addClass('owl-theme');
+//         // elem.attr('id', 'owl-carousel__banner');
+//       }
+//       else{
+//         elem.removeClass('owl-carousel');
+//         elem.removeClass('owl-theme');
+//         // elem.removeAttr('id', 'owl-carousel__banner');
+
+//       }
+//     }
+  
+//     checkWidth();
+  
+//     $(window).resize(function(){
+//       checkWidth();
+//     });
+// });
+
+if($(window).width() < 810){
+    $(document).ready(function() {
+        $("#owl-carousel__banner").owlCarousel({
+            margin: 10,
+            loop: true,
+            nav: true,
+            pagination: true,   
+            dots: true,
+            navText : ["",""],
+            responsiveClass:true,
+            responsiveBaseElement:"body",
+            responsive:{
+                0:{
+                    items:1.5
+                },
+                563: {
+                    items: 2  
+                }
             }
-        }
+        });
     });
-});
-
-
-//nav
+};
 //infra
 jQuery(($) => {
 
@@ -198,6 +247,7 @@ jQuery(($) => {
     });
 
 });
+//nav
 //room-fund
 function openRoom(evt, buildingNumber) {
     var i, tabcontent, tablinks;
