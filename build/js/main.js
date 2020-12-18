@@ -262,7 +262,7 @@ $(document).ready(function(){
   });
 //sanatorium-progs
 //section-activity
-//section-feedback
 //section-discount
-//under-hero
+//section-feedback
 //small-banner
+//under-hero
