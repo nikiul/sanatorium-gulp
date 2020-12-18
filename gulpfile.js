@@ -62,9 +62,9 @@ var paths = {
 
 
 gulp.task('video', function () {
-  return gulp.src('./src/video')
+  return gulp.src('./src/video/*')
     .pipe(plumber())
-    .pipe(gulp.dest(paths.css.dest));
+    .pipe(gulp.dest('./build/video'));
 });
 
 gulp.task('clean', function () {
