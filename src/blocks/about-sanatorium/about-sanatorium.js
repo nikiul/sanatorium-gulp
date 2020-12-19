@@ -19,9 +19,9 @@ function videoPlay(wrapper) {
   iframe.attr('src',src);
 };
 
-if($(window).width() < 811){
-  $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
+var aboutCarousel = $("#owl-carousel__about-sanatorium");
+function aboutCarouselInit() {
+  aboutCarousel.owlCarousel({
         margin: 10,
         loop: true,
         nav: true,
@@ -31,16 +31,24 @@ if($(window).width() < 811){
         responsiveClass:true,
         responsiveBaseElement:"body",
         responsive:{
-            0: {
-                item:1.05
+            0:{
+                items:1.1
             },
-            320:{
-                items:1.5
-            },
-            604: {
-                items: 2,  
+            563: {
+                items: 2  
             }
         }
     });
-  });
 };
+$(document).ready(function(){
+    if($(window).width() < 810){
+      aboutCarouselInit()
+    };
+    $(window).resize(function(){
+        if($(window).width() < 810){
+          aboutCarouselInit()
+        }else{
+          aboutCarousel.trigger('destroy.owl.carousel')
+        };  
+    })
+});
