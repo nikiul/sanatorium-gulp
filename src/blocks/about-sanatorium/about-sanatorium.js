@@ -18,37 +18,3 @@ function videoPlay(wrapper) {
   // подставляем в src параметр из data
   iframe.attr('src',src);
 };
-
-var aboutCarousel = $("#owl-carousel__about-sanatorium");
-function aboutCarouselInit() {
-  aboutCarousel.owlCarousel({
-        margin: 10,
-        loop: true,
-        nav: true,
-        pagination: true,   
-        dots: true,
-        navText : ["",""],
-        responsiveClass:true,
-        responsiveBaseElement:"body",
-        responsive:{
-            0:{
-                items:1.1
-            },
-            563: {
-                items: 2  
-            }
-        }
-    });
-};
-$(document).ready(function(){
-    if($(window).width() < 810){
-      aboutCarouselInit()
-    };
-    $(window).resize(function(){
-        if($(window).width() < 810){
-          aboutCarouselInit()
-        }else{
-          aboutCarousel.trigger('destroy.owl.carousel')
-        };  
-    })
-});
