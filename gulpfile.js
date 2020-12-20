@@ -28,6 +28,8 @@ var paths = {
   },
   css: {
     libsCSS: [
+      './node_modules/magnific-popup/dist/magnific-popup.css',
+      './node_modules/slick-carousel/slick/slick.css',
       './src/styles/libs/**/*.css'
     ],
     src: ['./src/styles/style.less' ],
@@ -36,6 +38,8 @@ var paths = {
   },
   js: {
     libsJS: [
+      './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+      './node_modules/slick-carousel/slick/slick.min.js',
       './node_modules/jquery/dist/jquery.min.js',
       './src/libsJS/**/*.js'],
     src: ['./src/blocks/**/*.js'],
