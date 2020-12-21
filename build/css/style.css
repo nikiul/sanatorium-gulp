@@ -24,12 +24,21 @@ body {
 a {
   text-decoration: none
 }
-.container__header {
-  max-width: 1660px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px
+.flex {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
 }
 .container {
   max-width: 1253px;
@@ -37,46 +46,76 @@ a {
   padding-left: 15px;
   padding-right: 15px
 }
+.wrapper {
+  width: 1272px;
+  margin: 0 auto
+}
 .owl-theme .owl-nav {
   margin-top: 10px;
   position: absolute;
-  right: 0
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
 }
 .owl-carousel .owl-nav button.owl-prev {
+  position: relative;
   margin: 0 10px 0 0;
   width: 35px;
   height: 35px;
   border-radius: 3px;
-  background-image: url(../img/icons/nav-arrow-left-gray.svg);
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: #f4f4f4;
   border: none;
   outline: 0
 }
+.owl-carousel .owl-nav button.owl-prev::after {
+  content: '';
+  position: absolute;
+  height: 9px;
+  width: 9px;
+  border-bottom: 2px solid #ccc;
+  border-left: 2px solid #ccc;
+  top: 12px;
+  left: 15px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
 .owl-carousel .owl-nav button.owl-prev:hover {
-  background-image: url(../img/icons/nav-arrow-left-white.svg);
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: #006cb5
 }
+.owl-carousel .owl-nav button.owl-prev:hover::after {
+  border-color: #fff
+}
 .owl-carousel .owl-nav button.owl-next {
+  position: relative;
   margin: 0;
   width: 35px;
   height: 35px;
   border-radius: 3px;
-  background-image: url(../img/icons/nav-arrow-right-gray.svg);
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: #f4f4f4;
   border: none;
   outline: 0
 }
+.owl-carousel .owl-nav button.owl-next::after {
+  content: '';
+  position: absolute;
+  height: 9px;
+  width: 9px;
+  border-bottom: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  top: 12px;
+  left: 10px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg)
+}
 .owl-carousel .owl-nav button.owl-next:hover {
-  background-image: url(../img/icons/nav-arrow-right-white.svg);
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: #006cb5
+}
+.owl-carousel .owl-nav button.owl-next:hover::after {
+  border-color: #fff
 }
 .owl-dots {
   margin-top: 26px;
@@ -93,12 +132,279 @@ a {
   border: none;
   outline: 0
 }
-.owl-theme .owl-dots .owl-dot:active,
+.owl-theme .owl-dots .owl-dot.active,
 .owl-theme .owl-dots .owl-dot:hover {
   background-color: #2e95db
 }
 .owl-theme .owl-dots .owl-dot span {
   display: none
+}
+input:-moz-placeholder,
+input:-ms-input-placeholder,
+input::-moz-placeholder,
+input::-webkit-input-placeholder {
+  color: #000
+}
+.select-custom {
+  position: relative;
+  display: block;
+  min-width: 220px;
+  width: 100%;
+  max-width: 100%;
+  background: #f7f8fa;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px
+}
+.select-custom .select__head {
+  width: 100%;
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #303030;
+  padding: 24px 80px 24px 30px;
+  cursor: pointer;
+  border: 1px solid #efefef
+}
+.select-custom .select__head::before {
+  width: 76px;
+  height: 100%;
+  background: #2e95db;
+  position: absolute;
+  border-radius: 0 5px 5px 0;
+  right: 0;
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  content: '';
+  display: block;
+  z-index: 5;
+  -webkit-transition: .2s ease-in;
+  transition: .2s ease-in
+}
+.select-custom .select__head::after {
+  width: 76px;
+  height: 100%;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAYAAAAi2ky3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB4SURBVHgBvc9hDYAgEIbhs4ENJIoRjGAEI9gAGxiFCEYwgjPB5znZdDeUAzafzV/CN16ivwAw/FkqxSMrLh3l4ssjbtv5OkrlkySXOlI/kqQhZWjCO10iH+oR52Ij5iNJn8g/Z+iFE5VJ0lKSJNncpJC28kMNldkPbFe/kn93e5IAAAAASUVORK5CYII=) center no-repeat;
+  position: absolute;
+  border-radius: 0 5px 5px 0;
+  right: 0;
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  content: '';
+  display: block;
+  z-index: 6;
+  -webkit-transition: .2s ease-in;
+  transition: .2s ease-in
+}
+.select-custom .select__head.open::after {
+  -webkit-transform: translateY(50%) rotate(180deg);
+  transform: translateY(50%) rotate(180deg)
+}
+.select-custom .select__list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: 0 0 4px rgba(0,0,0,.2);
+  box-shadow: 0 0 4px rgba(0,0,0,.2);
+  border-radius: 5px;
+  margin-top: 5px;
+  border: 1px solid #efefef;
+  max-height: 205px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 100;
+  background: #fff;
+  padding: 0;
+  color: #424348;
+  scrollbar-color: dark;
+  scrollbar-width: thin;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: contain
+}
+.select-custom .select__list::-webkit-scrollbar {
+  width: 7px;
+  background-color: #f8f9fa;
+  padding: 5px
+}
+.select-custom .select__list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #d9d9d9
+}
+.select-custom .select__list .select__item {
+  position: relative;
+  border-top: 1px solid rgba(224,229,231,.5);
+  padding: 15px 30px;
+  cursor: pointer;
+  list-style-type: none
+}
+.select-custom .select__list .select__item:hover {
+  background-color: #f7f8fa
+}
+.btn-blue {
+  outline: 0;
+  width: 381px;
+  padding: 23px 0 23px 30px;
+  border: 2px solid #2e95db;
+  background: #2e95db;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: left;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: .2s;
+  transition: .2s
+}
+.btn-blue:hover {
+  background: #006cb5;
+  border-color: #006cb5;
+  color: #fff
+}
+.btn-blue:active {
+  background: #003a62;
+  border-color: #003a62
+}
+.btn-blue .plus-minus {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%)
+}
+.btn-blue .plus-minus.plus {
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  -webkit-transition: .2s;
+  transition: .2s
+}
+.btn-blue .plus-minus.plus:after {
+  content: "";
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  width: 2px;
+  height: 20px;
+  position: absolute;
+  z-index: 5;
+  background: #fff;
+  -webkit-transition: .2s;
+  transition: .2s
+}
+.btn-blue .plus-minus.minus {
+  width: 20px;
+  height: 2px;
+  background: #2e95db;
+  -webkit-transition: .2s;
+  transition: .2s
+}
+.btn-blue.btn-transparent {
+  background: 0 0;
+  color: #2e95db
+}
+.btn-blue.btn-transparent:hover {
+  background: #006cb5;
+  color: #fff;
+  border-color: #006cb5
+}
+.btn-blue.btn-transparent:hover .plus-minus.minus {
+  background: #fff
+}
+.btn-blue.btn-transparent:active {
+  background: #003a62;
+  color: #fff;
+  border-color: #003a62
+}
+.btn-blue.btn-transparent:active .plus-minus.minus {
+  background: #fff
+}
+.form__title {
+  margin: 0 0 35px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 56px;
+  color: #303030
+}
+.form__input {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  margin-bottom: 25px;
+  background: #f9f9f9;
+  font-size: 14px;
+  border: 1px solid #eaeaea;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline-color: #14a04c
+}
+.form__checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 25px
+}
+.form__checkbox input {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  margin: 0 5px 0 0;
+  width: 20px;
+  height: 20px;
+  background: #f9f9f9;
+  border: 1px solid #eaeaea;
+  border-radius: 2px
+}
+.form__checkbox p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  color: #787c83
+}
+.form__checkbox p a {
+  color: #006cb5
+}
+.form__btn {
+  margin: 0;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+  background: #2e95db;
+  -webkit-box-shadow: 0 4px 20px rgba(0,61,102,.15);
+  box-shadow: 0 4px 20px rgba(0,61,102,.15);
+  border-radius: 5px;
+  border: none;
+  outline: 0;
+  cursor: pointer
 }
 .header__desctop-menu {
   -webkit-transform: translateY(-150%);
@@ -1183,11 +1489,17 @@ a {
   position: relative;
   width: 877px;
   height: 650px;
-  background-image: url(../img/blue-square.jpg);
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 60% 60%;
   border-radius: 10px
+}
+.about-sanatorium__right-col::before {
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+  background-color: #006cb5;
+  height: 80%;
+  width: 80%;
+  right: 0;
+  top: 0
 }
 .video_wrapper {
   width: 867px;
@@ -1219,7 +1531,6 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../img/about-video.jpg);
   background-size: cover;
   background-position: center;
   border: none;
@@ -1238,28 +1549,17 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80px;
-  height: 80px;
-  margin: -40px 0 0 -40px;
-  border: 5px solid #006cb5;
-  background-color: #006cb5;
-  border-radius: 100%;
-  -webkit-transition: border-color .3s;
-  transition: border-color .3s
-}
-.videoPoster:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin: -20px 0 0 -10px;
-  border-left: 40px solid #fff;
-  border-top: 25px solid transparent;
-  border-bottom: 25px solid transparent;
-  -webkit-transition: border-color .3s;
-  transition: border-color .3s
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAb9SURBVHgB7Z3Pb9RGFMe/4zVJuS30UolWGKlceoD0lN7YPfJLJOq1UsINNUGEvyDhLyBtAXEj+QeaRDTQW7a3cupy6aFUwqhwLF21B8TG6+k8O2azWXvt3bXHY+98pP3hZKOE+fLem3meeY9BdVa2qnAqNXDTgoHT4LAAbonXKph4wHscpiW+1wJjtnfF0ISLV2CdJkynifX5FhSGQTVubFmoTM/B4OfFQNbEX2ghTThsIZYQie/AbTfwcN6GQqghyPJjMfCVa2KQ5lIXIA4SyGDb6PBNPLjcRM7kJ4jnij66Bbhz4moGKkDicNzJ03LkC/Lt7gwqbAGcL6Lf/6sDwwb223dkCyNPkBtPLZj8kfhvWEORkCxM9oKQa+pMrwqLWEGRkSRMtoIs/yxiRGcNKrumYQhizIPLG8iIbAQpqntKDGvAeX89C2sxkDZkFab7W3nFIMS/rTK1JyYoi0iZ9CykLLFiWBhbxw+XbiMl0hHEc1HuFlRZT8inCac9n4YLG18QEqPi7klfYasGBfxOuz6uKOPFEFrkUbyYdDEIGgM/rozlJUa3EPrFBvZQlilterREUrQ+al5sNEG0GHGMLMrwgvgBXExrtRgxtESg/3LYmDJcDAkCuBYjCVUvptD9nSEYThA9mxoOGitzamuYH0kuyM0nd7UYIzHjjV1CksUQP0m4Ds3ocGMR9y9uxn0sXhAdxNMiUZCPd1le1laLkQJVmNOP4j40WJCblM0sc9ZWNmIsl54MTL5Guyydo8qKFsz2maj9YdEWUnFXtRiZ4N+miCDcQvxA/hKa7HCElYQE+HALIevQZMuxqdAx7rcQbR3yCLGSfgvR1iEP0+ybcfVaiLYO2fTNuHot5Jhbg0YmVTi9VmL2fNvFqgr74RdnP8XC7ClUjx9D882/uPP0Bey/36GcVC4cvuoOPx0JgLGHnFm9eBZrl872fX3j2esSC+PWce9qg951XRY3FpAz1sfHQ8UgyGpertXx6Jtz3udKRi14Y4R9MS+sE/EDXUphWNcYfEFo00LB0iSlEobOTS7tnqa3viCV4u44LI8wfJ6efUE4u4aCU3hhDHbee/EuOC/NntwCC1OjJ+Yfvpz6BwpQ+/wk9m59hTQp1HTZbJ8wxEqx1DvWC2UxznTNEPFjIo4QFEIY7loGGLcwQSgtjNBCBPXKeUwgSgrDDSv9M4YFQylhGE6LGDJZLisKJYRhqBoHJY40BwTCrNQsSIeTIHpXYih3v/5C3I8xIZnqxMeQQcyd+wSy0YIMoPWuDdloQQbQfP0fZEOCKF2DMC9u//g77LfS818t0y8YqQN7QOPFW5GM/MN7lQ4jQRhvqVgLUza5ChHAuS3mdYYt3k1qjRI1hDiEEKTzahJju2pC+PDnIoYwe5I8lppCHCC0EDHEtWmXQ9lRWogAxpsmzE4DTnkFKYQQAaYjBKGd10u7dtmOrxVKCILqbQktDrJn/BdhLxZKQOGE6PKcnoJ0JpURyn1v7zgUWAgfjm168QXpVLZhuonrcahE4YXo4tXW8gV5eNEuWhwpkRB+/Dgodta9A8PcHbFAvIUcab6Jz66WSogAA43u2y7byJnWu31vl2EYJED9+1+9R6nEILj7oUpQ7xp9eZeq/uSe11qcPYWF2c9gnTyOxp9vsfnsr/KJEEDu6v7lM8HlkZvGntvKXZCNZ2+8x0RAxf0P0ZtVNB0qUqZvWMmEuvkcolcQ77y0G1v1TJMS1JMktpKDa2xAIwdqEHOEfkG8+TBrQJMtIdZBhN+Zcth1aLIlxDqIcEFo5Q73O2iyIcI6iOh7t6azBj3jSh9ad0RYBxEtCM24OI/8Qc2I0LpjQKnY+Lvpy0/2dGXStOAN3LtSH/SJ+O0mfoDXrmt8WnD2YydL8YJQgNeua3xoDBO0rki2Iev+lXU96xoHMXbeGMaTfIecP+saqY3PREOzqntXE7cSTC4IzbocY977BZpkBJ3bhkC3PMoOCS2PCAry1PBKz7wG4TcFG6GnoW6blz45tM0L0KIcZSwxCN16NS2UaL1KUEzpGPUJn3010xCDSPdkyPLj9bz3dslHLPpojRbRoGVY0j+qs/TTChijgv5ljyt+NjzhCjwp2Zyd8tYq1EysrFlikbWlRGEKLuoo2R5mo6Zifj15C+UgE6s4TPanC71ZWGdNuLFCH3dIO1ZEIe+4Z2GFyc49hSH//G0xhCEr2BTudmOcRd4o5HcgmoShBjJKxRguBp/veFtqM3ZNUahxQp16l3C2KP6cC9LFoQUtw46IEdtBD488Ua9kAOXHqDkAxzXxSL9rAwlAB2Rc9hyd99uyYkNS1K/h4JVCN4VAlRm/xjD3y9pyZh1UMTq6AG35FY68ojq2uH7lV6twbO9Mfk6uKCn/A8lBEcuKLwOuAAAAAElFTkSuQmCC);
+  -webkit-box-shadow: 0 0 25px rgba(0,0,0,.35);
+  box-shadow: 0 0 25px rgba(0,0,0,.35)
 }
 .videoWrapperActive .videoPoster {
   opacity: 0;
@@ -1355,10 +1655,6 @@ a {
   transition: .25s;
   margin-top: auto
 }
-.wrapper {
-  width: 1272px;
-  margin: 0 auto
-}
 .section-sanatorium-infrastructure {
   padding: 80px 0;
   background: #fafafa
@@ -1389,9 +1685,7 @@ a {
 }
 .section-sanatorium-infrastructure .infrastructure-map .map-img {
   width: 100%;
-  height: 850px;
-  -o-object-fit: cover;
-  object-fit: cover;
+  height: auto;
   border-radius: 10px
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item {
@@ -1533,77 +1827,99 @@ a {
   background: #003a62
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-  left: 108px;
-  top: 260px
+  left: 10%;
+  top: 32%
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 .about-item {
   width: 646px
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-  left: 74px;
-  top: 510px
+  left: 10%;
+  top: 60%
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 .about-item {
   width: 425px
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-  left: 371px;
-  top: 342px
+  left: 33%;
+  top: 40%
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 .about-item {
   width: 430px
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-  left: 781px;
-  top: 310px
+  left: 63%;
+  top: 35%
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 .about-item {
   width: 237px
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-  left: 927px;
-  top: 185px
+  left: 75%;
+  top: 20%
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 .about-item {
   width: 480px
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-  left: 982px;
-  top: 275px
+  left: 83%;
+  top: 30%
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 .about-item {
   width: 480px
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-  left: 400px;
-  top: 237px
+  left: 33%;
+  top: 25%
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 .about-item {
   width: 378px
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-  left: 1117px;
-  top: 443px
+  left: 90%;
+  top: 50%
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 .about-item {
   width: 246px
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-  left: 43px;
-  top: 411px
+  left: 8%;
+  top: 48%
 }
 .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 .about-item {
   width: 336px
 }
 .section__small-banner {
+  position: relative;
   padding: 36px 0;
-  background: -webkit-gradient(linear,left top,right top,color-stop(1.17%,rgba(0,0,0,.65)),color-stop(62.05%,rgba(0,0,0,.5655)),color-stop(116.9%,rgba(0,0,0,.0195))),url(../img/small-banner1.jpg);
-  background: linear-gradient(90deg,rgba(0,0,0,.65) 1.17%,rgba(0,0,0,.5655) 62.05%,rgba(0,0,0,.0195) 116.9%),url(../img/small-banner1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center
 }
-.small-banner__content,
+.section__small-banner::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear,left top,right top,color-stop(1.17%,rgba(0,0,0,.65)),color-stop(62.05%,rgba(0,0,0,.5655)),color-stop(116.9%,rgba(0,0,0,.0195)));
+  background-image: linear-gradient(90deg,rgba(0,0,0,.65) 1.17%,rgba(0,0,0,.5655) 62.05%,rgba(0,0,0,.0195) 116.9%);
+  z-index: 1
+}
+.small-banner__content {
+  position: relative;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
 .small-banner__content-text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1668,12 +1984,1206 @@ a {
   background-color: #003a62;
   color: #fff
 }
+.fund {
+  padding-bottom: 100px
+}
+.fund h1 {
+  margin-bottom: 20px;
+  font-size: 48px;
+  line-height: 65px;
+  font-weight: 700;
+  color: #303030
+}
+.fund h1 span {
+  color: #006cb5;
+  font-weight: 700
+}
+.fund__description {
+  margin-bottom: 20px
+}
+.fund__description p {
+  padding-bottom: 10px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #303030
+}
+.fund__filter.flex {
+  border: 1px solid #efefef;
+  border-radius: 5px;
+  background: #f7f8fa;
+  padding: 25px 30px 15px;
+  margin-bottom: 50px
+}
+.fund__filter_title {
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 700;
+  color: #303030;
+  padding-right: 50px;
+  margin-bottom: 10px
+}
+.fund__filter_links.flex {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start
+}
+.fund__filter_links a {
+  display: block;
+  font-size: 18px;
+  line-height: 25px;
+  color: #7d7d7d;
+  border-bottom: 1px solid #7d7d7d;
+  -webkit-transition: .3s;
+  transition: .3s;
+  margin-right: 50px;
+  text-decoration: none;
+  outline: 0;
+  margin-bottom: 10px
+}
+.fund__filter_links a:last-child {
+  margin-right: 0
+}
+.fund__filter_links a:hover {
+  border-color: transparent
+}
+.fund__filter_links a.active {
+  color: #006cb5;
+  border-color: #006cb5;
+  font-weight: 700
+}
+.part {
+  border-bottom: 1px solid #003a62;
+  margin-bottom: 50px;
+  padding-bottom: 20px
+}
+.part:last-child {
+  margin-bottom: 0;
+  border: none
+}
+.part__title {
+  margin-bottom: 25px;
+  font-size: 30px;
+  line-height: 56px;
+  font-weight: 700;
+  color: #303030
+}
+.part__title span {
+  display: inline-block;
+  font-weight: 700;
+  color: #fff;
+  background: #0081d8;
+  background: linear-gradient(90.09deg,#006cb5 .55%,#0081d8 100%);
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px
+}
+.rooms.flex {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch
+}
+.room {
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  width: calc(50% - 15px);
+  overflow: hidden;
+  margin-bottom: 30px
+}
+.room__img {
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid #eaeaea;
+  height: 450px
+}
+.room__img img {
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1
+}
+.room__note {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  max-width: calc(100% - 40px);
+  background: #14a04c;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px 20px;
+  z-index: 2;
+  font-size: 14px;
+  line-height: 18px;
+  color: #fff
+}
+.room__info {
+  padding: 20px
+}
+.room__title {
+  margin-bottom: 15px;
+  font-weight: 800;
+  color: #303030;
+  font-size: 20px;
+  line-height: 30px
+}
+.room__description {
+  margin-bottom: 15px;
+  color: #303030;
+  font-size: 14px;
+  line-height: 22px
+}
+.room__price {
+  font-size: 16px;
+  color: #006cb5;
+  margin-bottom: 15px
+}
+.room__price span {
+  font-size: 26px;
+  font-weight: 700
+}
+.room__see a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  outline: 0;
+  cursor: pointer;
+  color: #fff;
+  -webkit-transition: .3s;
+  transition: .3s;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  padding: 17px;
+  border-radius: 5px;
+  background: #2e95db;
+  border: 2px solid #2e95db;
+  -webkit-box-shadow: 0 4px 20px rgba(0,61,102,.15);
+  box-shadow: 0 4px 20px rgba(0,61,102,.15);
+  text-align: center
+}
+.room__see a:hover {
+  color: #2e95db;
+  background: 0 0;
+  -webkit-box-shadow: 0 4px 20px rgba(0,61,102,0);
+  box-shadow: 0 4px 20px rgba(0,61,102,0)
+}
+.bread-crumbs-block {
+  padding: 50px 0
+}
+.bread-crumbs-block .crumbs-text {
+  color: #006cb5;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 34px;
+  margin-bottom: 0
+}
+.bread-crumbs-block .crumbs-text .back-mobile {
+  display: none
+}
+.bread-crumbs-block .crumbs-text .crumbs-item {
+  display: inline-block;
+  text-decoration: underline;
+  font-weight: 400;
+  cursor: pointer;
+  color: #303030;
+  margin-right: 36px;
+  position: relative;
+  -webkit-transition: .2s;
+  transition: .2s
+}
+.bread-crumbs-block .crumbs-text .crumbs-item.none-underline {
+  text-decoration: none
+}
+.bread-crumbs-block .crumbs-text .crumbs-item:after {
+  content: "";
+  left: calc(100% + 20px);
+  top: 14px;
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  background: #2e95db;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%
+}
+.bread-crumbs-block .crumbs-text .crumbs-current {
+  display: inline-block
+}
+.hr-card-housing-price {
+  width: 100%;
+  height: 1px;
+  background: #193243;
+  border: none;
+  margin: 100px 0
+}
+.housing-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start
+}
+.housing-card h3 {
+  margin-bottom: 22px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 54px;
+  color: #303030
+}
+.housing-card h3.h3-mobile {
+  display: none
+}
+.housing-card h3 .housing-number {
+  color: #fff;
+  display: inline-block;
+  background: linear-gradient(90.09deg,#006cb5 .55%,#0081d8 100%);
+  border-radius: 5px;
+  padding: 0 16px
+}
+.housing-card .housing-info {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 calc(100% - 621px);
+  flex: 0 0 calc(100% - 621px);
+  max-width: calc(100% - 621px);
+  padding-right: 128px
+}
+.housing-card .housing-info .housing-info__text {
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #303030
+}
+.housing-card .img-block {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 621px;
+  flex: 0 0 621px;
+  max-width: 621px
+}
+.housing-card .img-block img {
+  width: 100%
+}
+.about-price-block {
+  display: none
+}
+.about-price-block.about-top,
+.about-price-block.open {
+  display: block
+}
+.about-price-block.about-bottom {
+  padding-top: 40px
+}
+.about-price-block.about-mobile {
+  padding-top: 50px
+}
+.about-price-block.about-mobile .table-mobile-block .table-item {
+  margin-bottom: 10px
+}
+.about-price-block.about-mobile .table-mobile-block .table-item:last-child {
+  margin-bottom: 0
+}
+.about-price-block.about-mobile .table-mobile-block .table-item .title-item {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  padding: 22px 50px 22px 20px;
+  background: #2e95db;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  outline: 0;
+  -webkit-transition: .2s;
+  transition: .2s
+}
+.about-price-block.about-mobile .table-mobile-block .table-item .title-item:after {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  background: #fff;
+  border-radius: 3px;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px
+}
+.about-price-block.about-mobile .table-mobile-block .table-item .title-item:before {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 35px;
+  height: 35px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAJCAYAAADtj3ZXAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAELSURBVHgBjY9PTsJQEMZnnqEbXfQIXWjUBJr2BuUI3oC10UhPoDeABKpL9AR4g3oDjMZIaJNyhCYsCOX1DW8oJYTw79u8l5nvN/k+tF/jBLTEbOJ++24KR+S8JZaiPFwyQAqAyFLGeei0BuZBsJeYimSf/cyJLMvrmh4DoJNXLvqHYDWVIRA47GdODP3bcXkAEbxaEPd2gXZ39L4JMofl8qb1bxlGZaCXpja1fx6u/DUYxG09f9LzNJtLl8Gi80o8kHCmE2AKCE27E70UIL8FKOdUL0EWbserdiJPCAhXyy8C8PhPSt39Pl5/bnpxV79aMGog4Lp7jtj4u7/8gFNld6OmjkzVIHre51kAQJp+DA1+XmUAAAAASUVORK5CYII=) center no-repeat
+}
+.about-price-block.about-mobile .table-mobile-block .table-item .add-info-item {
+  border: 1px solid #efefef;
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+  display: none
+}
+.about-price-block.about-mobile .table-mobile-block .table-item .add-info-item .row-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 22px 20px;
+  border-bottom: 1px solid #efefef
+}
+.about-price-block.about-mobile .table-mobile-block .table-item .add-info-item .row-item:last-child {
+  border: none
+}
+.about-price-block.about-mobile .table-mobile-block .table-item .add-info-item .row-item .position-item {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #303030
+}
+.about-price-block.about-mobile .table-mobile-block .table-item .add-info-item .row-item .price-item {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #303030
+}
+.about-price-block.about-mobile .table-mobile-block .table-item .add-info-item .row-item .price-item .blue-rub {
+  font-family: Nunito Sans;
+  font-weight: 600;
+  color: #006cb5
+}
+.about-price-block.about-mobile .table-mobile-block .table-item.open .title-item {
+  border-radius: 8px 8px 0 0
+}
+.about-price-block.about-mobile .table-mobile-block .table-item.open .title-item:before {
+  -webkit-transform: translateY(-50%) rotate(-180deg);
+  transform: translateY(-50%) rotate(-180deg)
+}
+.about-price-block .select-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 50px
+}
+.about-price-block .select-section .select-block {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 calc(50% - 15px);
+  flex: 0 0 calc(50% - 15px);
+  max-width: calc(50% - 15px)
+}
+.about-price-block .select-section .title-select {
+  margin-bottom: 15px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  color: #303030
+}
+.about-price-block .title-block {
+  margin-bottom: 20px
+}
+.about-price-block .title-block h2 {
+  color: #006cb5;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 56px;
+  display: inline-block
+}
+.about-price-block .title-block .dates {
+  display: inline-block;
+  margin-left: 35px;
+  color: #14a04c;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px
+}
+.about-price-block .table-block {
+  overflow-y: hidden;
+  border-radius: 10px 10px 0 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+.about-price-block .table-block .table-price {
+  border-collapse: collapse;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+.about-price-block .table-block .table-price .tr-head {
+  background: #2e95db;
+  color: #fff;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  border: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+.about-price-block .table-block .table-price .tr-head .light-text {
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px
+}
+.about-price-block .table-block .table-price .tr-head th {
+  padding: 12px 0 11px;
+  border: 1px solid #2e95db;
+  position: relative;
+  text-align: center
+}
+.about-price-block .table-block .table-price .tr-head th:after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 48px;
+  width: 1px;
+  background: #52a9e3;
+  z-index: 5
+}
+.about-price-block .table-block .table-price .tr-head th:last-child:after {
+  display: none
+}
+.about-price-block .table-block .table-price .tr-head th:first-child {
+  text-align: left;
+  padding-left: 20px
+}
+.about-price-block .table-block .table-price tr {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #efefef
+}
+.about-price-block .table-block .table-price tr td {
+  text-align: center;
+  height: 68px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #303030;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative
+}
+.about-price-block .table-block .table-price tr td:after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 48px;
+  width: 1px;
+  background: #efefef;
+  z-index: 5
+}
+.about-price-block .table-block .table-price tr td:last-child:after {
+  display: none
+}
+.about-price-block .table-block .table-price tr td .blue-rub {
+  color: #006cb5;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600
+}
+.about-price-block .table-block .table-price tr td:first-child {
+  text-align: left;
+  padding: 10px 0 10px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px
+}
+.about-price-block .table-block .table-price tr td:first-child .blue-text {
+  display: block;
+  font-weight: 400;
+  color: #006cb5
+}
+h1.custom-h1 {
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+  color: #303030
+}
+.section-price-table .desc-section {
+  margin-bottom: 47px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #303030
+}
+.mfp-counter {
+  display: none
+}
+.section-room-card {
+  padding-bottom: 100px
+}
+.section-room-card h1.custom-h1 {
+  margin-bottom: 50px
+}
+.section-room-card .btn-blue {
+  border-radius: 5px
+}
+.section-room-card .gallery-room-block {
+  margin-bottom: 50px
+}
+.section-room-card .gallery-room-block .prev-next-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 20px
+}
+.section-room-card .gallery-room-block .prev-next-btns .btn-nav-href {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7d7d7d
+}
+.section-room-card .gallery-room-block .prev-next-btns .btn-nav-href img {
+  margin-right: 14px
+}
+.section-room-card .gallery-room-block .prev-next-btns .btn-nav-href.blue {
+  color: #006cb5;
+  font-weight: 600
+}
+.section-room-card .gallery-room-block .prev-next-btns .btn-nav-href.blue img {
+  margin-right: 0;
+  margin-left: 14px
+}
+.section-room-card .gallery-room-block .room-card-gallery-mobile {
+  position: relative;
+  display: none;
+  padding-bottom: 55px
+}
+.section-room-card .gallery-room-block .room-card-gallery-mobile .magnific-item-my {
+  width: 100%
+}
+.section-room-card .gallery-room-block .room-card-gallery-mobile .magnific-item-my img {
+  width: 100%;
+  height: 380px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border: 1px solid #eaeaea;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 10px
+}
+.section-room-card .gallery-room-block .room-card-gallery-mobile .slick-arrow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-indent: -9999px;
+  border: none;
+  outline: 0;
+  height: 35px;
+  width: 35px;
+  border-radius: 3px;
+  z-index: 5
+}
+.section-room-card .gallery-room-block .room-card-gallery-mobile .slick-arrow.slick-next {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOCAYAAAD9lDaoAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABlSURBVHgBnZGLCYAwDESDE3QER+hGukndoG7kKI7gCGeEA4OQRHpwFJpHvgLgpGfxRAB8qwcV9UHwUi9Rxo5XWwQ2A/YIXFkWbKN4YLUDTTKitNwzVdi4fu4GaN9gvsy/Z0kPfAO4eMaJjC7a/wAAAABJRU5ErkJggg==) center no-repeat,#006cb5
+}
+.section-room-card .gallery-room-block .room-card-gallery-mobile .slick-arrow.slick-prev {
+  right: 45px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOCAYAAAD9lDaoAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADFSURBVHgBdZEBEYMwDEVpmQAkIGFzMAeAgs3BmIKBArAwBQUFw8EmAQkz0HY/LOV6tOSu1+T62vzfiGQnlFK5lPJFudwBjgzkUQjA1QHW2skYcxI+MI5jg+1BOYC+LMs75cIDemw3LpuiKFp3JvB8lqapws0z6i9WDeDpdzig/xtAjnxG/wrx2eqMugugRb0QE7khV9B22UKr8GEYOsA1ly10NQHEDsn+chj9Ahf8mR3SjGRorasAYpDGopL/WOYoxOA64B+HU1KKDzugagAAAABJRU5ErkJggg==) center no-repeat,#f4f4f4
+}
+.section-room-card .gallery-room-block .room-card-gallery-mobile .slick-dots {
+  position: absolute;
+  height: 35px;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  padding: 5px 0 0
+}
+.section-room-card .gallery-room-block .room-card-gallery-mobile .slick-dots li {
+  display: inline-block;
+  background: #efefef;
+  border-radius: 10px;
+  width: 30px;
+  height: 2px;
+  margin-right: 10px
+}
+.section-room-card .gallery-room-block .room-card-gallery-mobile .slick-dots li:last-child {
+  margin-right: 0
+}
+.section-room-card .gallery-room-block .room-card-gallery-mobile .slick-dots li.slick-active {
+  background: #2e95db
+}
+.section-room-card .gallery-room-block .room-card-gallery-mobile .slick-dots li button {
+  display: none
+}
+.section-room-card .gallery-room-block .room-card-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 505px
+}
+.section-room-card .gallery-room-block .room-card-gallery a {
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in
+}
+.section-room-card .gallery-room-block .room-card-gallery .photo-big {
+  height: 100%;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 calc(50% - 15px);
+  flex: 0 0 calc(50% - 15px);
+  max-width: calc(50% - 15px)
+}
+.section-room-card .gallery-room-block .room-card-gallery .photo-big img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px
+}
+.section-room-card .gallery-room-block .room-card-gallery .photo-small {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 calc(25% - 15px);
+  flex: 0 0 calc(25% - 15px);
+  max-width: calc(25% - 15px);
+  height: calc(100% / 2 - 7.5px)
+}
+.section-room-card .gallery-room-block .room-card-gallery .photo-small img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.section-room-card .gallery-room-block .room-card-gallery .photo-small.small-border img {
+  border-radius: 0 10px 10px 0
+}
+.section-room-card .about-room-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+.section-room-card .about-room-block .description-room-block {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 calc(58.3% - 15px);
+  flex: 0 0 calc(58.3% - 15px);
+  max-width: calc(58.3% - 15px)
+}
+.section-room-card .about-room-block .description-room-block .title-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 30px
+}
+.section-room-card .about-room-block .description-room-block .title-block h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 54px;
+  color: #303030;
+  margin-right: 15px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto
+}
+.section-room-card .about-room-block .description-room-block .title-block h3 .housing-number {
+  color: #fff;
+  display: inline-block;
+  background: linear-gradient(90.09deg,#006cb5 .55%,#0081d8 100%);
+  border-radius: 5px;
+  padding: 0 16px
+}
+.section-room-card .about-room-block .description-room-block .title-block .title-room {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #303030;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1
+}
+.section-room-card .about-room-block .description-room-block .category-room {
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #2e95db
+}
+.section-room-card .about-room-block .description-room-block .desc-text {
+  padding-bottom: 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #303030;
+  border-bottom: 1px solid #e6e6e6
+}
+.section-room-card .about-room-block .description-room-block .about-room-section {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 30px 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #303030
+}
+.section-room-card .about-room-block .description-room-block .about-room-section h4 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .detail-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 12px
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .detail-item:last-child {
+  margin-bottom: 0
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .btn-blue {
+  width: auto;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 15px 25px;
+  border: none;
+  margin-top: 10px
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .about-li-item {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 15px
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .about-li-item:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  background: #2e95db;
+  border-radius: 3px;
+  width: 10px;
+  height: 2px
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .comfort-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 325px;
+  flex: 0 0 325px;
+  max-width: 325px;
+  margin-right: 42px
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column.comfort-mobile {
+  display: none
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column:last-child {
+  margin-right: 0
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column .comfort-item {
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column .comfort-item img {
+  margin-right: 10px
+}
+.section-room-card .about-room-block .description-room-block .about-room-section .attention {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAiCAYAAABiOJjbAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD/SURBVHgBvZPNTcNAEIXfDIgrKcEluAQ4h0tK4IpAQCWAUCSOpIjAMSkhHWTTweYceV9214f8yLOOFClzsmc+z7y3Oxa8/C1BVjBCUQ6vIJxZZgJKIQkQOpug79OQRIq3G8BFkfQ9HYrVJBIre4ScIpJNQSRd2UXuENQGVGOHGz3DZsO15IfnKTsBojrlLnJ06xgPVy0gttXSCL8DutaOLXCdXwLfcSW3B0DgGpeJ9iTf/is0zSuodZsNC2w2X/gZOcHTtI5eZjE9OPrYI+BeofLRUUTOxVo8B97ZClj3XdYgrdy8ACzSvzmxJ/BT8T38jWYfE71Xmcd1GmH8MNkCdu9V8O/FTEQAAAAASUVORK5CYII=) 25px center no-repeat,#fbfbfb;
+  border: 1px solid #efefef;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 13px 45px 13px 53px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px
+}
+.section-room-card .about-room-block .description-room-block .about-room-section iframe {
+  width: 100%;
+  border-radius: 10px
+}
+.section-room-card .about-room-block .description-price-block {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 calc(41.6% - 15px);
+  flex: 0 0 calc(41.6% - 15px);
+  max-width: calc(41.6% - 15px)
+}
+.section-room-card .about-room-block .description-price-block .conditions-block {
+  margin-bottom: 30px;
+  padding: 10px 30px;
+  background: #f7f8fa;
+  border: 1px solid #efefef;
+  border-radius: 5px
+}
+.section-room-card .about-room-block .description-price-block .conditions-block .condition-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #cfcfcf;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #303030
+}
+.section-room-card .about-room-block .description-price-block .conditions-block .condition-item .condition-title {
+  display: inline-block;
+  padding-right: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px
+}
+.section-room-card .about-room-block .description-price-block .conditions-block .condition-item .condition-value {
+  display: inline-block;
+  text-align: right
+}
+.section-room-card .about-room-block .description-price-block .conditions-block .condition-item:last-child {
+  border: none
+}
+.section-room-card .about-room-block .description-price-block .price-room-block {
+  margin-bottom: 30px;
+  background: #fff;
+  border: 1px solid #efefef;
+  -webkit-box-shadow: 0 0 30px rgba(0,0,0,.1);
+  box-shadow: 0 0 30px rgba(0,0,0,.1);
+  border-radius: 10px;
+  padding: 25px 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #303030
+}
+.section-room-card .about-room-block .description-price-block .price-room-block .btn-blue {
+  width: auto;
+  padding: 30px 35px;
+  border: none;
+  font-size: 20px;
+  line-height: 24px
+}
+.section-room-card .about-room-block .description-price-block .price-room-block p {
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+.section-room-card .about-room-block .description-price-block .price-room-block p.price-room-header {
+  font-weight: 600;
+  color: #193243
+}
+.section-room-card .about-room-block .description-price-block .price-room-block p.price-room-item .price-room-value {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  color: #006cb5
+}
+.section-room-card .about-room-block .description-price-block .price-room-block p.price-room-item .price-room-value .rub {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 700
+}
+.section-room-card .d-none {
+  display: none
+}
+.section-special-offers {
+  padding: 100px 0 70px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #303030
+}
+.section-special-offers h2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+  margin-bottom: 40px;
+  margin-top: 0
+}
+.section-special-offers h2 .blue-text {
+  color: #006cb5
+}
+.section-special-offers .offers-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+.section-special-offers .offer-item {
+  width: calc(33.33% - 10px);
+  margin-bottom: 30px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow: hidden
+}
+.section-special-offers .offer-item img {
+  width: 100%;
+  height: 270px;
+  border-bottom: 1px solid #eaeaea;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.section-special-offers .offer-item .offer-desc {
+  padding: 25px 30px
+}
+.section-special-offers .offer-item .offer-desc h3 {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 34px;
+  margin-bottom: 15px;
+  margin-top: 0
+}
+.section-special-offers .offer-item .offer-desc h3 br {
+  display: none
+}
+.section-special-offers .offer-item .offer-desc p {
+  margin-bottom: 15px
+}
+.section-special-offers .offer-item .offer-desc .btn-blue {
+  width: auto;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  -webkit-box-shadow: 0 4px 20px rgba(0,61,102,.15);
+  box-shadow: 0 4px 20px rgba(0,61,102,.15);
+  border-radius: 5px;
+  padding: 12px 35px;
+  font-size: 14px;
+  line-height: 24px
+}
+.section-advantages {
+  padding: 80px 0 50px;
+  background: #fafafa;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px
+}
+.section-advantages h2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+  color: #303030;
+  margin-bottom: 40px;
+  margin-top: 0
+}
+.section-advantages h2 .blue-text {
+  color: #006cb5
+}
+.section-advantages .advantages-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+.section-advantages .advantage-item {
+  width: calc(33.33% - 13px);
+  margin-bottom: 20px;
+  position: relative;
+  color: #fff
+}
+.section-advantages .advantage-item:before {
+  content: "";
+  left: 1px;
+  top: 1px;
+  position: absolute;
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(-36.65%,rgba(0,0,0,0)),color-stop(100%,#232a34),to(#000));
+  background: linear-gradient(180deg,rgba(0,0,0,0) -36.65%,#232a34 100%,#000 100%);
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  z-index: 5;
+  border-radius: 10px
+}
+.section-advantages .advantage-item .adv-desc {
+  padding: 30px;
+  position: absolute;
+  z-index: 8;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  left: 0
+}
+.section-advantages .advantage-item .adv-desc p {
+  margin: 0
+}
+.section-advantages .advantage-item .adv-desc h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 10px;
+  margin-top: 0
+}
+.section-advantages .advantage-item img {
+  border: 1px solid #cdcdcd;
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 10px;
+  position: relative
+}
 .section__room-fund {
   padding: 100px 0
 }
 .room-fund__title {
   margin: 0 0 20px;
-  font-family: 'Open Sans';
   font-weight: 700;
   font-size: 48px;
   line-height: 65px;
@@ -1684,7 +3194,6 @@ a {
 }
 .room-fund__desc {
   margin: 0 0 30px;
-  font-family: 'Open Sans';
   font-size: 18px;
   line-height: 30px;
   color: #303030
@@ -1709,7 +3218,6 @@ a {
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 30px;
-  font-family: 'Open Sans';
   font-weight: 700;
   font-size: 20px;
   line-height: 27px;
@@ -1727,7 +3235,6 @@ a {
 }
 .tab li {
   list-style-type: none;
-  font-family: 'Open Sans';
   font-size: 18px;
   line-height: 25px;
   color: #7d7d7d
@@ -1745,78 +3252,57 @@ a {
 .tabcontent {
   display: none
 }
-.build__title {
+.build-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center
-}
-.build__title p {
-  margin: 0 10px 0 0;
-  font-family: 'Open Sans';
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 56px;
-  color: #303030
-}
-.build__title span {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 82px;
-  height: 53px;
+  margin-bottom: 30px;
   font-size: 30px;
+  font-weight: 700;
+  color: #303030
+}
+.build-title span {
+  line-height: 1;
+  margin-left: 10px;
+  text-align: center;
+  padding: .5rem 1.3rem;
   background: linear-gradient(90.09deg,#006cb5 .55%,#0081d8 100%);
   border-radius: 5px;
   color: #fff
 }
-.build__card--wrapper {
+.build__card-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between
-}
-.build__card {
-  margin-bottom: 29px;
-  margin-right: 10px;
-  position: relative;
-  width: 24%;
-  background-color: #fff;
-  border: 1px solid #eaeaea;
-  border-radius: 10px
+  margin-left: -5px;
+  margin-right: -5px
 }
 .build__badge {
   position: absolute;
-  top: 35px;
-  left: 30px;
+  top: 5%;
+  left: 7%;
   margin: 0;
   padding: 5px 10px;
   display: inline-block;
-  font-family: 'Open Sans';
   font-size: 12px;
   line-height: 18px;
   color: #fff;
   background-color: #14a04c;
   border-radius: 5px
 }
-.build__img {
-  width: 100%;
-  height: auto;
-  display: block
-}
-.build__content {
+.build__card {
+  position: relative;
+  width: calc(100% / 4 - 10px);
+  margin: 0 5px 20px;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1824,54 +3310,65 @@ a {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 25px 20px 20px
+  padding-bottom: 20px
+}
+.build__card.ui-flex-empty {
+  display: none
+}
+.build__img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden
+}
+.build__img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center
 }
 .build__title {
   max-width: 256px;
   margin: 0 0 10px;
-  font-family: 'Open Sans';
   font-weight: 800;
   font-size: 20px;
   line-height: 30px;
-  color: #303030
+  color: #303030;
+  padding: 0 20px
 }
 .build__desc {
-  max-width: 256px;
-  margin: 0 0 15px;
-  font-family: 'Open Sans';
+  margin-bottom: 15px;
+  padding: 0 20px;
   font-size: 14px;
   line-height: 22px;
   color: #303030
 }
 .build__price {
-  margin: 0 0 20px;
-  font-family: 'Open Sans';
+  margin-bottom: 20px;
   font-size: 16px;
-  line-height: 22px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #006cb5
+  color: #006cb5;
+  padding: 0 20px
 }
 .build__price span {
   font-size: 26px;
   font-weight: 700
 }
-.build__link-btn {
-  padding: 19px 31px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Open Sans';
-  font-weight: 700;
+.build__btn {
+  text-decoration: none;
   font-size: 18px;
-  line-height: 24px;
   text-align: center;
+  padding: 1rem 1.5rem;
+  margin: auto 20px 0;
   color: #fff;
   background: #2e95db;
   -webkit-box-shadow: 0 4px 20px rgba(0,61,102,.15);
@@ -1879,12 +3376,13 @@ a {
   border-radius: 5px;
   border: none;
   outline: 0;
-  cursor: pointer
+  cursor: pointer;
+  font-weight: 700
 }
-.build__link-btn:hover {
+.build__btn:hover {
   background-color: #006cb5
 }
-.build__link-btn:active {
+.build__btn:active {
   background-color: #003a62
 }
 .section__sanatorium-progs {
@@ -2004,7 +3502,6 @@ a {
 }
 .progs__block-number {
   margin: 0 0 25px;
-  font-family: 'Open Sans',sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
@@ -2016,7 +3513,6 @@ a {
 .progs__block-desc {
   z-index: 2;
   margin: 0 0 25px;
-  font-family: 'Open Sans',sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 28px;
@@ -2027,14 +3523,16 @@ a {
 }
 .progs__block-btn {
   position: relative;
-  width: 115px;
   margin: auto 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   border-bottom: 1px solid #2e95db;
-  display: inline;
-  font-family: 'Open Sans',sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 24px;
@@ -2065,18 +3563,37 @@ a {
   right: 5.3%
 }
 .sanatorium-progs__bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  position: relative;
   padding: 23px 0;
-  background: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.56)),color-stop(82.3%,rgba(0,0,0,0))),-webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.5))),url(../img/sanatorium-progs-bg.jpg),#c4c4c4;
-  background: linear-gradient(90deg,rgba(0,0,0,.56) 0,rgba(0,0,0,0) 82.3%),linear-gradient(0deg,rgba(0,0,0,.5),rgba(0,0,0,.5)),url(../img/sanatorium-progs-bg.jpg),#c4c4c4;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border-radius: 10px
+  border-radius: 10px;
+  overflow: hidden
+}
+.sanatorium-progs__bottom::after {
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.56)),color-stop(82.3%,rgba(0,0,0,0))),-webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.5)));
+  background-image: linear-gradient(90deg,rgba(0,0,0,.56) 0,rgba(0,0,0,0) 82.3%),linear-gradient(0deg,rgba(0,0,0,.5),rgba(0,0,0,.5))
+}
+.sanatorium-progs__content {
+  position: relative;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%
 }
 .sanatorium-progs__bottom-title {
   margin: 0;
@@ -2096,15 +3613,12 @@ a {
 .sanatorium-progs__bottom-form {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center
+  display: flex
 }
 .sanatorium-progs__bottom-form input {
   width: 363px;
-  padding-top: 17px;
-  padding-bottom: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   padding-left: 25px;
   font-size: 18px;
   background: #fff;
@@ -2159,7 +3673,6 @@ a {
   background-color: #003a62
 }
 .section-discount {
-  background-image: url(../img/discount-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center
@@ -2196,7 +3709,6 @@ a {
 }
 .discount__title {
   margin: 0;
-  font-family: 'Open Sans',sans-serif;
   font-weight: 600;
   font-size: 28px;
   line-height: 34px;
@@ -2228,7 +3740,6 @@ a {
 }
 .discount__desc {
   margin: 0;
-  font-family: 'Open Sans',sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 26px;
@@ -2236,7 +3747,6 @@ a {
 }
 .discount__btn {
   padding: 15px 31px;
-  font-family: 'Open Sans',sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
@@ -2319,10 +3829,11 @@ a {
   justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
 }
 .feedback__left-col {
-  margin-right: 10px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2330,14 +3841,21 @@ a {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column
+  flex-direction: column;
+  width: calc(50% - 10px);
+  max-width: 500px
+}
+.feedback__right-col {
+  width: calc(50% - 10px)
+}
+.feedback__info--mobile {
+  display: none
 }
 .feedback__badge {
   max-width: 189px;
   display: block;
   margin: 0 0 25px;
   padding: 15px 25px;
-  font-family: 'Open Sans',sans-serif;
   font-size: 18px;
   line-height: 24px;
   color: #fff;
@@ -2346,7 +3864,6 @@ a {
 }
 .feedback__title {
   margin: 0 0 20px;
-  font-family: 'Open Sans',sans-serif;
   font-weight: 700;
   font-size: 48px;
   line-height: 65px;
@@ -2357,7 +3874,6 @@ a {
 }
 .feedback__subtitle {
   margin: 0 0 50px;
-  font-family: 'Open Sans',sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 30px;
@@ -2365,7 +3881,6 @@ a {
 }
 .contacts__title {
   margin: 0 0 20px;
-  font-family: 'Open Sans',sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 56px;
@@ -2402,7 +3917,6 @@ a {
 }
 .contacts__item--left {
   margin: 0;
-  font-family: 'Open Sans',sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
@@ -2410,17 +3924,10 @@ a {
 }
 .contacts__item--right {
   margin: 0;
-  font-family: 'Open Sans',sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 25px;
   color: #303030
-}
-.feedback__right-col {
-  width: 51%
-}
-.feedback__right-col--mobile {
-  display: none
 }
 .feedback__form {
   display: -webkit-box;
@@ -2446,75 +3953,6 @@ a {
   outline-color: #14a04c;
   border-radius: 5px;
   resize: none
-}
-.form__title {
-  margin: 0 0 35px;
-  font-family: 'Open Sans',sans-serif;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 56px;
-  color: #303030
-}
-.form__input {
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  margin-bottom: 25px;
-  background: #f9f9f9;
-  font-size: 14px;
-  border: 1px solid #eaeaea;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border-radius: 5px;
-  outline-color: #14a04c
-}
-.form__checkbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 25px
-}
-.form__checkbox input {
-  margin: 0 5px 0 0;
-  width: 20px;
-  height: 20px;
-  background: #f9f9f9;
-  border: 1px solid #eaeaea;
-  border-radius: 2px
-}
-.form__checkbox p {
-  margin: 0;
-  font-family: 'Open Sans',sans-serif;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 18px;
-  color: #787c83
-}
-.form__checkbox p a {
-  color: #006cb5
-}
-.form__btn {
-  margin: 0;
-  padding: 20px;
-  font-family: 'Open Sans',sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
-  color: #fff;
-  background: #2e95db;
-  -webkit-box-shadow: 0 4px 20px rgba(0,61,102,.15);
-  box-shadow: 0 4px 20px rgba(0,61,102,.15);
-  border-radius: 5px;
-  border: none;
-  outline: 0;
-  cursor: pointer
 }
 footer {
   background: #001c2f;
@@ -2787,54 +4225,12 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .nav__link {
     font-size: 14px
   }
-  .wrapper {
-    width: 1110px
+  .videoPoster:before {
+    height: 80px;
+    width: 80px
   }
   .section-sanatorium-infrastructure {
     padding: 50px 0
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .map-img {
-    width: 100%;
-    height: 665px;
-    -o-object-fit: cover;
-    object-fit: cover;
-    border-radius: 10px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: 79px;
-    top: 195px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: 42px;
-    top: 379px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    left: 354px;
-    top: 238px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: 690px;
-    top: 297px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: 687px;
-    top: 125px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: 806px;
-    top: 205px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: 356px;
-    top: 163px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: 929px;
-    top: 352px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: 79px;
-    top: 300px
   }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .title-item {
     padding: 8px 23px;
@@ -2845,6 +4241,149 @@ footer .footer-bottom .social-block .soc-item:last-child {
   }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item .about-title {
     font-size: 18px
+  }
+  .wrapper {
+    width: 1110px
+  }
+  .fund__filter.flex,
+  .section-price-table .desc-section {
+    margin-bottom: 40px
+  }
+  .about-price-block .table-block .table-price .tr-head {
+    font-size: 14px;
+    line-height: 21px
+  }
+  .about-price-block .table-block .table-price .tr-head th:first-child {
+    width: 240px;
+    font-size: 16px;
+    line-height: 24px
+  }
+  .about-price-block .table-block .table-price .tr-head th:nth-child(2) {
+    width: 160px
+  }
+  .about-price-block .table-block .table-price .tr-head th:nth-child(3) {
+    width: 200px
+  }
+  .about-price-block .table-block .table-price .tr-head th:nth-child(4) {
+    width: 150px
+  }
+  .about-price-block .table-block .table-price .tr-head th:nth-child(5) {
+    width: 180px
+  }
+  .about-price-block .table-block .table-price .tr-head th:nth-child(6) {
+    width: 175px
+  }
+  .about-price-block .table-block .table-price tr td {
+    height: 92px
+  }
+  .about-price-block .table-block .table-price tr td:first-child {
+    padding-right: 5px
+  }
+  .about-price-block .table-block .table-price tr td:after {
+    height: calc(100% - 20px)
+  }
+  .housing-card .img-block {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 540px;
+    flex: 0 0 540px;
+    max-width: 540px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px
+  }
+  .housing-card .img-block img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 540px;
+    height: 400px
+  }
+  .housing-card .housing-info {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(100% - 540px);
+    flex: 0 0 calc(100% - 540px);
+    max-width: calc(100% - 540px);
+    padding-right: 57px
+  }
+  .section-room-card .gallery-room-block .room-card-gallery {
+    height: 469px
+  }
+  .section-room-card .gallery-room-block .room-card-gallery .photo-big {
+    height: inherit
+  }
+  .section-room-card .gallery-room-block .room-card-gallery .photo-small {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(25% - 10px);
+    flex: 0 0 calc(25% - 10px);
+    max-width: calc(25% - 10px);
+    height: calc(469px / 2 - 6.5px)
+  }
+  .section-room-card .gallery-room-block {
+    margin-bottom: 30px
+  }
+  .section-room-card .about-room-block .description-room-block .title-block .title-room {
+    font-size: 18px
+  }
+  .section-room-card .about-room-block .description-room-block .desc-text br {
+    display: none
+  }
+  .section-room-card .about-room-block .description-price-block .conditions-block {
+    margin-bottom: 20px;
+    padding: 10px 20px
+  }
+  .section-room-card .about-room-block .description-price-block .conditions-block .condition-item {
+    font-size: 14px;
+    line-height: 19px
+  }
+  .section-room-card .about-room-block .description-price-block .price-room-block {
+    padding: 25px 20px;
+    font-size: 16px;
+    line-height: 28px;
+    color: #303030
+  }
+  .section-room-card .about-room-block .description-price-block .price-room-block p.price-room-item .price-room-value {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto
+  }
+  .section-room-card .about-room-block .description-price-block .price-room-block p.price-room-item .price-room-title {
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column {
+    margin-right: 0;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(50% - 50px);
+    flex: 0 0 calc(50% - 50px);
+    max-width: calc(50% - 50px)
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .comfort-container {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+  }
+  .section-special-offers h2 {
+    margin-bottom: 30px
+  }
+  .section-special-offers .offer-item .offer-desc h3 {
+    font-size: 20px
+  }
+  .section-advantages {
+    padding: 50px 0 20px
+  }
+  .section-advantages h2 {
+    margin-bottom: 30px
+  }
+  .section-advantages .advantage-item img {
+    height: 230px
+  }
+  .section-advantages .advantage-item:first-child .adv-desc {
+    height: 183px
+  }
+  .section-advantages .advantage-item .adv-desc {
+    padding: 30px 25px
   }
   footer .footer-top .logo-block .sanatorium-info {
     width: 193px
@@ -2864,6 +4403,9 @@ footer .footer-bottom .social-block .soc-item:last-child {
   }
 }
 @media (max-width:1366px) {
+  .form__title {
+    margin-bottom: 25px
+  }
   .header__title {
     width: 164px
   }
@@ -2914,12 +4456,6 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .tab__wrapper {
     margin-bottom: 40px
   }
-  .build__card {
-    width: 22%
-  }
-  .build__content {
-    padding-bottom: 25px
-  }
   .build__title {
     font-size: 18px;
     line-height: 26px;
@@ -2928,10 +4464,6 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .build__desc,
   .build__price {
     margin-bottom: 13px
-  }
-  .build__link-btn {
-    font-size: 16px;
-    padding: 19px 15px
   }
   .section__sanatorium-progs {
     padding: 50px 0
@@ -2987,11 +4519,20 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .feedback__form {
     padding: 40px
   }
-  .form__title {
-    margin-bottom: 25px
-  }
 }
 @media (max-width:1200px) {
+  .select-custom .select__head::after,
+  .select-custom .select__head::before {
+    width: 66px
+  }
+  .select-custom .select__head {
+    font-size: 18px;
+    line-height: 26px;
+    padding: 19px 70px 19px 30px
+  }
+  .select-custom {
+    font-size: 18px
+  }
   .header__title {
     width: auto
   }
@@ -3004,8 +4545,22 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .header__booking {
     display: none
   }
-  .wrapper {
-    width: 920px
+  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
+    left: 20%;
+    top: 25%
+  }
+  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
+    left: 13%
+  }
+  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
+    left: 35%
+  }
+  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
+    top: 25%;
+    left: 33%
+  }
+  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
+    top: 45%
   }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .title-item {
     padding: 0;
@@ -3045,45 +4600,6 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .section-sanatorium-infrastructure .about-sanatorium-text {
     font-size: 16px;
     line-height: 26px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .map-img {
-    height: 552px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: 158px;
-    top: 162px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: 99px;
-    top: 337px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    left: 331px;
-    top: 216px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: 590px;
-    top: 215px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: 660px;
-    top: 105px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: 738px;
-    top: 169px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: 285px;
-    top: 159px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: 786px;
-    top: 289px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: 79px;
-    top: 268px
   }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item {
     width: 325px!important;
@@ -3141,6 +4657,190 @@ footer .footer-bottom .social-block .soc-item:last-child {
   }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item .title-item-mobile {
     display: block
+  }
+  .wrapper {
+    width: 920px
+  }
+  .room {
+    margin-bottom: 20px;
+    width: calc(50% - 10px)
+  }
+  .room__img {
+    height: 370px
+  }
+  .fund {
+    padding-bottom: 50px
+  }
+  .about-price-block.about-bottom {
+    display: none!important
+  }
+  .about-price-block .title-block {
+    margin-bottom: 32px
+  }
+  .about-price-block .title-block h2 {
+    font-size: 24px;
+    margin: 0;
+    line-height: 34px
+  }
+  .about-price-block .title-block .dates {
+    margin-left: 30px;
+    font-size: 18px;
+    line-height: 28px
+  }
+  .hr-card-housing-price {
+    margin: 50px 0
+  }
+  .about-price-block .select-section .title-select {
+    margin-bottom: 10px;
+    font-size: 20px
+  }
+  .about-price-block .select-section .select-block {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(50% - 10px);
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px)
+  }
+  .housing-card .img-block {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(50% - 10px);
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    height: 336px
+  }
+  .housing-card .img-block img {
+    width: 100%;
+    height: 336px
+  }
+  .housing-card {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+  }
+  .housing-card .housing-info {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(50% - 10px);
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    padding-right: 0;
+    min-height: 100%;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .housing-card .housing-info .btn-blue {
+    margin-top: auto
+  }
+  .housing-card h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 44px
+  }
+  .housing-card .housing-info__text {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 26px;
+    display: inline
+  }
+  .section-room-card .gallery-room-block .room-card-gallery {
+    height: 380px
+  }
+  .section-room-card .gallery-room-block .room-card-gallery .photo-big {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(50% - 12.5px);
+    flex: 0 0 calc(50% - 12.5px);
+    max-width: calc(50% - 12.5px)
+  }
+  .section-room-card .gallery-room-block .room-card-gallery .photo-small {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(25% - 10px);
+    flex: 0 0 calc(25% - 10px);
+    max-width: calc(25% - 10px);
+    height: calc(380px / 2 - 5px)
+  }
+  .section-room-card .about-room-block .description-room-block .title-block h3 {
+    font-size: 24px;
+    line-height: 44px;
+    margin: 0 30px 0 0
+  }
+  .section-room-card .about-room-block .description-room-block .title-block .title-room {
+    line-height: 26px;
+    margin: 0
+  }
+  .section-room-card .about-room-block .description-price-block,
+  .section-room-card .about-room-block .description-room-block,
+  .section-room-card .about-room-block .description-room-block .about-room-section .detail-item span {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(50% - 10px);
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px)
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .detail-item span:last-child {
+    text-align: right
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .attention {
+    line-height: 20px
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .comfort-container {
+    line-height: 24px
+  }
+  .section-room-card {
+    padding-bottom: 80px
+  }
+  .section-room-card .about-room-block .description-price-block .price-room-block .btn-blue {
+    padding: 20px 35px;
+    font-size: 18px;
+    line-height: 24px
+  }
+  .section-special-offers {
+    padding: 80px 0 50px
+  }
+  .section-special-offers h2 {
+    font-size: 36px
+  }
+  .section-special-offers .offer-item img {
+    height: 220px
+  }
+  .section-special-offers .offer-item .offer-desc {
+    padding: 20px 25px
+  }
+  .section-special-offers .offer-item .offer-desc h3 {
+    font-size: 18px;
+    line-height: 28px
+  }
+  .section-special-offers .offer-item .offer-desc h3 br {
+    display: block
+  }
+  .section-advantages {
+    padding: 40px 0 20px
+  }
+  .section-advantages h2 {
+    font-size: 36px
+  }
+  .section-advantages h2 br {
+    display: none
+  }
+  .section-advantages .advantage-item {
+    width: calc(33.33% - 10px);
+    margin-bottom: 20px
+  }
+  .section-advantages .advantage-item .adv-desc {
+    padding: 20px 15px
+  }
+  .section-advantages .advantage-item:first-child .adv-desc {
+    height: 163px
+  }
+  .section-advantages .advantage-item:nth-child(7) .adv-desc,
+  .section-advantages .advantage-item:nth-child(9) .adv-desc {
+    height: 141px
+  }
+  .build__btn {
+    font-size: 16px
   }
   footer .footer-top {
     -webkit-box-orient: vertical;
@@ -3269,10 +4969,12 @@ footer .footer-bottom .social-block .soc-item:last-child {
     line-height: 24px
   }
 }
-@media (max-width:1090px) {
-  .build__content {
-    padding: 20px 15px
+@media (max-width:1100px) {
+  .build__card {
+    width: calc(33.33% - 10px)
   }
+}
+@media (max-width:1090px) {
   .build__title {
     font-size: 16px;
     margin-bottom: 10px
@@ -3281,9 +4983,10 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .build__price {
     margin-bottom: 10px
   }
-  .build__link-btn {
-    font-size: 14px;
-    padding: 13px
+}
+@media (max-width:1070px) {
+  .build__btn {
+    font-size: 14px
   }
 }
 @media (max-width:1060px) {
@@ -3293,61 +4996,291 @@ footer .footer-bottom .social-block .soc-item:last-child {
   }
 }
 @media (max-width:992px) {
-  .wrapper {
-    width: 700px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .map-img {
-    height: 490px
-  }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .title-item {
     width: 32px;
     height: 32px;
     font-size: 16px
   }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: 123px;
-    top: 130px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: 46px;
-    top: 311px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    left: 240px;
-    top: 204px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: 456px;
-    top: 196px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: 533px;
-    top: 105px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: 604px;
-    top: 153px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: 203px;
-    top: 163px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: 638px;
-    top: 259px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: 25px;
-    top: 244px
-  }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item {
     -webkit-box-shadow: 0 11px 30px rgba(0,0,0,.05),0 6px 25px rgba(0,0,0,.05),0 2px 25px rgba(0,0,0,.05);
     box-shadow: 0 11px 30px rgba(0,0,0,.05),0 6px 25px rgba(0,0,0,.05),0 2px 25px rgba(0,0,0,.05)
+  }
+  .fund {
+    padding-bottom: 40px
+  }
+  .fund h1 {
+    font-size: 32px;
+    line-height: 42px
+  }
+  .fund__description p,
+  .fund__filter_title {
+    font-size: 16px;
+    line-height: 24px
+  }
+  .fund__filter_links a {
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 30px
+  }
+  .fund__filter.flex {
+    margin-bottom: 30px
+  }
+  .room__img {
+    height: 250px
+  }
+  .room__note {
+    top: 15px;
+    left: 15px;
+    max-width: calc(100% - 30px)
+  }
+  h1.custom-h1 {
+    font-size: 32px;
+    line-height: 42px
+  }
+  .section-price-table .desc-section {
+    font-size: 16px;
+    line-height: 24px
+  }
+  .about-price-block .select-section .select-block {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 25px
+  }
+  .about-price-block .select-section .select-block:last-child {
+    margin-bottom: 0
+  }
+  .about-price-block .select-section {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 40px
+  }
+  .housing-card h3 {
+    display: none
+  }
+  .housing-card h3.h3-mobile {
+    display: block;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1
+  }
+  .housing-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+  }
+  .housing-card .housing-info {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    min-height: unset;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3
+  }
+  .housing-card .img-block {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 250px!important;
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    margin-bottom: 20px
+  }
+  .housing-card .img-block img {
+    width: 100%;
+    height: 250px
+  }
+  .housing-card .housing-info .btn-blue {
+    margin-top: 20px
+  }
+  .about-price-block.about-mobile {
+    padding-top: 40px
+  }
+  .about-price-block .title-block {
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+  }
+  .about-price-block .title-block h2 {
+    font-size: 20px;
+    line-height: 34px
+  }
+  .about-price-block .title-block .dates {
+    margin-left: 0;
+    font-size: 16px;
+    line-height: 28px
+  }
+  .about-price-block.about-mobile .table-mobile-block .table-item .title-item {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 50px 0 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 68px
+  }
+  .about-price-block.about-mobile .table-mobile-block .table-item .add-info-item .row-item .position-item {
+    font-size: 14px;
+    line-height: 24px
+  }
+  .about-price-block.about-mobile .table-mobile-block .table-item .add-info-item .row-item .price-item {
+    font-size: 14px;
+    line-height: 19px
+  }
+  .hr-card-housing-price {
+    margin: 40px 0
+  }
+  .wrapper {
+    width: 700px
+  }
+  .section-room-card .gallery-room-block .room-card-gallery .photo-small {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(25% - 5px);
+    flex: 0 0 calc(25% - 5px);
+    max-width: calc(25% - 5px)
+  }
+  .section-room-card h1.custom-h1 {
+    margin-bottom: 40px
+  }
+  .section-room-card .gallery-room-block {
+    margin-bottom: 20px
+  }
+  .section-room-card .about-room-block .description-price-block,
+  .section-room-card .about-room-block .description-room-block {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%
+  }
+  .section-room-card .about-room-block .description-room-block {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2
+  }
+  .section-room-card .about-room-block .description-price-block {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1
+  }
+  .section-room-card .about-room-block {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+  }
+  .section-room-card .about-room-block .description-price-block .conditions-block {
+    padding: 5px 20px
+  }
+  .section-room-card .about-room-block .description-price-block .price-room-block {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 28px
+  }
+  .section-room-card .about-room-block .description-price-block .price-room-block p {
+    margin-bottom: 15px;
+    padding-bottom: 15px
+  }
+  .section-room-card .about-room-block .description-price-block .price-room-block p.price-room-item .price-room-value {
+    font-size: 14px;
+    line-height: 19px
+  }
+  .section-room-card .about-room-block .description-room-block .title-block {
+    margin-bottom: 20px
+  }
+  .section-room-card .about-room-block .description-room-block .title-block .title-room {
+    font-size: 16px
+  }
+  .section-room-card .about-room-block .description-room-block .category-room {
+    margin-bottom: 20px
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .detail-item {
+    margin-bottom: 15px
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column .comfort-item {
+    margin-bottom: 17px
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(50% - 15px);
+    flex: 0 0 calc(50% - 15px);
+    max-width: calc(50% - 15px)
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section iframe {
+    margin-top: 15px
+  }
+  .section-room-card {
+    padding-bottom: 60px
+  }
+  .section-room-card .gallery-room-block .prev-next-btns .btn-nav-href {
+    font-size: 14px
+  }
+  .section-special-offers {
+    padding: 60px 0 40px
+  }
+  .section-special-offers h2 {
+    font-size: 32px;
+    line-height: 42px
+  }
+  .section-special-offers .offer-item {
+    width: calc(50% - 10px);
+    margin-bottom: 20px
+  }
+  .section-special-offers .offer-item .offer-desc h3 br {
+    display: none
+  }
+  .section-advantages h2 {
+    font-size: 32px;
+    line-height: 42px
+  }
+  .section-advantages .advantage-item {
+    width: calc(50% - 10px);
+    margin-bottom: 20px
+  }
+  .section-advantages .advantage-item .adv-desc {
+    height: 163px!important
+  }
+  .section-advantages .advantage-item:last-child {
+    margin: 0 auto 20px
   }
 }
 @media (max-width:960px) {
   .main {
     padding-top: 60px
+  }
+  .form__title {
+    line-height: 34px;
+    margin-bottom: 20px
+  }
+  .form__input {
+    margin-bottom: 15px
   }
   .header__desctop-menu {
     display: none
@@ -3356,7 +5289,8 @@ footer .footer-bottom .social-block .soc-item:last-child {
     top: 0;
     left: 0;
     position: fixed;
-    z-index: 10
+    z-index: 10;
+    border-bottom: 1px solid #eee
   }
   .header__top {
     padding: 0
@@ -3545,6 +5479,10 @@ footer .footer-bottom .social-block .soc-item:last-child {
     width: 453px;
     height: 430px
   }
+  .videoPoster:before {
+    height: 60px;
+    width: 60px
+  }
   .wrap-item__title {
     font-size: 16px;
     line-height: 26px
@@ -3567,6 +5505,9 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .small-banner__title {
     margin-bottom: 20px
   }
+  .bread-crumbs-block {
+    padding: 100px 0 50px
+  }
   .section__room-fund {
     padding: 80px 0
   }
@@ -3581,16 +5522,9 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .tab__wrapper {
     margin-bottom: 47px
   }
-  .build__title {
-    margin-bottom: 20px
-  }
-  .build__title p {
-    font-size: 24px;
-    line-height: 44px
-  }
-  .build__title span {
-    width: 70px;
-    height: 44px
+  .build-title {
+    margin-bottom: 20px;
+    font-size: 24px
   }
   .section__sanatorium-progs {
     padding: 40px 0
@@ -3706,34 +5640,15 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .feedback__form textarea {
     margin-bottom: 20px
   }
-  .form__title {
-    line-height: 34px;
-    margin-bottom: 20px
-  }
-  .form__input {
-    margin-bottom: 15px
-  }
 }
 @media (max-width:915px) {
   .build__badge {
-    top: 25px;
-    left: 25px;
     font-size: 10px
-  }
-  .build__link-btn {
-    font-size: 13px;
-    width: 160px;
-    padding-top: 7px;
-    padding-bottom: 7px
   }
 }
 @media (max-width:860px) {
   .build__card {
-    width: 47%
-  }
-  .build__link-btn {
-    padding: 7px 30px;
-    width: 100%
+    width: calc(50% - 10px)
   }
 }
 @media (max-width:830px) {
@@ -3772,6 +5687,15 @@ footer .footer-bottom .social-block .soc-item:last-child {
     margin-bottom: 18px
   }
 }
+@media (max-width:809px) {
+  .section-special-offers .offer-item {
+    width: auto;
+    margin-bottom: 0
+  }
+  .section-special-offers .owl-nav {
+    bottom: -20px
+  }
+}
 @media (max-width:780px) {
   .about-sanatorium__row-top {
     display: none
@@ -3791,31 +5715,35 @@ footer .footer-bottom .social-block .soc-item:last-child {
     height: auto;
     margin-bottom: 20px
   }
-  .build__card--wrapper {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center
+  .build__desc,
+  .build__price,
+  .build__title {
+    padding: 0 10px
   }
-  .build__card {
-    width: 45%
+  .build__btn {
+    margin: auto 15px 0
+  }
+  .feedback__left-col {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 100%
+  }
+  .feedback__right-col {
+    width: 100%
+  }
+  .feedback__info--mobile {
+    display: block
+  }
+  .feedback__info--desctop {
+    display: none
   }
 }
 @media (max-width:768px) {
-  .wrapper {
-    width: calc(100% - 40px)
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .map-img {
-    height: 325px;
-    width: 100%;
-    -o-object-fit: scale-down;
-    object-fit: scale-down;
-    border-radius: 0;
-    display: none
-  }
-  .section-sanatorium-infrastructure .infrastructure-map {
-    margin: 0 -20px;
-    height: 350px;
-    background: url(../img/infrastructure-map.png) center center/728px auto no-repeat
+  .btn-blue .plus-minus {
+    right: calc(50% - 160px)
   }
   .section-sanatorium-infrastructure h2 {
     font-size: 32px;
@@ -3831,42 +5759,6 @@ footer .footer-bottom .social-block .soc-item:last-child {
     font-size: 17px;
     line-height: 1;
     outline: 0
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: calc(50% - 209px);
-    top: 75px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: calc(50% - 262px);
-    top: 230px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    left: calc(50% - 100px);
-    top: 139px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: calc(50% + 94px);
-    top: 132px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: calc(50% + 163px);
-    top: 51px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: calc(50% + 224px);
-    top: 99px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: calc(50% - 127px);
-    top: 91px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: calc(50% + 246px);
-    top: 193px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: calc(50% - 274px);
-    top: 168px
   }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item {
     font-size: 12px;
@@ -3889,6 +5781,114 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 .about-item {
     border-radius: 10px 10px 0
   }
+  .wrapper {
+    width: calc(100% - 40px)
+  }
+  .room {
+    width: 100%
+  }
+  .room__img {
+    height: 300px
+  }
+  .bread-crumbs-block .crumbs-text {
+    font-size: 18px;
+    line-height: 26px;
+    border: 1px solid #efefef;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 70px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative
+  }
+  .bread-crumbs-block .crumbs-text .back-mobile {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 5;
+    color: #2e95db;
+    padding-left: 17px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 34px;
+    text-decoration: none;
+    display: inline-block;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABfSURBVHgB1ZCxDYAwDATfYQAWiTIbTJBsQAERw3mJLBAbQx9T5yRLLk4v/RMc0sUb0BGGQuUCwiG0rEPBTmPlPK9gBCja94gV9og35zctnbbNJCJ5ojUu0L7TXyJE2wN7E2AHHhrtFQAAAABJRU5ErkJggg==) left center no-repeat
+  }
+  .bread-crumbs-block .crumbs-text .crumbs-item {
+    display: none
+  }
+  .bread-crumbs-block .crumbs-text .crumbs-current {
+    width: 100%;
+    text-align: center;
+    padding: 0 105px
+  }
+  .about-price-block.about-mobile .table-mobile-block .table-item .title-item {
+    padding: 0 70px 0 20px
+  }
+  .housing-card .housing-info .btn-blue {
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 0;
+    text-align: center
+  }
+  .housing-card h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 30px
+  }
+  .housing-card h3 .housing-number {
+    padding: 6px 18px
+  }
+  .about-price-block .title-block .dates {
+    text-align: right
+  }
+  .section-room-card .gallery-room-block .room-card-gallery {
+    display: none
+  }
+  .section-room-card .gallery-room-block .room-card-gallery-mobile {
+    display: block
+  }
+  .section-special-offers {
+    padding: 60px 0 115px
+  }
+  .section-special-offers .offer-item .offer-desc h3 {
+    font-size: 20px;
+    line-height: 34px
+  }
+  .section-special-offers .offer-item .offer-desc h3 br {
+    display: block
+  }
+  .section-special-offers .offer-item .offer-desc p {
+    display: none
+  }
+  .section-advantages {
+    padding: 40px 0 30px
+  }
+  .section-advantages .advantage-item {
+    margin-bottom: 10px
+  }
+  .section-advantages .advantage-item .adv-desc {
+    height: auto!important;
+    padding: 20px
+  }
+  .section-advantages .advantage-item img {
+    height: 197px
+  }
+  .section-advantages .advantage-item .adv-desc h3 {
+    line-height: 28px;
+    margin-bottom: 15px
+  }
   .tab__wrapper {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -3898,7 +5898,8 @@ footer .footer-bottom .social-block .soc-item:last-child {
     display: none
   }
   .tab {
-    padding: 25px 10px
+    padding: 25px 10px;
+    width: 100%
   }
   footer .footer-top .logo-block .sanatorium-info .official-site {
     font-size: 14px;
@@ -3938,7 +5939,7 @@ footer .footer-bottom .social-block .soc-item:last-child {
   }
 }
 @media (max-width:685px) {
-  .sanatorium-progs__bottom {
+  .sanatorium-progs__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -3993,56 +5994,319 @@ footer .footer-bottom .social-block .soc-item:last-child {
     top: 25%
   }
 }
+@media (max-width:600px) {
+  .section-sanatorium-infrastructure .infrastructure-map .map-img {
+    border-radius: 0
+  }
+  .section-advantages .advantage-item {
+    width: 100%
+  }
+  .section__room-fund {
+    padding: 60px 0
+  }
+  .build__card-wrapper {
+    margin: 0
+  }
+  .build__card-wrapper .owl-nav {
+    right: 0;
+    bottom: -15px;
+    position: absolute
+  }
+  .build__badge {
+    padding: 5px;
+    top: 15px;
+    left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+  }
+  .build__card {
+    width: auto;
+    margin: 0 0 20px
+  }
+}
 @media (max-width:576px) {
-  .wrapper {
-    width: calc(100% - 30px)
+  .btn-blue .plus-minus {
+    right: 20px
   }
-  .section-sanatorium-infrastructure .infrastructure-map {
-    margin: 0 -15px;
-    height: 325px;
-    background: url(../img/infrastructure-map.png) center center/576px auto no-repeat
+  .select-custom .select__head {
+    font-size: 14px;
+    padding: 14px 60px 14px 15px
   }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: calc(50% - 167px);
-    top: 75px
+  .select-custom {
+    font-size: 14px
   }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    left: calc(50% - 77px);
-    top: 131px
+  .select-custom .select__list .select__item {
+    padding: 10px 15px
   }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: calc(50% - 205px);
-    top: 204px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: calc(50% + 69px);
-    top: 121px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: calc(50% + 124px);
-    top: 51px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: calc(50% + 174px);
-    top: 99px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: calc(50% - 104px);
-    top: 94px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: calc(50% + 196px);
-    top: 170px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: calc(50% - 222px);
-    top: 154px
+  .select-custom .select__head::after,
+  .select-custom .select__head::before {
+    width: 56px
   }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item {
     width: 275px!important
   }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 .about-item {
     width: 225px!important
+  }
+  .wrapper {
+    width: calc(100% - 30px)
+  }
+  .room__title {
+    font-size: 18px;
+    line-height: 28px
+  }
+  .fund__description {
+    margin-bottom: 10px
+  }
+  .fund__filter.flex {
+    padding: 15px 20px 5px
+  }
+  .part__title {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 15px
+  }
+  .room__img {
+    height: 70vw
+  }
+  .part {
+    padding-bottom: 10px;
+    margin-bottom: 35px
+  }
+  .fund {
+    padding-bottom: 20px
+  }
+  .bread-crumbs-block .crumbs-text .back-mobile {
+    text-indent: -9999px
+  }
+  .bread-crumbs-block .crumbs-text {
+    font-size: 13px;
+    line-height: 16px;
+    height: 50px;
+    font-weight: 700
+  }
+  .bread-crumbs-block .crumbs-text .crumbs-current {
+    padding: 0 55px
+  }
+  .section-price-table .desc-section {
+    margin-bottom: 30px
+  }
+  .about-price-block .select-section .title-select {
+    font-size: 16px;
+    line-height: 26px
+  }
+  .about-price-block .select-section .select-block {
+    margin-bottom: 20px
+  }
+  .housing-card .img-block img {
+    height: 200px
+  }
+  .housing-card .img-block {
+    height: 200px!important
+  }
+  .housing-card .housing-info .btn-blue {
+    margin-top: 15px;
+    font-size: 14px;
+    padding: 13px 35px 13px 0
+  }
+  .hr-card-housing-price {
+    margin: 30px 0
+  }
+  .about-price-block .title-block h2 {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 5px;
+    margin-right: 20px
+  }
+  .about-price-block .title-block {
+    margin-bottom: 15px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+  }
+  .about-price-block .title-block .dates {
+    text-align: left;
+    font-size: 14px;
+    line-height: 26px
+  }
+  .about-price-block.about-mobile .table-mobile-block .table-item .title-item {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0 70px 0 15px;
+    height: 74px
+  }
+  .about-price-block.about-mobile .table-mobile-block .table-item .title-item:after,
+  .about-price-block.about-mobile .table-mobile-block .table-item .title-item:before {
+    right: 15px
+  }
+  .about-price-block.about-mobile .table-mobile-block .table-item .add-info-item .row-item .position-item {
+    line-height: 22px;
+    padding-right: 20px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(100% - 65px);
+    flex: 0 0 calc(100% - 65px);
+    max-width: calc(100% - 65px)
+  }
+  .about-price-block.about-mobile .table-mobile-block .table-item .add-info-item .row-item {
+    padding: 0 15px;
+    height: 68px
+  }
+  .housing-card .housing-info__text br {
+    display: none
+  }
+  .section-room-card h1.custom-h1 {
+    margin-bottom: 30px
+  }
+  .section-room-card .about-room-block .description-price-block .conditions-block .condition-item {
+    display: block
+  }
+  .section-room-card .about-room-block .description-price-block .conditions-block .condition-item .condition-title,
+  .section-room-card .about-room-block .description-price-block .conditions-block .condition-item .condition-value {
+    display: block;
+    text-align: left;
+    padding: 0
+  }
+  .section-room-card .about-room-block .description-price-block .conditions-block .condition-item .condition-title {
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: #7d7d7d
+  }
+  .section-room-card .about-room-block .description-price-block .conditions-block .condition-item .condition-value {
+    font-weight: 700
+  }
+  .section-room-card .about-room-block .description-price-block .price-room-block p.price-room-header {
+    display: none
+  }
+  .section-room-card .about-room-block .description-price-block .price-room-block p {
+    display: block
+  }
+  .section-room-card .about-room-block .description-price-block .price-room-block p.price-room-item .price-room-title {
+    display: block;
+    margin-bottom: 5px;
+    color: #7d7d7d
+  }
+  .section-room-card .about-room-block .description-price-block .price-room-block .btn-blue {
+    padding: 20px 0;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    width: 100%
+  }
+  .section-room-card .about-room-block .description-room-block .title-block {
+    display: block;
+    margin-bottom: 15px
+  }
+  .section-room-card .about-room-block .description-room-block .title-block h3 {
+    margin-bottom: 15px;
+    margin-right: 0
+  }
+  .section-room-card .about-room-block .description-room-block .title-block .title-room {
+    font-size: 14px
+  }
+  .section-room-card .about-room-block .description-room-block .category-room {
+    margin-bottom: 15px;
+    font-size: 14px
+  }
+  .section-room-card .about-room-block .description-room-block .desc-text {
+    padding-bottom: 20px;
+    font-size: 14px;
+    line-height: 24px
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section {
+    padding: 20px 0;
+    font-size: 14px;
+    line-height: 24px
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .detail-item {
+    display: block;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 15px
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .detail-item:last-child {
+    border: none;
+    margin-bottom: -15px
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .detail-item span {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    color: #7d7d7d;
+    margin-bottom: 5px
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .detail-item span:last-child {
+    text-align: left;
+    font-weight: 700;
+    color: #303030;
+    margin-bottom: 0
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .btn-blue {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .comfort-container {
+    display: block
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column {
+    max-width: 100%;
+    width: 100%
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column:last-child {
+    display: none
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .add-comfort-items .comfort-container .comfort-items-column:last-child,
+  .section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column.comfort-mobile {
+    display: block
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .comfort-container .comfort-items-column .comfort-item {
+    margin-bottom: 15px;
+    font-size: 16px
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section .attention {
+    padding: 15px 20px 15px 48px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAiCAYAAABiOJjbAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD/SURBVHgBvZPNTcNAEIXfDIgrKcEluAQ4h0tK4IpAQCWAUCSOpIjAMSkhHWTTweYceV9214f8yLOOFClzsmc+z7y3Oxa8/C1BVjBCUQ6vIJxZZgJKIQkQOpug79OQRIq3G8BFkfQ9HYrVJBIre4ScIpJNQSRd2UXuENQGVGOHGz3DZsO15IfnKTsBojrlLnJ06xgPVy0gttXSCL8DutaOLXCdXwLfcSW3B0DgGpeJ9iTf/is0zSuodZsNC2w2X/gZOcHTtI5eZjE9OPrYI+BeofLRUUTOxVo8B97ZClj3XdYgrdy8ACzSvzmxJ/BT8T38jWYfE71Xmcd1GmH8MNkCdu9V8O/FTEQAAAAASUVORK5CYII=) 20px 28px no-repeat,#fbfbfb
+  }
+  .section-room-card .about-room-block .description-room-block .about-room-section iframe {
+    height: 200px
+  }
+  .section-room-card {
+    padding-bottom: 50px
+  }
+  .section-room-card .gallery-room-block .prev-next-btns .btn-nav-href {
+    font-size: 12px
+  }
+  .section-room-card .gallery-room-block .prev-next-btns .btn-nav-href img {
+    display: none
+  }
+  .section-room-card .gallery-room-block .room-card-gallery-mobile .magnific-item-my img {
+    height: 240px
+  }
+  .section-special-offers {
+    padding: 50px 0
+  }
+  .section-special-offers .offer-item img {
+    height: 190px
+  }
+  .section-special-offers .offer-item .offer-desc {
+    padding: 20px
+  }
+  .section-special-offers .offer-item .offer-desc h3 {
+    font-size: 18px;
+    line-height: 28px
+  }
+  .section-special-offers .offer-item .offer-desc .btn-blue {
+    width: 100%;
+    text-align: center;
+    padding: 10px 35px;
+    line-height: 22px
+  }
+  .section-advantages .advantage-item img {
+    height: 247px
+  }
+  .section-advantages .advantage-item .adv-desc br {
+    display: none
   }
   footer .footer-top .logo-block .sanatorium-info .official-site {
     font-size: 12px;
@@ -4071,6 +6335,18 @@ footer .footer-bottom .social-block .soc-item:last-child {
   }
 }
 @media (max-width:540px) {
+  .main {
+    padding-top: 23px
+  }
+  .form__title {
+    margin-bottom: 15px
+  }
+  .form__input {
+    padding: 15px
+  }
+  .form__btn {
+    font-size: 16px
+  }
   .header__top {
     padding: 5px 0
   }
@@ -4148,6 +6424,10 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .about-sanatorium__btn {
     width: 142px
   }
+  .videoPoster:before {
+    height: 50px;
+    width: 50px
+  }
   .small-banner__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -4170,20 +6450,15 @@ footer .footer-bottom .social-block .soc-item:last-child {
     padding: 15px 0;
     width: 315px
   }
-  .section__room-fund {
-    padding: 60px 0
+  .bread-crumbs-block {
+    padding: 50px 0
   }
   .room-fund__title {
     font-size: 32px;
     line-height: 42px
   }
-  .build__title p {
-    font-size: 20px;
-    line-height: 30px
-  }
-  .build__title span {
-    width: 68px;
-    height: 43px
+  .build-title {
+    font-size: 20px
   }
   .progs__block-desc,
   .progs__block-number {
@@ -4216,9 +6491,6 @@ footer .footer-bottom .social-block .soc-item:last-child {
     font-size: 32px;
     line-height: 42px
   }
-  .feedback__left-col {
-    margin-right: 0
-  }
   .feedback__badge {
     max-width: 120px;
     padding: 8px 12px;
@@ -4248,16 +6520,6 @@ footer .footer-bottom .social-block .soc-item:last-child {
   .contacts__item--right {
     font-size: 16px
   }
-  .feedback__right-col {
-    display: none
-  }
-  .feedback__right-col--mobile {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    margin-bottom: 51px
-  }
   .feedback__form {
     padding: 25px 20px
   }
@@ -4265,21 +6527,6 @@ footer .footer-bottom .social-block .soc-item:last-child {
     height: 110px;
     margin-bottom: 15px;
     padding: 15px
-  }
-  .form__title {
-    margin-bottom: 15px
-  }
-  .form__input {
-    padding: 15px
-  }
-  .form__btn {
-    font-size: 16px
-  }
-}
-@media (max-width:525px) {
-  .build__link-btn {
-    padding: 7px;
-    width: 100%
   }
 }
 @media (max-width:500px) {
@@ -4294,46 +6541,6 @@ footer .footer-bottom .social-block .soc-item:last-child {
 @media (max-width:455px) {
   .section-sanatorium-infrastructure .about-sanatorium-text {
     margin-bottom: 20px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map {
-    height: 270px;
-    background: url(../img/infrastructure-map.png) center center/455px auto no-repeat
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: calc(50% - 132px);
-    top: 66px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: calc(50% - 159px);
-    top: 168px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    top: 111px;
-    left: calc(50% - 68px)
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: calc(50% + 56px);
-    top: 104px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: calc(50% + 96px);
-    top: 51px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: calc(50% + 134px);
-    top: 82px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: calc(50% - 87px);
-    top: 75px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: calc(50% + 143px);
-    top: 141px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: calc(50% - 177px);
-    top: 125px
   }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item {
     width: 232px!important;
@@ -4371,12 +6578,6 @@ footer .footer-bottom .social-block .soc-item:last-child {
   }
 }
 @media (max-width:444px) {
-  .build__badge {
-    top: 5px;
-    left: 5px;
-    padding: 5px;
-    display: none
-  }
   .build__title {
     font-size: 12px;
     line-height: 20px;
@@ -4389,9 +6590,6 @@ footer .footer-bottom .social-block .soc-item:last-child {
   }
 }
 @media (max-width:430px) {
-  .build__content {
-    padding: 15px 10px 10px
-  }
   .build__desc {
     font-size: 12px;
     line-height: 20px
@@ -4423,62 +6621,12 @@ footer .footer-bottom .social-block .soc-item:last-child {
     display: block
   }
 }
-@media (max-width:420px) {
-  .build__link-btn {
-    font-size: 10px
-  }
-}
 @media (max-width:370px) {
   .progs__block-desc {
     font-size: 12px
   }
 }
-@media (max-width:356px) {
-  .build__link-btn {
-    padding: 4px
-  }
-}
 @media (max-width:355px) {
-  .section-sanatorium-infrastructure .infrastructure-map {
-    height: 213px;
-    background: url(../img/infrastructure-map.png) center center/355px auto no-repeat
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: calc(50% - 110px);
-    top: 51px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: calc(50% - 135px);
-    top: 128px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    top: 89px;
-    left: calc(50% - 50px)
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: calc(50% + 43px);
-    top: 83px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: calc(50% + 75px);
-    top: 32px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: calc(50% + 106px);
-    top: 63px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: calc(50% - 71px);
-    top: 58px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: calc(50% + 118px);
-    top: 111px
-  }
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: calc(50% - 147px);
-    top: 91px
-  }
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 .about-item,
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 .about-item {
     width: 200px!important

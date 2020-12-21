@@ -82,7 +82,6 @@ input::-moz-placeholder {
     overflow-x: hidden;
     overflow-y: auto;
     z-index: 100;
-    //margin: 0;
     background: white;
     padding: 0;
     color: #424348;
@@ -129,7 +128,7 @@ input::-moz-placeholder {
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
-  color: white;
+  color: #fff;
   cursor: pointer;
   position: relative;
   transition: all .2s ease;
@@ -137,6 +136,7 @@ input::-moz-placeholder {
   &:hover {
     background: #006CB5;
     border-color: #006CB5;
+    color: #fff
   }
 
   &:active {
@@ -244,5 +244,97 @@ input::-moz-placeholder {
 
   .select-custom .select__head::before, .select-custom .select__head::after {
     width: 56px;
+  }
+}
+
+.form__title {
+  margin: 0;
+  margin-bottom: 35px;
+  
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 56px;    
+  color: #303030;
+
+  @media (max-width: 1366px) {
+      margin-bottom: 25px;
+  }
+  @media (max-width: 960px) {
+      margin-bottom: 24px;
+      line-height: 34px;
+      margin-bottom: 20px;
+  }
+  @media (max-width: 540px) {
+      margin-bottom: 15px;
+  }
+}
+
+.form__input {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  margin-bottom: 25px;
+  background: #F9F9F9;
+  font-size: 14px;
+  border: 1px solid #EAEAEA;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline-color:  #14A04C;
+
+  @media (max-width: 960px) {
+      margin-bottom: 15px;
+  }
+  @media (max-width: 540px) {
+      padding: 15px;
+  }
+}
+
+.form__checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+
+  input {
+      flex: none;
+      margin: 0;
+      margin-right: 5px;
+      width: 20px;
+      height: 20px;
+      background: #F9F9F9;
+      border: 1px solid #EAEAEA;
+      border-radius: 2px;
+  }
+
+  p {
+      margin: 0;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 18px;
+      color: #787C83;
+
+      a {
+          color: #006CB5;
+      }
+  }
+}
+
+.form__btn {
+  margin: 0;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+  background: #2E95DB;
+  box-shadow: 0px 4px 20px rgba(0, 61, 102, 0.15);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  @media (max-width:540px) {
+      font-size: 16px;
   }
 }

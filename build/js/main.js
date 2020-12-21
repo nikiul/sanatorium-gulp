@@ -18,55 +18,26 @@ function videoPlay(wrapper) {
   // подставляем в src параметр из data
   iframe.attr('src',src);
 };
-
-var aboutCarousel = $("#owl-carousel__about-sanatorium");
-function aboutCarouselInit() {
-  aboutCarousel.owlCarousel({
-        margin: 10,
-        loop: true,
-        nav: true,
-        pagination: true,   
-        dots: true,
-        navText : ["",""],
-        responsiveClass:true,
-        responsiveBaseElement:"body",
-        responsive:{
-            0:{
-                items:1.1
-            },
-            563: {
-                items: 2  
-            }
-        }
-    });
-};
-$(document).ready(function(){
-    if($(window).width() < 810){
-      aboutCarouselInit()
-    };
-    $(window).resize(function(){
-        if($(window).width() < 810){
-          aboutCarouselInit()
-        }else{
-          aboutCarousel.trigger('destroy.owl.carousel')
-        };  
-    })
-});
+//bread-crumbs
 //START footer
-$("footer .title-nav-section").on('click', function () {
-  if ($(window).width() <= 1200) {
-    $(this).toggleClass('open');
-    $(this).next().slideToggle();
-  }
-});
+$(document).ready(function(){
 
-$(window).resize(function () {
-  if ($(window).width() > 1200) {
-    $("footer .title-nav-section").removeClass('open');
-    $("footer .title-nav-section").next().fadeIn(0);
-  }
+  $("footer .title-nav-section").on('click', function () {
+    if ($(window).width() <= 1200) {
+      $(this).toggleClass('open');
+      $(this).next().slideToggle();
+    }
+  });
+  
+  $(window).resize(function () {
+    if ($(window).width() > 1200) {
+      $("footer .title-nav-section").removeClass('open');
+      $("footer .title-nav-section").next().fadeIn(0);
+    }
+  });
 });
 //END footer
+//fund
 //header start
 $(document).ready(function(){
     // десктопное меню
@@ -139,39 +110,127 @@ $(document).ready(function(){
 });
 
 //header end
-var heroCarousel = $("#owl-carousel__banner");
-function heroCarouselInit() {
-    heroCarousel.owlCarousel({
-        margin: 10,
-        loop: true,
-        nav: true,
-        pagination: true,   
-        dots: true,
-        navText : ["",""],
-        responsiveClass:true,
-        responsiveBaseElement:"body",
-        responsive:{
-            0:{
-                items:1.1
-            },
-            563: {
-                items: 2  
-            }
-        }
-    });
-};
 $(document).ready(function(){
-    if($(window).width() < 810){
-        heroCarouselInit()
-    };
-    $(window).resize(function(){
-        if($(window).width() < 810){
-            heroCarouselInit()
+    var heroCarousel = $("#owl-carousel__banner");
+    var aboutCarousel = $("#owl-carousel__about-sanatorium");
+    var offerCarousel = $("#offers-block-slider");
+    var fundCarousel = $(".owl-carousel__room-fund");
+    // HERO CAROUSEL
+    function heroCarouselInit() {
+        if($('body').children(heroCarousel) && $(window).width() < 810){
+            heroCarousel.owlCarousel({
+                margin: 10,
+                loop: true,
+                nav: true,
+                pagination: true,   
+                dots: true,
+                navText : ["",""],
+                responsiveClass:true,
+                responsiveBaseElement:"body",
+                responsive:{
+                    0:{
+                        items:1.1
+                    },
+                    563: {
+                        items: 2  
+                    }
+                }
+            });
         }else{
             heroCarousel.trigger('destroy.owl.carousel')
-        };  
-    })
-});
+        }; 
+    };
+
+    //ABOUT CAROUSEL
+    function aboutCarouselInit() {
+        if($('body').children(aboutCarousel) && $(window).width() < 810){
+            aboutCarousel.owlCarousel({
+                margin: 10,
+                loop: true,
+                nav: true,
+                pagination: true,   
+                dots: true,
+                navText : ["",""],
+                responsiveClass:true,
+                responsiveBaseElement:"body",
+                responsive:{
+                    0:{
+                        items:1.1
+                    },
+                    563: {
+                        items: 2  
+                    }
+                }
+            });
+        } else {
+            aboutCarousel.trigger('destroy.owl.carousel');
+        }
+    };
+
+    //OFFER CAROUSEL
+    function offerCarouselInit() {
+        if($('body').children(offerCarousel) && $(window).width() < 810){
+            offerCarousel.owlCarousel({
+                margin: 10,
+                loop: true,
+                nav: true,
+                pagination: true,   
+                dots: true,
+                navText : ["",""],
+                responsiveClass:true,
+                responsiveBaseElement:"body",
+                responsive:{
+                    0:{
+                        items:1.1
+                    },
+                    563: {
+                        items: 2  
+                    }
+                }
+            });
+        } else {
+            offerCarousel.trigger('destroy.owl.carousel');
+        }
+    };
+
+    //section room-fund
+    function fundCarouselInit() {
+        if($('body').children(fundCarousel) && $(window).width() <= 600){
+            fundCarousel.owlCarousel({
+                margin: 10,
+                loop: true,
+                nav: true,
+                pagination: true,   
+                dots: true,
+                navText : ["",""],
+                responsiveClass:true,
+                responsiveBaseElement:"body",
+                responsive:{
+                    0:{
+                        items:1.1
+                    },
+                    563: {
+                        items: 2  
+                    }
+                }
+            });
+        } else {
+            fundCarousel.trigger('destroy.owl.carousel');
+        }
+    };
+
+
+    heroCarouselInit();
+    aboutCarouselInit();
+    offerCarouselInit()
+    fundCarouselInit()
+    $(window).resize(function(){
+        heroCarouselInit();
+        aboutCarouselInit();
+        offerCarouselInit()
+        fundCarouselInit()
+    });
+}); 
 //infra
 jQuery(($) => {
 
@@ -208,32 +267,164 @@ function openRoom(evt, buildingNumber) {
     }
     document.getElementById(buildingNumber).style.display = "block";
     evt.currentTarget.className += " active";
-}
+};
 
-// 
-$(document).ready(function(){
-    $("#owl-carousel__room-fund").owlCarousel({
-        margin: 10,
-        loop: true,
-        nav: true,
-        pagination: true,   
-        dots: true,
-        navText : ["",""],
-        responsiveClass:true,
-        responsiveBaseElement:"body",
-        responsive:{
-            0:{
-                items:1.5
-            },
-            563: {
-                items: 2,  
-            }
-        }
-    });
-  });
 //sanatorium-progs
 //section-activity
+//section-advantages
 //section-discount
 //section-feedback
+//section-price
+jQuery(($) => {
+  $('.select-custom').on('click', '.select__head', function () {
+      if ($(this).hasClass('open')) {
+          $(this).removeClass('open');
+          $(this).next().fadeOut();
+      } else {
+          $('.select__head').removeClass('open');
+          $('.select__list').fadeOut();
+          $(this).addClass('open');
+          $(this).next().fadeIn();
+      }
+  });
+
+  $('.select-custom').on('click', '.select__item', function () {
+      $('.select__head').removeClass('open');
+      $(this).parent().fadeOut();
+      $(this).parent().prev().text($(this).text());
+      $(this).parent().prev().prev().val($(this).text());
+  });
+
+  $(document).click(function (e) {
+      if (!$(e.target).closest('.select-custom').length) {
+          $('.select__head').removeClass('open');
+          $('.select__list').fadeOut();
+      }
+  });
+
+  var windowWidth = $( window ).width();
+
+  $(window).resize(function() {
+      windowWidth = $( window ).width();
+      refreshSize();
+  });
+
+  function refreshSize() {
+      $('.housing-card .btn-blue').each(function () {
+          if (windowWidth > 1200) {
+              $(this).closest('.wrapper').children('.about-price-block.about-mobile').slideUp().removeClass('open');
+              if(!$(this).hasClass('open')) {
+                  $(this).closest('.wrapper').children('.about-price-block.about-bottom').slideUp().removeClass('open');
+              } else {
+                  $(this).closest('.wrapper').children('.about-price-block.about-bottom').slideDown().addClass('open');
+              }
+          } else {
+              $(this).closest('.wrapper').children('.about-price-block.about-bottom').slideUp().removeClass('open');
+              if(!$(this).hasClass('open')) {
+                  $(this).closest('.wrapper').children('.about-price-block.about-mobile').slideUp().removeClass('open');
+              } else {
+                  $(this).closest('.wrapper').children('.about-price-block.about-mobile').slideDown().addClass('open');
+              }
+          }
+      });
+      
+  }
+
+  $('.housing-card .btn-blue').on('click', function () {
+      if($(this).hasClass('open')) {
+          $(this).removeClass('open').removeClass('btn-transparent');
+          $(this).children('.plus-minus').removeClass('minus').addClass('plus');
+          $(this).children('.text').text('Смотреть прайс по номерам');
+      } else {
+          $(this).addClass('open').addClass('btn-transparent');
+          $(this).children('.plus-minus').removeClass('plus').addClass('minus');
+          $(this).children('.text').text('Скрыть прайс по номерам');
+      }
+
+      if (windowWidth > 1200) {
+          if(!$(this).hasClass('open')) {
+              $(this).closest('.wrapper').children('.about-price-block.about-bottom').slideUp().removeClass('open');
+          } else {
+              $(this).closest('.wrapper').children('.about-price-block.about-bottom').slideDown().addClass('open');
+          }
+      } else {
+          if(!$(this).hasClass('open')) {
+              $(this).closest('.wrapper').children('.about-price-block.about-mobile').slideUp().removeClass('open');
+          } else {
+              $(this).closest('.wrapper').children('.about-price-block.about-mobile').slideDown().addClass('open');
+          }
+      }
+
+  });
+
+
+  $('.about-price-block.about-mobile .title-item').on('click', function () {
+      $(this).parent().toggleClass('open');
+      $(this).next().slideToggle();
+  });
+
+});
+//END section-price
+//section-room
+jQuery(($) => {
+  $('.room-card-gallery, .room-card-gallery-mobile').magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      // tLoading: 'Loading image #%curr%...',
+      mainClass: 'mfp-img-mobile',
+      gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+      },
+      image: {
+          tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+      }
+  });
+
+  $('.room-card-gallery-mobile').slick({
+      dots: true,
+  });
+
+  $('.section-room-card .about-room-section .btn-blue').on('click', function () {
+      let idParent = $(this).parent().attr('id');
+      $(this).parent().children('.d-none').slideToggle();
+
+      if ($(this).text().indexOf("Свернуть") >= 0) {
+          switch (idParent) {
+              case 'service':
+                  $(this).text('Полный список услуг');
+                  break;
+              case 'comfort':
+                  $(this).text('Показать все удобства: 15');
+                  break;
+              case 'documents':
+                  $(this).text('Полный перечень документов');
+                  break;
+              case 'comfortService':
+                  $(this).text('Показать все сервисы: 12');
+                  break;
+          }
+      } else {
+          switch (idParent) {
+              case 'service':
+                  $(this).text('Свернуть список услуг');
+                  break;
+              case 'comfort':
+                  $(this).text('Свернуть список удобств');
+                  break;
+              case 'documents':
+                  $(this).text('Свернуть список документов');
+                  break;
+              case 'comfortService':
+                  $(this).text('Свернуть список сервисов');
+                  break;
+          }
+      }
+  });
+});
+//End section-room
+ 
+//section-special-offres
 //small-banner
 //under-hero

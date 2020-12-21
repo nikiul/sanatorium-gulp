@@ -11,26 +11,4 @@ function openRoom(evt, buildingNumber) {
     }
     document.getElementById(buildingNumber).style.display = "block";
     evt.currentTarget.className += " active";
-}
-
-// 
-$(document).ready(function(){
-    $("#owl-carousel__room-fund").owlCarousel({
-        margin: 10,
-        loop: true,
-        nav: true,
-        pagination: true,   
-        dots: true,
-        navText : ["",""],
-        responsiveClass:true,
-        responsiveBaseElement:"body",
-        responsive:{
-            0:{
-                items:1.5
-            },
-            563: {
-                items: 2,  
-            }
-        }
-    });
-  });
+};

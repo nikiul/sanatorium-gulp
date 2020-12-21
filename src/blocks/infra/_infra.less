@@ -1,9 +1,3 @@
-//infra
-.wrapper {
-  width: 1272px;
-  margin: 0 auto;
-}
-
 .section-sanatorium-infrastructure {
   padding: 80px 0;
   background: #FAFAFA;
@@ -37,9 +31,11 @@
 
     .map-img {
       width: 100%;
-      height: 850px;
-      object-fit: cover;
+      height: auto;
       border-radius: 10px;
+      @media (max-width: 600px){
+        border-radius: 0;
+      }
     }
 
     .infrastructure-item {
@@ -180,43 +176,46 @@
         .title-item {
           background: #003A62;
         }
-
-        .about-item {
-          //display: block;
-        }
       }
 
 
       &.item-1 {
-        left: 108px;
-        top: 260px;
-
+        left: 10%;
+        top: 32%;
+        @media (max-width: 1200px){
+          left: 20%;
+          top: 25%;
+        }
         .about-item {
           width: 646px;
         }
       }
 
       &.item-2 {
-        left: 74px;
-        top: 510px;
-
+        left: 10%;
+        top: 60%;
+        @media (max-width: 1200px){
+          left: 13%;
+        }
         .about-item {
           width: 425px;
         }
       }
 
       &.item-3 {
-        left: 371px;
-        top: 342px;
-
+        left: 33%;
+        top: 40%;
+        @media (max-width: 1200px){
+          left: 35%;
+        }
         .about-item {
           width: 430px;
         }
       }
 
       &.item-4 {
-        left: 781px;
-        top: 310px;
+        left: 63%;
+        top: 35%;
 
         .about-item {
           width: 237px;
@@ -224,8 +223,8 @@
       }
 
       &.item-5 {
-        left: 927px;
-        top: 185px;
+        left: 75%;
+        top: 20%;
 
         .about-item {
           width: 480px;
@@ -233,8 +232,8 @@
       }
 
       &.item-6 {
-        left: 982px;
-        top: 275px;
+        left: 83%;
+        top: 30%;
 
         .about-item {
           width: 480px;
@@ -242,17 +241,20 @@
       }
 
       &.item-7 {
-        left: 400px;
-        top: 237px;
-
+        left: 33%;
+        top: 25%;
+        @media (max-width: 1200px){
+          top: 25%;
+          left: 33%;
+        }
         .about-item {
           width: 378px;
         }
       }
 
       &.item-8 {
-        left: 1117px;
-        top: 443px;
+        left: 90%;
+        top: 50%;
 
         .about-item {
           width: 246px;
@@ -260,9 +262,11 @@
       }
 
       &.item-9 {
-        left: 43px;
-        top: 411px;
-
+        left: 8%;
+        top: 48%;
+        @media (max-width: 1200px){
+          top: 45%;
+        }
         .about-item {
           width: 336px;
         }
@@ -272,65 +276,12 @@
 }
 
 @media (max-width: 1400px) {
-  .wrapper {
-    width: 1110px;
-  }
 
   .section-sanatorium-infrastructure {
     padding: 50px 0;
   }
 
-  .section-sanatorium-infrastructure .infrastructure-map .map-img {
-    width: 100%;
-    height: 665px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: 79px;
-    top: 195px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: 42px;
-    top: 379px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    left: 354px;
-    top: 238px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: 690px;
-    top: 297px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: 687px;
-    top: 125px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: 806px;
-    top: 205px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: 356px;
-    top: 163px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: 929px;
-    top: 352px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: 79px;
-    top: 300px;
-  }
+  
 
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .title-item {
     padding: 8px 23px;
@@ -347,9 +298,7 @@
 }
 
 @media (max-width: 1200px) {
-  .wrapper {
-    width: 920px;
-  }
+
   //Инфраструктура санатория
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .title-item {
     padding: 0px;
@@ -393,55 +342,6 @@
   .section-sanatorium-infrastructure .about-sanatorium-text {
     font-size: 16px;
     line-height: 26px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .map-img {
-    height: 552px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: 158px;
-    top: 162px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: 99px;
-    top: 337px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    left: 331px;
-    top: 216px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: 590px;
-    top: 215px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: 660px;
-    top: 105px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: 738px;
-    top: 169px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: 285px;
-    top: 159px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: 786px;
-    top: 289px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: 79px;
-    top: 268px;
   }
 
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item {
@@ -516,63 +416,10 @@
 }
 
 @media (max-width: 992px) {
-  .wrapper {
-    width: 700px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .map-img {
-    height: 490px;
-  }
-
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .title-item {
     width: 32px;
     height: 32px;
     font-size: 16px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: 123px;
-    top: 130px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: 46px;
-    top: 311px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    left: 240px;
-    top: 204px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: 456px;
-    top: 196px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: 533px;
-    top: 105px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: 604px;
-    top: 153px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: 203px;
-    top: 163px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: 638px;
-    top: 259px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: 25px;
-    top: 244px;
   }
 
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item {
@@ -581,24 +428,6 @@
 }
 
 @media (max-width: 768px) {
-  .wrapper {
-    width: calc(100% - 40px);
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .map-img {
-    height: 325px;
-    width: 100%;
-    object-fit: scale-down;
-    border-radius: 0;
-    display: none;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map {
-    margin: 0 -20px;
-    height: 350px;
-    background: url("../img/infrastructure-map.png") center center no-repeat;
-    background-size: 728px auto;
-  }
 
   .section-sanatorium-infrastructure h2 {
     font-size: 32px;
@@ -618,51 +447,7 @@
     outline: none;
   }
 
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: calc(50% - 209px);
-    top: 75px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: calc(50% - 262px);
-    top: 230px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    left: calc(50% - 100px);
-    top: 139px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: calc(50% + 94px);
-    top: 132px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: calc(50% + 163px);
-    top: 51px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: calc(50% + 224px);
-    top: 99px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: calc(50% - 127px);
-    top: 91px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: calc(50% + 246px);
-    top: 193px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: calc(50% - 274px);
-    top: 168px;
-  }
-
+  
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item {
     font-size: 12px;
     line-height: 22px;
@@ -689,62 +474,6 @@
 }
 
 @media (max-width: 576px) {
-  .wrapper {
-    width: calc(100% - 30px);
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map {
-    margin: 0 -15px;
-    height: 325px;
-    background: url(../img/infrastructure-map.png) center center no-repeat;
-    background-size: 576px auto;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: calc(50% - 167px);
-    top: 75px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    left: calc(50% - 77px);
-    top: 131px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: calc(50% - 205px);
-    top: 204px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: calc(50% + 69px);
-    top: 121px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: calc(50% + 124px);
-    top: 51px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: calc(50% + 174px);
-    top: 99px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: calc(50% - 104px);
-    top: 94px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: calc(50% + 196px);
-    top: 170px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: calc(50% - 222px);
-    top: 154px;
-  }
-
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item {
     width: 275px !important;
   }
@@ -757,57 +486,6 @@
 @media (max-width: 455px) {
   .section-sanatorium-infrastructure .about-sanatorium-text {
     margin-bottom: 20px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map {
-    height: 270px;
-    background: url(../img/infrastructure-map.png) center center no-repeat;
-    background-size: 455px auto;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: calc(50% - 132px);
-    top: 66px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: calc(50% - 159px);
-    top: 168px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    top: 111px;
-    left: calc(50% - 68px);
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: calc(50% + 56px);
-    top: 104px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: calc(50% + 96px);
-    top: 51px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: calc(50% + 134px);
-    top: 82px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: calc(50% - 87px);
-    top: 75px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: calc(50% + 143px);
-    top: 141px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: calc(50% - 177px);
-    top: 125px;
   }
 
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item .about-item {
@@ -831,65 +509,11 @@
   }
 
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 .about-item {
-    //left: auto;
-    //right: 0;
     width: 230px !important;
-    //border-radius: 10px 0 10px 10px;
   }
 }
 
 @media (max-width: 355px) {
-  .section-sanatorium-infrastructure .infrastructure-map {
-    height: 213px;
-    background: url(../img/infrastructure-map.png) center center no-repeat;
-    background-size: 355px auto;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-1 {
-    left: calc(50% - 110px);
-    top: 51px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-2 {
-    left: calc(50% - 135px);
-    top: 128px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-3 {
-    top: 89px;
-    left: calc(50% - 50px);
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 {
-    left: calc(50% + 43px);
-    top: 83px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-5 {
-    left: calc(50% + 75px);
-    top: 32px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-6 {
-    left: calc(50% + 106px);
-    top: 63px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 {
-    left: calc(50% - 71px);
-    top: 58px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-8 {
-    left: calc(50% + 118px);
-    top: 111px;
-  }
-
-  .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-9 {
-    left: calc(50% - 147px);
-    top: 91px;
-  }
-
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-7 .about-item,
   .section-sanatorium-infrastructure .infrastructure-map .infrastructure-item.item-4 .about-item {
     width: 200px !important;

@@ -174,11 +174,17 @@
     position: relative;
     width: 877px;
     height: 650px;
-    background-image: url('../img/blue-square.jpg');
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-size: 60% 60%;
     border-radius: 10px;
+    &::before{
+      content: '';
+      position: absolute;
+      border-radius: inherit;
+      background-color: #006CB5;
+      height: 80%;
+      width: 80%;
+      right: 0;
+      top: 0;
+    }
   }
   @media (max-width: 1366px) {
     .about-sanatorium__right-col {
@@ -242,7 +248,7 @@
     left: 0px;
     width: 100%;
     height: 100%;
-    background-image: url('../img/about-video.jpg');
+    // background-image: url('../img/about-video.jpg');
     background-size: cover;
     background-position: center;
     border: none;
@@ -263,28 +269,27 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 80px;
-    height: 80px;
-    margin: -40px 0 0 -40px;
-    border: 5px solid #006CB5;
-    background-color: #006CB5;
-    border-radius: 100%;
-    -webkit-transition: border-color 300ms;
-    transition: border-color 300ms;
-  }
-  .videoPoster:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    margin: -20px 0 0 -10px;
-    border-left: 40px solid #fff;
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
-    -webkit-transition: border-color 300ms;
-    transition: border-color 300ms;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url('data:image/png;base64,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');
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.35);
+    @media(max-width: 1400px){
+      height: 80px;
+      width: 80px;
+    }
+    @media(max-width: 960px){
+      height: 60px;
+      width: 60px;
+    }
+    @media(max-width: 540px){
+      height: 50px;
+      width: 50px;
+    }
   }
   .videoWrapperActive .videoPoster {
     opacity: 0;

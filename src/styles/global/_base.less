@@ -15,6 +15,9 @@ body {
   @media (max-width: 960px) {
     padding-top: 60px;
   }
+  @media (max-width: 540px) {
+    padding-top: 23px
+  }
 }
 .body__lock {
   height: 100%;
@@ -46,51 +49,72 @@ a {
   padding-right: 15px;
 
 }
+.wrapper {
+  width: 1272px;
+  margin: 0 auto;
+}
 .owl-theme .owl-nav {
   margin-top: 10px;
   position: absolute;
   right: 0;
+  display: flex;
+  align-items: center;
 }
 
 .owl-carousel .owl-nav button.owl-prev {
+  position: relative;
   margin: 0;
   margin-right: 10px;
   width: 35px;
   height: 35px;
   border-radius: 3px;
-  background-image: url('../img/icons/nav-arrow-left-gray.svg');
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: #F4F4F4;
   border: none;
   outline: none;
-
+  &::after{
+    content: '';
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    border-bottom: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    top: 12px;
+    left: 15px;
+    transform: rotate(45deg);
+  }
   &:hover {
-    background-image: url('../img/icons/nav-arrow-left-white.svg');
-    background-repeat: no-repeat;
-    background-position: center;
     background-color: #006CB5;
+    &::after{
+      border-color: #fff;
+    }
   }
 }
 
 .owl-carousel .owl-nav button.owl-next {
+  position: relative;
   margin: 0;
   width: 35px;
   height: 35px;
   border-radius: 3px;
-  background-image: url('../img/icons/nav-arrow-right-gray.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #F4F4F4;
   background-color: #F4F4F4;
   border: none;
   outline: none;
-
+  &::after{
+    content: '';
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    border-bottom: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    top: 12px;
+    left: 10px;
+    transform: rotate(-45deg);
+  }
   &:hover {
-    background-image: url('../img/icons/nav-arrow-right-white.svg');
-    background-repeat: no-repeat;
-    background-position: center;
     background-color: #006CB5;
+    &::after{
+      border-color: #fff;
+    }
   }
 }
 
@@ -112,7 +136,7 @@ a {
     background-color: #2E95DB;
   }
 
-  &:active {
+  &.active {
     background-color: #2E95DB;
   }
 

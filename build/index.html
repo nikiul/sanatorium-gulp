@@ -5,11 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
 		<!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"> -->
-		<link rel="stylesheet" href="css/owl.carousel.min.css">
-		<link rel="stylesheet" href="css/owl.theme.default.css">
-		<link rel="stylesheet" href="css/owl.theme.default.min.css">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<link rel="stylesheet" href="css/slick.css">
 		<link rel="stylesheet" href="css/style.css">
 		<title>Главная</title>
 	</head>
@@ -421,8 +422,6 @@
             <h1 class="banner__title">Санаторий имени Георгия Димитрова</h1>
             <p class="banner__desc">Санаторий является многопрофильным лечебно-профилактическим учреждением, представляет собой архитектурный комплекс из отдельно стоящих корпусов с панорамными видами на город Кисловодск и выходами в центральную часть национального парка.</p>  
             <p class="banner__desc">Уникальные лечебные и природные факторы нашей здравницы в лучшем соотношении цена / качество !</p>
-          
-
             <button class="banner__about-progs">Подробнее о программах</button>
 
             <div class="card-list owl-theme owl-carousel" id="owl-carousel__banner">
@@ -481,7 +480,7 @@
                 
                 <div class="video_wrapper video_wrapper_full js-videoWrapper">
                     <iframe class="videoIframe js-videoIframe" data-src="https://www.youtube.com/embed/Leoo2bJ5Vik?modestbranding=1&iv_load_policy=3" allowfullscreen></iframe>
-                    <button class="videoPoster js-videoPoster"></button>                    
+                    <button class="videoPoster js-videoPoster" style="background-image: url(/img/about-video.jpg)"></button>                    
                 </div>
 
             </div>
@@ -493,7 +492,7 @@
             <div class="about-sanatorium__right-col">
                 <div class="video_wrapper video_wrapper_full js-videoWrapper">
                     <iframe class="videoIframe js-videoIframe" data-src="https://www.youtube.com/embed/Leoo2bJ5Vik?modestbranding=1&iv_load_policy=3" allowfullscreen></iframe>
-                    <button class="videoPoster js-videoPoster"></button>                    
+                    <button class="videoPoster js-videoPoster" style="background-image: url(/img/about-video.jpg)"></button>                    
                 </div>
             </div>
 
@@ -532,7 +531,7 @@
 
 			<!-- infra  -->
 <section class="section-sanatorium-infrastructure">
-    <div class="wrapper">
+    <div class="container">
         <h2><span class="blue-text">Инфраструктура</span> санатория</h2>
         <p class="about-sanatorium-text">
             В одном из самых живописных уголков города-курорта Кисловодска, в Ребровой балке, находится санаторий «им.
@@ -741,7 +740,7 @@
 			<!-- End infra  -->
 
 			<!-- small-banner  -->
-<section class="section__small-banner">
+<section class="section__small-banner" style="background-image: url(img/small-banner1.jpg)">
     <div class="container">
 
         <div class="small-banner__content">
@@ -773,119 +772,9 @@
                 <li><a href="#room__fund-title" class="tablinks active" onclick="openRoom(event, 'build4')">Корпус 4</a></li>
             </ul>
         </div>      
-        <!-- <div class="tabcontent__wrapper"> -->
-            <!-- <div class="tabcontent" id="all-builds">
-                
-                <div class="build__title">
-                    <p>Корпус</p> 
-                    <span>№2</span></div>
-
-                <div class="build__card--wrapper">
-
-                    <div class="build__card">
-                        <img src="img/2bedroom.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
-                    </div>
-                    <div class="build__card">
-                        <img src="img/2bedroom1.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
-                    </div>
-                    <div class="build__card">
-                        <img src="img/1bedroom.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
-                    </div>
-                    <div class="build__card">
-                        <img src="img/1bedroom1.png" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
-                    </div>
-                    <div class="build__card">
-                        <img src="img/2bedroom3.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
-                    </div>
-                    <div class="build__card">
-                        <img src="img/2bedroom1.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
-                    </div>
-                    <div class="build__card">
-                        <img src="img/1bedroom2.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
-                    </div>
-                    <div class="build__card">
-                        <img src="img/1bedroom.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
-                    </div>
-
-                </div>
-
-            </div> -->
-            
             <div class="tabcontent" id="build2">
                 
-                <div class="build__title">
+                <div class="build-title">
                     <p>Корпус</p> 
                     <span>№2</span></div>
 
@@ -994,7 +883,7 @@
             
             <div class="tabcontent" id="build3">
                 
-                <div class="build__title">
+                <div class="build-title">
                     <p>Корпус</p> 
                     <span>№3</span></div>
 
@@ -1103,107 +992,69 @@
 
             <div class="tabcontent" id="build4" style="display:block">
                 
-                <div class="build__title">
-                    <p>Корпус</p> 
-                    <span>№4</span></div>
+                <div class="build-title">
+                    Корпус
+                    <span>4</span>
+                </div>
 
-                <div class="build__card--wrapper">
+                <div class="build__card-wrapper owl-carousel__room-fund owl-carousel owl-theme">
 
                     <div class="build__card">
-                        <img src="img/2bedroom.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
+                        <div class="build__img">
+                            <img src="img/2bedroom.jpg" alt="" >
+                        </div>
+                        <div class="build__badge">ONLINE - бронирование</div>
+                        <div class="build__title">Двухместный двухкомнатный Двухместный двухкомнатный</div>
+                        <div class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</div>
+                        <div class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</div>
+                        <a href="#" class="build__btn theme-exclude-hover">Посмотреть номер</a>
                     </div>
+                    
                     <div class="build__card">
-                        <img src="img/2bedroom1.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
+                        <div class="build__img">
+                            <img src="img/2bedroom1.jpg" alt="" >
+                        </div>
+                        <div class="build__badge">ONLINE - бронирование</div>
+                        <div class="build__title">Двухместный двухкомнатный</div>
+                        <div class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</div>
+                        <div class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</div>
+                        <a href="#" class="build__btn theme-exclude-hover">Посмотреть номер</a>
                     </div>
+
+                    
                     <div class="build__card">
-                        <img src="img/1bedroom.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
+                        <div class="build__img">
+                            <img src="img/2bedroom1.jpg" alt="" >
+                        </div>
+                        <div class="build__badge">ONLINE - бронирование</div>
+                        <div class="build__title">Двухместный двухкомнатный</div>
+                        <div class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</div>
+                        <div class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</div>
+                        <a href="#" class="build__btn theme-exclude-hover">Посмотреть номер</a>
                     </div>
+
+                    
                     <div class="build__card">
-                        <img src="img/1bedroom1.png" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
+                        <div class="build__img">
+                            <img src="img/2bedroom1.jpg" alt="" >
+                        </div>
+                        <div class="build__badge">ONLINE - бронирование</div>
+                        <div class="build__title">Двухместный двухкомнатный</div>
+                        <div class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</div>
+                        <div class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</div>
+                        <a href="#" class="build__btn theme-exclude-hover">Посмотреть номер</a>
                     </div>
+
+                    
                     <div class="build__card">
-                        <img src="img/2bedroom3.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
-                    </div>
-                    <div class="build__card">
-                        <img src="img/2bedroom1.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
-                    </div>
-                    <div class="build__card">
-                        <img src="img/1bedroom2.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
-                    </div>
-                    <div class="build__card">
-                        <img src="img/1bedroom.jpg" alt="" class="build__img">
-                        <p class="build__badge">ONLINE - бронирование</p>
-                        <div class="build__content">
-                            <p class="build__title">Двухместный двухкомнатный</p>
-                            <p class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</p>
-                            <p class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</p>
-                            <button class="build__link-btn">
-                                Посмотреть номер
-                            </button>
-                        </div>    
+                        <div class="build__img">
+                            <img src="img/2bedroom1.jpg" alt="" >
+                        </div>
+                        <div class="build__badge">ONLINE - бронирование</div>
+                        <div class="build__title">Двухместный двухкомнатный</div>
+                        <div class="build__desc">1 категория • <br> Улучшенный 10 и 11 этаж</div>
+                        <div class="build__price">от&nbsp; <span>3 470 ₽</span>&nbsp; /сут.</div>
+                        <a href="#" class="build__btn theme-exclude-hover">Посмотреть номер</a>
                     </div>
 
                 </div>
@@ -1295,14 +1146,15 @@
  
         </div>
 
-        <div class="sanatorium-progs__bottom">
-
-            <p class="sanatorium-progs__bottom-title">Позвоним сами <br> и  <span>поможем выбрать подходящую программу</span></p>
-
-            <div class="sanatorium-progs__bottom-form">
-                <input type="number" placeholder="Ваш номер телефона">
-                <button class="sanatorium-progs__bottom-btn1">Хочу!</button>
-                <button class="sanatorium-progs__bottom-btn2">Оставить номер телефона</button>
+        <div class="sanatorium-progs__bottom" style="background-image: url(img/sanatorium-progs-bg.jpg);">
+            <div class="sanatorium-progs__content">
+                <p class="sanatorium-progs__bottom-title">Позвоним сами <br> и  <span>поможем выбрать подходящую программу</span></p>
+                
+                <div class="sanatorium-progs__bottom-form">
+                    <input type="number" placeholder="Ваш номер телефона">
+                    <button class="sanatorium-progs__bottom-btn1">Хочу!</button>
+                    <button class="sanatorium-progs__bottom-btn2">Оставить номер телефона</button>
+                </div>
             </div>
 
         </div>
@@ -1345,6 +1197,118 @@
 
 </section>
 			<!-- End section-discount  -->
+
+			<!-- section-special-offers  -->
+<section class="section-special-offers">
+  <div class="container">
+    <h2>Специальные <span class="blue-text">предложения</span></h2>
+    <div class="offers-block owl-carousel owl-theme" id="offers-block-slider">
+      <div class="offer-item">
+        <img alt="" src="img/offer.png">
+        <div class="offer-desc">
+          <h3>Раннее бронирование</h3>
+          <p>Ранее бронирование номеров в санатории – это получить самый лучший номер из всех доступных категорий.<br>
+          Окунитесь в чудесную атмосферу нашего санатория. Узнайте о нас больше, воспользуйтесь виртуальными турами и посетите нас прямо сейчас!<br></p><a class="btn-blue" href="http://gdimitrova.ru">Подробнее</a>
+        </div>
+      </div>
+      <div class="offer-item">
+        <img alt="" src="img/offer.png">
+        <div class="offer-desc">
+          <h3>Кэшбэк - 20%</h3>
+          <p>Окунитесь чудесную атмосферу нашего санатория. Питьевые бюветы, прогулочные дорожки, узнайте о нас больше, посмотрев виртуальный тур прямо сейчас!</p><a class="btn-blue" href="http://gdimitrova.ru">Подробнее</a>
+        </div>
+      </div>
+      <div class="offer-item">
+        <img alt="" src="img/offer.png">
+        <div class="offer-desc">
+          <h3>Новогодний банкет 2021</h3>
+          <p>Окунитесь чудесную атмосферу нашего санатория. Питьевые бюветы, прогулочные дорожки, узнайте о нас больше, посмотрев виртуальный тур прямо сейчас!</p><a class="btn-blue" href="http://gdimitrova.ru">Подробнее</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+			<!-- End section-special-offers  -->
+			
+			<!-- .section-advantages  -->
+<section class="section-advantages">
+  <div class="container">
+      <h2><span class="blue-text">9 ключевых преимуществ</span><br>
+          нашего санатория</h2>
+      
+
+
+<div class="advantages-block">
+      <div class="advantage-item">
+      <div class="adv-desc">
+          <h3>Минеральные ванны</h3>
+          <p>Мы - первые по близости к скважине с минеральной водой, поэтому наши ванны такие игристые</p>
+      </div>
+      <img src="img/advantages.png" alt="">
+  </div>
+      <div class="advantage-item">
+      <div class="adv-desc">
+          <h3>Близость к парку</h3>
+          <p>Нас любят за расположение. У Вас будет персональный выход в центр Кисловодского парка, не нужно никуда ходить</p>
+      </div>
+      <img src="img/advantages.png" alt="">
+  </div>
+      <div class="advantage-item">
+      <div class="adv-desc">
+          <h3>Климатоплощадка</h3>
+          <p>В основном корпусе санатория принимайте солнечные ванны на высоте птичьего полета где открывается необыкновенный вид</p>
+      </div>
+      <img src="img/advantages.png" alt="">
+  </div>
+      <div class="advantage-item">
+      <div class="adv-desc">
+          <h3>Питьевой бювет</h3>
+          <p>Три вида свежих минеральных вод в постоянном доступе</p>
+      </div>
+      <img src="img/advantages.png" alt="">
+  </div>
+      <div class="advantage-item">
+      <div class="adv-desc">
+          <h3>Дружная компания</h3>
+          <p>Отдыхающие возвращаются к друзья!<br>
+Встречайте новых друзей каждый год!</p>
+      </div>
+      <img src="img/advantages.png" alt="">
+  </div>
+      <div class="advantage-item">
+      <div class="adv-desc">
+          <h3>Обширная лечебная база</h3>
+          <p>Современный пакет медицинских услуг в отдельном лечебном корпусе</p>
+      </div>
+      <img src="img/advantages.png" alt="">
+  </div>
+      <div class="advantage-item">
+      <div class="adv-desc">
+          <h3>Развлекательный центр</h3>
+          <p>Кино, концерты и мероприятия<br>
+для наших гостей</p>
+      </div>
+      <img src="img/advantages.png" alt="">
+  </div>
+      <div class="advantage-item">
+      <div class="adv-desc">
+          <h3>Панорамный вид</h3>
+          <p>Потрясающий вид из окна<br>
+на Кисловодск и леса Национального парка</p>
+      </div>
+      <img src="img/advantages.png" alt="">
+  </div>
+      <div class="advantage-item">
+      <div class="adv-desc">
+          <h3>Доступность</h3>
+          <p>Мы делаем все для сохранения соотношения цена / качество</p>
+      </div>
+      <img src="img/advantages.png" alt="">
+  </div>
+</div>
+  </div>
+</section>
+			<!-- END section-advantages  -->
 
 			<!-- section-activity  -->
 <div class="section__activity">
@@ -1400,29 +1364,14 @@
         <div class="feedback__wrapper">
 
             <div class="feedback__left-col">
+                <div class="feedback__info--desctop">
 
-                <div class="feedback__badge">Обратная связь</div>
-                <h2 class="feedback__title"><span>Хотите узнать</span> <br> о стоимости <br> и наличии мест?</h2>
-                <h5 class="feedback__subtitle">Оставьте свои данные, специалисты отдела <br> бронирования ответят на все вопросы</h5>
-
-                <div class="feedback__right-col feedback__right-col--mobile">
-
-                    <div class="feedback__form">
-    
-                        <p class="form__title">Задать вопрос</p>
-                        <input type="text" class="form__input" placeholder="Ваше имя">
-                        <input type="text" class="form__input" placeholder="Ваша фамилия">
-                        <input type="email" class="form__input" placeholder="Ваш email">
-                        <input type="tel" class="form__input" placeholder="Ваш номер телефона">
-                        <textarea name="" re id="" cols="30" rows="10" placeholder="Ваше сообщение"></textarea>
-                        <div class="form__checkbox">
-                            <input type="checkbox">
-                            <p>Заполняя форму, я даю своё согласие на обработку <a href="#">персональных данных</a></p>
-                        </div>
-                        <button class="form__btn">Задать вопрос</button>
-                    </div>
-    
+                    <div class="feedback__badge">Обратная связь</div>
+                    <h2 class="feedback__title"><span>Хотите узнать</span> <br> о стоимости <br> и наличии мест?</h2>
+                    <h5 class="feedback__subtitle">Оставьте свои данные, специалисты отдела <br> бронирования ответят на все вопросы</h5>
                 </div>
+
+
 
                 <p class="contacts__title">Контакты:</p>
 
@@ -1448,7 +1397,13 @@
             </div>
 
             <div class="feedback__right-col">
+                <div class="feedback__info--mobile">
 
+                    <div class="feedback__badge">Обратная связь</div>
+                    <h2 class="feedback__title"><span>Хотите узнать</span> <br> о стоимости <br> и наличии мест?</h2>
+                    <h5 class="feedback__subtitle">Оставьте свои данные, специалисты отдела <br> бронирования ответят на все вопросы</h5>
+    
+                </div>
                 <div class="feedback__form">
 
                     <p class="form__title">Задать вопрос</p>
@@ -1581,6 +1536,10 @@
         <script src="js/owl.carousel.min.js"></script>
         <!-- vide -->
         <script src="js/jquery.vide.min.js"></script>
+        <!-- slick -->
+        <script src="js/slick.min.js"></script>
+        <!-- magnific-popup -->
+        <script src="js/jquery.magnific-popup.min.js"></script>
         <!-- Пользовательские скрипты -->
         <script src="js/main.js"></script>
     </body>
