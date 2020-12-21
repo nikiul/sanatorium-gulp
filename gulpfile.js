@@ -65,12 +65,6 @@ var paths = {
 };
 
 
-gulp.task('video', function () {
-  return gulp.src('./src/video/*')
-    .pipe(plumber())
-    .pipe(gulp.dest('./build/video'));
-});
-
 gulp.task('clean', function () {
   return del(paths.dirs.build);
 });
@@ -231,7 +225,6 @@ gulp.task('build', gulp.series(
   'icons',
   'libsJS',
   'images',
-  'video',
   'blocks',
   'blockCSS'
 ));
