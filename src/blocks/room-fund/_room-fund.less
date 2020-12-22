@@ -55,11 +55,12 @@
     margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     background-color: #F7F8FA;
     border: 1px solid #EFEFEF;
     border-radius: 5px;
-
+    padding: 25px 30px;
     @media (max-width: 1366px) {
       margin-bottom: 40px;
     }
@@ -67,23 +68,19 @@
     @media (max-width: 960px) {
       margin-bottom: 47px;
     }
-
-    @media (max-width: 768px) {
-      justify-content: center;
+    @media (max-width: 580px) {
+      padding: 20px;
     }
 
     p {
       margin: 0;
-      padding-top: 25px;
-      padding-bottom: 25px;
-      padding-left: 30px;
       font-weight: bold;
       font-size: 20px;
       line-height: 27px;
       color: #303030;
 
-      @media (max-width: 768px) {
-        display: none;
+      @media (max-width: 580px) {
+        font-size: 16px;
       }
     }
   }
@@ -91,35 +88,26 @@
   .tab {
     margin: 0;
     padding: 0;
-    padding-right: 30px;
-    width: 500px;
     display: flex;
-    justify-content: space-around;
-
-    @media (max-width: 768px) {
-      padding: 25px 10px;
-      width: 100%;
-      // justify-content: center;
-    }
-    @media (max-width: 450px) {
-      padding: 20px 5px;
+    @media (max-width: 580px) {
+      margin-top: 10px;
     }
 
     li {
       list-style-type: none;
-      
       font-size: 18px;
-      line-height: 25px;
       color: #7D7D7D;
-
+      margin-right: 30px;
+      &:last-child{
+        margin-right: 0;
+      }
       @media (max-width: 450px) {
         font-size: 15px;
         line-height: 20px;
       }
 
       @media (max-width: 450px) {
-        font-size: 12px;
-        // line-height: 15px;
+        font-size: 14px;
       }
     }
   }
@@ -128,13 +116,17 @@
     color: #7D7D7D;
     border-bottom: 1px solid #7D7D7D;
 
+    &.active {
+      color: #006CB5;
+      border-bottom: 1px solid #006CB5;
+    }
+
     &:hover {
       color: #006CB5;
       border-bottom: 1px solid #006CB5;
     }
 
     &:focus {
-      font-weight: bold;
       color: #006CB5;
       border-bottom: 1px solid #006CB5;
     }
@@ -253,17 +245,16 @@
       }
     }
     &__title {
-      max-width: 256px;
       margin: 0;
       margin-bottom: 10px;
-      font-weight: 800;
-      font-size: 20px;
-      line-height: 30px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.4;
       color: #303030;
       padding: 0 20px;
       @media (max-width: 1366px) {
         font-size: 18px;
-        line-height: 26px;
+        // line-height: 26px;
         margin-bottom: 13px;
       }
       @media (max-width: 1090px) {
@@ -303,6 +294,7 @@
     }
     &__price {
       margin-bottom: 20px;
+      margin-top: auto;
       font-size: 16px;
       display: flex;
       align-items: center;
@@ -342,7 +334,7 @@
       font-size: 18px;
       text-align: center;
       padding: 1rem 1.5rem;
-      margin: auto 20px 0 20px;
+      margin: 0 20px;
       color: #FFFFFF;
       background: #2E95DB;
       box-shadow: 0px 4px 20px rgba(0, 61, 102, 0.15);
