@@ -1,10 +1,22 @@
 //hero
 .section__banner {
+  position: relative;
     padding-top: 96px;
     padding-bottom: 22px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: 1;
+    &::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 1.17%, rgba(0, 0, 0, 0.5655) 62.05%, rgba(0, 0, 0, 0.0195) 116.9%);
+      z-index: -1;
+    }
   }
   @media (max-width: 960px) {
     .section__banner {
@@ -22,6 +34,9 @@
     .section__banner {
       padding-bottom: 30px;
     }
+  }
+  .banner__content{
+    z-index: 5;
   }
   .banner__badge {
     display: inline-block;
