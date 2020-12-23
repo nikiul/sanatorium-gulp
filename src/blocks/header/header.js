@@ -10,9 +10,11 @@ $(document).ready(function(){
     
     // мобильное меню
     $('.header__top-burger').click(function(){
-        $(this).find('.header__top-burger__menu-icon').toggleClass('header__top-burger__menu-icon--active');
-        $('.header__sub--wrapper').toggleClass('is-active')
+        $('.header__sub--wrapper').addClass('is-active')
     });
+    $('.header__sub-close').click(function(){
+        $('.header__sub--wrapper').removeClass('is-active');
+    })
 
     // лочим прокрутку сайта при активном десктопном/мобильном меню
     $('.header__menu, .header__top-burger').click(function() {
