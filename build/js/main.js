@@ -1,3 +1,21 @@
+//START footer
+$(document).ready(function(){
+
+  $("footer .title-nav-section").on('click', function () {
+    if ($(window).width() <= 1200) {
+      $(this).toggleClass('open');
+      $(this).next().slideToggle();
+    }
+  });
+  
+  $(window).resize(function () {
+    if ($(window).width() > 1200) {
+      $("footer .title-nav-section").removeClass('open');
+      $("footer .title-nav-section").next().fadeIn(0);
+    }
+  });
+});
+//END footer
 //about-sanatorium
 $(document).on('click','.js-videoPoster',function(e) {
   //отменяем стандартное действие button
@@ -19,25 +37,42 @@ function videoPlay(wrapper) {
   iframe.attr('src',src);
 };
 //bread-crumbs
-//START footer
-$(document).ready(function(){
-
-  $("footer .title-nav-section").on('click', function () {
-    if ($(window).width() <= 1200) {
-      $(this).toggleClass('open');
-      $(this).next().slideToggle();
-    }
-  });
-  
-  $(window).resize(function () {
-    if ($(window).width() > 1200) {
-      $("footer .title-nav-section").removeClass('open');
-      $("footer .title-nav-section").next().fadeIn(0);
-    }
-  });
-});
-//END footer
 //fund
+//gallery
+$(document).ready(function(){
+  var gallery360 = $('.gallery-360');
+  if($('body').children(gallery360)){
+    gallery360.owlCarousel({
+        // margin: 30,
+        loop: true,
+        nav: true,
+        pagination: true,   
+        dots: false,
+        navContainer: ".gallery-360__nav",
+        navText : ["",""],
+        responsiveClass:true,
+        responsiveBaseElement:"body",
+        responsive:{
+            0:{
+                items:1.1
+            },
+            563: {
+                items: 2  
+            },
+            960: {
+                items: 4  
+            }
+        }
+    });
+  };
+  $('.gallery-360__item').magnificPopup({
+    type: 'image',
+    gallery:{
+      enabled: true
+    }
+  });
+})
+//End gallery
 //header start
 $(document).ready(function(){
     // десктопное меню
@@ -50,9 +85,11 @@ $(document).ready(function(){
     
     // мобильное меню
     $('.header__top-burger').click(function(){
-        $(this).find('.header__top-burger__menu-icon').toggleClass('header__top-burger__menu-icon--active');
-        $('.header__sub--wrapper').toggleClass('is-active')
+        $('.header__sub--wrapper').addClass('is-active')
     });
+    $('.header__sub-close').click(function(){
+        $('.header__sub--wrapper').removeClass('is-active');
+    })
 
     // лочим прокрутку сайта при активном десктопном/мобильном меню
     $('.header__menu, .header__top-burger').click(function() {
@@ -274,97 +311,7 @@ function openRoom(evt, buildingNumber) {
 //section-advantages
 //section-discount
 //section-feedback
-//section-price
-jQuery(($) => {
-  $('.select-custom').on('click', '.select__head', function () {
-      if ($(this).hasClass('open')) {
-          $(this).removeClass('open');
-          $(this).next().fadeOut();
-      } else {
-          $('.select__head').removeClass('open');
-          $('.select__list').fadeOut();
-          $(this).addClass('open');
-          $(this).next().fadeIn();
-      }
-  });
 
-  $('.select-custom').on('click', '.select__item', function () {
-      $('.select__head').removeClass('open');
-      $(this).parent().fadeOut();
-      $(this).parent().prev().text($(this).text());
-      $(this).parent().prev().prev().val($(this).text());
-  });
-
-  $(document).click(function (e) {
-      if (!$(e.target).closest('.select-custom').length) {
-          $('.select__head').removeClass('open');
-          $('.select__list').fadeOut();
-      }
-  });
-
-  var windowWidth = $( window ).width();
-
-  $(window).resize(function() {
-      windowWidth = $( window ).width();
-      refreshSize();
-  });
-
-  function refreshSize() {
-      $('.housing-card .btn-blue').each(function () {
-          if (windowWidth > 1200) {
-              $(this).closest('.wrapper').children('.about-price-block.about-mobile').slideUp().removeClass('open');
-              if(!$(this).hasClass('open')) {
-                  $(this).closest('.wrapper').children('.about-price-block.about-bottom').slideUp().removeClass('open');
-              } else {
-                  $(this).closest('.wrapper').children('.about-price-block.about-bottom').slideDown().addClass('open');
-              }
-          } else {
-              $(this).closest('.wrapper').children('.about-price-block.about-bottom').slideUp().removeClass('open');
-              if(!$(this).hasClass('open')) {
-                  $(this).closest('.wrapper').children('.about-price-block.about-mobile').slideUp().removeClass('open');
-              } else {
-                  $(this).closest('.wrapper').children('.about-price-block.about-mobile').slideDown().addClass('open');
-              }
-          }
-      });
-      
-  }
-
-  $('.housing-card .btn-blue').on('click', function () {
-      if($(this).hasClass('open')) {
-          $(this).removeClass('open').removeClass('btn-transparent');
-          $(this).children('.plus-minus').removeClass('minus').addClass('plus');
-          $(this).children('.text').text('Смотреть прайс по номерам');
-      } else {
-          $(this).addClass('open').addClass('btn-transparent');
-          $(this).children('.plus-minus').removeClass('plus').addClass('minus');
-          $(this).children('.text').text('Скрыть прайс по номерам');
-      }
-
-      if (windowWidth > 1200) {
-          if(!$(this).hasClass('open')) {
-              $(this).closest('.wrapper').children('.about-price-block.about-bottom').slideUp().removeClass('open');
-          } else {
-              $(this).closest('.wrapper').children('.about-price-block.about-bottom').slideDown().addClass('open');
-          }
-      } else {
-          if(!$(this).hasClass('open')) {
-              $(this).closest('.wrapper').children('.about-price-block.about-mobile').slideUp().removeClass('open');
-          } else {
-              $(this).closest('.wrapper').children('.about-price-block.about-mobile').slideDown().addClass('open');
-          }
-      }
-
-  });
-
-
-  $('.about-price-block.about-mobile .title-item').on('click', function () {
-      $(this).parent().toggleClass('open');
-      $(this).next().slideToggle();
-  });
-
-});
-//END section-price
 //section-room
 jQuery(($) => {
   $('.room-card-gallery, .room-card-gallery-mobile').magnificPopup({
