@@ -1,21 +1,4 @@
-//START footer
-$(document).ready(function(){
-
-  $("footer .title-nav-section").on('click', function () {
-    if ($(window).width() <= 1200) {
-      $(this).toggleClass('open');
-      $(this).next().slideToggle();
-    }
-  });
-  
-  $(window).resize(function () {
-    if ($(window).width() > 1200) {
-      $("footer .title-nav-section").removeClass('open');
-      $("footer .title-nav-section").next().fadeIn(0);
-    }
-  });
-});
-//END footer
+//bread-crumbs
 //about-sanatorium
 $(document).on('click','.js-videoPoster',function(e) {
   //отменяем стандартное действие button
@@ -36,7 +19,24 @@ function videoPlay(wrapper) {
   // подставляем в src параметр из data
   iframe.attr('src',src);
 };
-//bread-crumbs
+//START footer
+$(document).ready(function(){
+
+  $("footer .title-nav-section").on('click', function () {
+    if ($(window).width() <= 1200) {
+      $(this).toggleClass('open');
+      $(this).next().slideToggle();
+    }
+  });
+  
+  $(window).resize(function () {
+    if ($(window).width() > 1200) {
+      $("footer .title-nav-section").removeClass('open');
+      $("footer .title-nav-section").next().fadeIn(0);
+    }
+  });
+});
+//END footer
 //fund
 //gallery
 $(document).ready(function(){
@@ -78,27 +78,22 @@ $(document).ready(function(){
     // десктопное меню
     $('.header__menu').click(function(){
         $('.header__desctop-menu').addClass('header__side-menu--active');
+        $('body').addClass('body__lock');
     });
     $('.header__desctop-burger--wrapper').click(function(){
         $('.header__desctop-menu').removeClass('header__side-menu--active');
+        $('body').removeClass('body__lock');
     });
     
     // мобильное меню
     $('.header__top-burger').click(function(){
         $('.header__sub--wrapper').addClass('is-active')
+        $('body').addClass('body__lock');
     });
     $('.header__sub-close').click(function(){
         $('.header__sub--wrapper').removeClass('is-active');
-    })
-
-    // лочим прокрутку сайта при активном десктопном/мобильном меню
-    $('.header__menu, .header__top-burger').click(function() {
-        $('body').toggleClass('body__lock');
-    });
-    // разлочиваем прокрутку сайта при убраном десктопном/мобильном меню
-    $('.header__desctop-burger--wrapper, header__top-burger').click(function() {
         $('body').removeClass('body__lock');
-    });
+    })
 
     // выпадающий список телефонов в шапке и сайдбаре
     var tel = $(".tel");
